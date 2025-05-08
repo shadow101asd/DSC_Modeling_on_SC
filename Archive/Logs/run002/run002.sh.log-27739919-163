@@ -1,0 +1,2 @@
+thread_monitor Resource temporarily unavailable in pthread_create
+/var/spool/slurmd/job27739919/slurm_script: line 7: 1916582 Aborted                 matlab -nodisplay -r "DSC4_SC_run(${SLURM_ARRAY_TASK_ID},'002'); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT

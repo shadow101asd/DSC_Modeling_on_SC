@@ -1,0 +1,77 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+NSats =
+   122
+
+Single objective optimization:
+6 Variables
+2 Integer variables
+2 Linear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              198          0.2077          0.5288        0
+    2              295           0.189          0.4761        0
+    3              392           0.189           0.469        1
+    4              489           0.189          0.4245        2
+    5              586          0.1784          0.3926        0
+    6              683          0.1748          0.3915        0
+    7              780          0.1622          0.3644        0
+    8              877          0.1622          0.3977        1
+    9              974          0.1577          0.3365        0
+   10             1071          0.1577          0.3355        1
+   11             1168          0.1577          0.3069        2
+   12             1265          0.1577          0.2781        3
+   13             1362          0.1577          0.2377        4
+   14             1459          0.1577           0.225        5
+   15             1556          0.1573          0.2185        0
+   16             1653          0.1573          0.2009        1
+   17             1750          0.1573           0.192        2
+   18             1847          0.1573          0.2003        3
+   19             1944          0.1551          0.1929        0
+   20             2041          0.1537          0.1849        0
+   21             2138          0.1537          0.1975        1
+   22             2235          0.1537          0.1814        2
+   23             2332          0.1537          0.1821        3
+   24             2429          0.1537          0.1803        4
+   25             2526          0.1537          0.1917        5
+   26             2623          0.1527          0.1742        0
+   27             2720          0.1527          0.1883        1
+   28             2817          0.1524          0.1897        0
+   29             2914          0.1518          0.1853        0
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+   30             3011          0.1518           0.169        1
+   31             3108          0.1517           0.197        0
+   32             3205          0.1517          0.1899        1
+   33             3302          0.1517          0.1737        0
+   34             3399          0.1516          0.1808        0
+   35             3496          0.1516          0.1915        1
+   36             3593          0.1515          0.1835        0
+   37             3690          0.1515           0.168        1
+   38             3787          0.1515          0.1975        2
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+    5.0000    1.3093    0.0566   47.0000    1.1060    1.5149
+{Error using assert
+Index is too small for this architecture to be meaningful!
+Error in DSC6_SC_run (line 8)
+assert(idx >= 10, "Index is too small for this architecture to be meaningful!")
+Error in DSC_SC_runN (line 7)
+        FUNC(new_idx, run_idx)} 

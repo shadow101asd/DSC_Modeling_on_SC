@@ -1,0 +1,90 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+config_str = 
+    "S1B1C223"
+
+                                 Best            Mean     Stall
+Iteration     f-count            f(x)            f(x)    Iterations
+    0             100          0.3696          0.6327        0
+    1             200          0.3382          0.7647        0
+    2             300          0.3133          0.6645        0
+    3             400          0.3133           0.679        1
+    4             500          0.3133          0.6255        2
+    5             600          0.3133          0.6546        3
+    6             700          0.3133          0.6214        4
+    7             800          0.3133          0.6082        5
+    8             900          0.3133          0.6856        6
+    9            1000          0.3133          0.5212        7
+   10            1100          0.3132          0.4609        0
+   11            1200          0.3118          0.3887        0
+   12            1300          0.3115           0.364        0
+   13            1400          0.3115          0.3862        1
+   14            1500          0.3115          0.3822        2
+   15            1600          0.3114          0.3593        0
+   16            1700          0.3113          0.3344        0
+   17            1800          0.3113          0.3229        1
+   18            1900          0.3113          0.3227        2
+   19            2000          0.3113          0.3117        3
+   20            2100          0.3113          0.3117        4
+   21            2200          0.3113          0.3117        5
+   22            2300          0.3113          0.3117        6
+   23            2400          0.3113          0.3117        7
+   24            2500          0.3113          0.3116        0
+   25            2600          0.3113          0.3116        0
+Optimization ended: relative change in the objective value 
+over the last OPTIONS.MaxStallIterations iterations is less than OPTIONS.FunctionTolerance.
+config_str = 
+    "S1B223C1"
+
+                                 Best            Mean     Stall
+Iteration     f-count            f(x)            f(x)    Iterations
+    0             100           0.693           1.109        0
+    1             200          0.5156           1.149        0
+    2             300          0.4392           1.103        0
+    3             400          0.3399           1.056        0
+    4             500          0.3119           0.955        0
+    5             600          0.3118          0.8565        0
+    6             700          0.3118          0.8608        1
+    7             800          0.3116          0.8131        0
+    8             900          0.3116          0.7864        1
+    9            1000          0.3116          0.7344        2
+   10            1100          0.3116          0.7303        3
+   11            1200          0.3116          0.7291        4
+   12            1300          0.3116          0.6894        5
+   13            1400          0.3116          0.6601        6
+   14            1500          0.3116          0.6494        7
+   15            1600          0.3116          0.5916        8
+   16            1700          0.3116          0.5592        9
+Optimization ended: relative change in the objective value 
+over the last OPTIONS.MaxStallIterations iterations is less than OPTIONS.FunctionTolerance.
+config_str = 
+    "S223B1C1"
+
+                                 Best            Mean     Stall
+Iteration     f-count            f(x)            f(x)    Iterations
+    0             100           1.106           1.381        0
+    1             200           1.074           1.328        0
+    2             300           1.059           1.244        0
+    3             400           1.059           1.213        1
+    4             500           1.053           1.184        0
+    5             600           0.995           1.183        0
+    6             700           0.986           1.186        0
+    7             800           0.986           1.179        1
+    8             900           0.986           1.178        2
+    9            1000           0.986           1.187        3
+   10            1100           0.986           1.207        4
+   11            1200           0.986           1.169        5
+   12            1300           0.986           1.174        6
+   13            1400           0.986           1.167        7
+   14            1500           0.986           1.152        8
+   15            1600           0.986           1.125        9
+Optimization ended: relative change in the objective value 
+over the last OPTIONS.MaxStallIterations iterations is less than OPTIONS.FunctionTolerance.

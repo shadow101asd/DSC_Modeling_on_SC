@@ -1,0 +1,4 @@
+thread_monitor Resource temporarily unavailable in pthread_create
+MATLAB: tpp.c:83: __pthread_tpp_change_priority: Assertion `new_prio == -1 || (new_prio >= fifo_min_prio && new_prio <= fifo_max_prio)' failed.
+MATLAB: tpp.c:83: __pthread_tpp_change_priority: Assertion `new_prio == -1 || (new_prio >= fifo_min_prio && new_prio <= fifo_max_prio)' failed.
+/var/spool/slurmd/job27739804/slurm_script: line 7: 4129120 Aborted                 matlab -nodisplay -r "DSC4_SC_run(${SLURM_ARRAY_TASK_ID},'002'); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT

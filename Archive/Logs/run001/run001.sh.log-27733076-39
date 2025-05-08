@@ -1,0 +1,49 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+MAXSATS =
+    43
+
+Single objective optimization:
+15 Variables
+5 Integer variables
+1 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              200          0.4405            1.69        0
+    2              300          0.4405           1.551        1
+    3              400          0.3911          0.9048        0
+    4              500          0.3723            0.97        0
+    5              600          0.3487          0.8671        0
+    6              700          0.3487          0.7564        1
+    7              800          0.3049          0.6948        0
+    8              900          0.3044          0.5985        0
+    9             1000          0.3044          0.8436        1
+   10             1100          0.3044          0.6904        2
+   11             1200          0.3044          0.7381        3
+   12             1300          0.3044          0.8348        4
+   13             1400          0.3044          0.7807        5
+   14             1500          0.3044          0.8088        6
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+  Columns 1 through 7
+   39.0000    1.0000    1.0000    1.0000         0    1.2679    1.1118
+  Columns 8 through 14
+    1.1826    0.9684    1.3516    6.1098    5.8097    0.5312    4.5598
+  Column 15
+    0.9842

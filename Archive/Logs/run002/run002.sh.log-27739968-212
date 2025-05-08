@@ -1,0 +1,10 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Cannot create GC thread. Out of system resources.
+# An error report file with more information is saved as:
+# /home/gridsan/jpenot/hs_error_pid29879.log
+pure virtual method called
+terminate called without an active exception
+
+MATLAB is exiting because of fatal error
+/var/spool/slurmd/job27739968/slurm_script: line 7: 3241143 Killed                  matlab -nodisplay -r "DSC4_SC_run(${SLURM_ARRAY_TASK_ID},'002'); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT

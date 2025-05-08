@@ -1,0 +1,108 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+MAXSATS =
+   799
+
+Single objective optimization:
+5 Variables
+3 Integer variables
+1 Nonlinear inequality constraints
+1 Linear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              400           1.368           1.472        0
+    2              600           1.368           1.439        1
+    3              800           1.368           1.401        2
+    4             1000           1.368           1.402        3
+    5             1200          0.1901           1.377        0
+    6             1400          0.1901           1.375        1
+    7             1600          0.1901           1.397        2
+    8             1800          0.1901           1.352        3
+    9             2000          0.1901          0.6959        4
+   10             2200          0.1901          0.4079        5
+   11             2400          0.1901          0.4618        6
+   12             2600          0.1901          0.5064        7
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+    0.0035    0.5417   22.0000    8.0000    4.0000
+MAXSATS =
+   559
+
+Single objective optimization:
+5 Variables
+3 Integer variables
+1 Nonlinear inequality constraints
+1 Linear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              400           1.368           1.463        0
+    2              600          0.1707           1.429        0
+    3              800          0.1707           1.399        1
+    4             1000          0.1707           1.404        2
+    5             1200           0.159           1.391        0
+    6             1400           0.159           1.421        1
+    7             1600           0.159           1.478        2
+    8             1800           0.159          0.9905        3
+    9             2000           0.159           1.162        4
+   10             2200          0.1459           1.368        0
+   11             2400          0.1459          0.6687        1
+   12             2600          0.1459          0.9903        2
+   13             2800          0.1459           1.323        3
+   14             3000          0.1459           1.301        4
+   15             3200          0.1459           1.312        5
+   16             3400          0.1459           1.361        6
+   17             3600          0.1459           1.239        7
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+    0.3987    0.5683    3.0000   24.0000    6.0000
+MAXSATS =
+   319
+
+Single objective optimization:
+5 Variables
+3 Integer variables
+1 Nonlinear inequality constraints
+1 Linear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              400       0.0001966         0.09969        0
+    2              597       0.0001966           1.401        1
+    3              794       0.0001966          0.8852        2
+    4              991       0.0001966          0.9316        3
+    5             1188       0.0001966          0.9084        4
+    6             1385       0.0001966           1.366        5
+    7             1582       0.0001966           1.377        6
+    8             1779       0.0001966           1.058        7
+/var/spool/slurmd/job27775272/slurm_script: line 8: 76719 Killed                  matlab -nodisplay -r "DSC4_SC_runN(${SLURM_ARRAY_TASK_ID}, 4, 240, '004'); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT
+slurmstepd-d-17-10-1: error: Detected 1 oom_kill event in StepId=27775272.batch. Some of the step tasks have been OOM Killed.

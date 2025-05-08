@@ -1,0 +1,59 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+[Warning: Executing startup failed in matlabrc.
+This indicates a potentially serious problem in your MATLAB setup, which should
+be resolved as soon as possible.  Error detected was:
+MATLAB:bang:SystemError
+Unexpected system error: bang: fork [11] Resource temporarily unavailable] 
+MAXSATS =
+   173
+
+Single objective optimization:
+15 Variables
+5 Integer variables
+1 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              200          0.2376           1.683        0
+    2              300          0.1977           1.427        0
+    3              400          0.1977          0.6098        1
+    4              500          0.1912          0.5619        0
+    5              600          0.1912          0.5103        1
+    6              700          0.1872          0.4148        0
+    7              800          0.1836          0.3644        0
+    8              900          0.1836          0.4287        1
+    9             1000          0.1836          0.3827        2
+   10             1100          0.1836          0.3114        3
+   11             1200          0.1836          0.3078        4
+   12             1300          0.1704          0.3586        0
+   13             1400          0.1704          0.3144        1
+   14             1500          0.1704          0.4607        2
+   15             1600          0.1704          0.3282        3
+   16             1700          0.1704          0.3364        4
+   17             1800          0.1704           0.439        5
+   18             1900          0.1704          0.3343        6
+   19             2000          0.1703          0.3341        0
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+  Columns 1 through 7
+   18.0000   31.0000   59.0000   24.0000   33.0000    1.3955    1.4779
+  Columns 8 through 14
+    1.1085    1.2321    1.2696    4.4183    3.3702    3.3747    3.7973
+  Column 15
+    1.1951

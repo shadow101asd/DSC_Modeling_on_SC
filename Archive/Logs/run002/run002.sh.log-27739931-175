@@ -1,0 +1,56 @@
+
+--------------------------------------------------------------------------------
+          Segmentation violation detected at 2025-01-10 07:59:01 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 1917134
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+
+Fault Count: 1
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MVM State Queue' id 140165158770240
+
+Register State (from fault):
+  RAX = 0000000000000010  RBX = 00007f7ba43265f0
+  RCX = 00007f7abe7f8ab0  RDX = 00007f7abe7f8a90
+  RSP = 00007f7abe7f8a58  RBP = 00007f7abe7f8b60
+  RSI = 00007f7af026c960  RDI = 0000000000000010
+
+   R8 = 00000000000000cb   R9 = 0000000000000000
+  R10 = 0000000000000001  R11 = 7ee9c378d4f7e3a4
+  R12 = 00007f7abe7f8b90  R13 = 00007f7abe7f8ab0
+  R14 = 00007f7abe7f8af0  R15 = 00007f7abe7f8a90
+
+  RIP = 00007f7bbc525ef4  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f7bbc525ef4                    /lib/x86_64-linux-gnu/libc.so.6+00622324 pthread_mutex_lock+00000004
+[  1] 0x00007f7af020ad95 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/mvm_services/mvm_cache_impl/mwmvm_cache_impl.so+00363925
+[  2] 0x00007f7af0212f69 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/mvm_services/mvm_cache_impl/mwmvm_cache_impl.so+00397161
+[  3] 0x00007f7af02356b5 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/mvm_services/mvm_cache_impl/mwmvm_cache_impl.so+00538293 _ZN7mwboost6detail17task_shared_stateINS_8functionIFNS_10shared_ptrIKN10foundation7msg_svc8eventmgr9BaseEventEEEvEEESA_E6do_runEv+00000053
+[  4] 0x00007f7bbb7a145a /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsettingscore.so+02171994
+[  5] 0x00007f7bbc1fa277 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwboost_thread.so.1.78.0+00045687
+[  6] 0x00007f7bbc522ac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  7] 0x00007f7bbc5b4850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+** This crash report has been saved to disk as /home/gridsan/jpenot/matlab_crash_dump.1917134-1 **
+
+
+
+MATLAB is exiting because of fatal error
+/var/spool/slurmd/job27739931/slurm_script: line 7: 1917134 Killed                  matlab -nodisplay -r "DSC4_SC_run(${SLURM_ARRAY_TASK_ID},'002'); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT

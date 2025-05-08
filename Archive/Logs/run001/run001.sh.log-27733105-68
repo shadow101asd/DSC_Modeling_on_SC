@@ -1,0 +1,44 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+MAXSATS =
+    72
+
+Single objective optimization:
+15 Variables
+5 Integer variables
+1 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              200          0.3497           1.687        0
+    2              300          0.2699           1.453        0
+    3              400          0.2699          0.7522        1
+    4              500          0.2699          0.7013        2
+    5              600          0.2699          0.8054        3
+    6              700          0.2699           0.834        4
+    7              800          0.2699           0.557        5
+    8              900           0.266           0.928        0
+    9             1000           0.266          0.5574        1
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+  Columns 1 through 7
+   30.0000    8.0000    5.0000    3.0000   21.0000    1.1585    0.7330
+  Columns 8 through 14
+    1.1782    1.0666    1.3558    4.9956    3.2929    3.1071    3.1064
+  Column 15
+    4.5468

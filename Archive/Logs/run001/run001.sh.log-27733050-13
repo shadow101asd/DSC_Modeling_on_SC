@@ -1,0 +1,7 @@
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+malloc(): unsorted double linked list corrupted
+/var/spool/slurmd/job27733050/slurm_script: line 7: 1489623 Segmentation fault      matlab -nodisplay -r "DSC4_SC_run001(${SLURM_ARRAY_TASK_ID}); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT

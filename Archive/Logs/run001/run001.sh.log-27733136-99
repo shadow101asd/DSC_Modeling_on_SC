@@ -1,0 +1,106 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+MAXSATS =
+   103
+
+Single objective optimization:
+15 Variables
+5 Integer variables
+1 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+--------------------------------------------------------------------------------
+             std::terminate() detected at 2025-01-09 10:57:19 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  Deployed                 : false
+  GNU C Library            : 2.35 stable
+  Graphics Driver          : Uninitialized software 
+  Graphics card 1          : 0x102b ( 0x102b ) 0x536 Version 0.0.0.0 (0-0-0)
+  Interpreter 0            : Executing request: 64657461696C2F44656661756C744D564D2E637070
+  Java Version             : Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
+  MATLAB Architecture      : glnxa64
+  MATLAB Entitlement ID    : 7886139
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  OpenGL                   : software
+  Operating System         : GridOS 22.04.5
+  Process ID               : 2099645
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+  Session Key              : 0407ee5f-119a-48e3-b54c-aa26e533aa81
+  Window System            : No active display
+
+Fault Count: 1
+
+
+Abnormal termination:
+std::terminate()
+
+Current Thread: 'GTP_0' id 139905392961088
+
+Register State (captured):
+  RAX = 0000000000000000  RBX = 00007f4104a9c2c8
+  RCX = 0000000000000000  RDX = 00007f4104a95eb0
+  RSP = 00007f3e433f91d0  RBP = 00007f3e433f95b0
+  RSI = 00007f4104a7c025  RDI = 00007f3e433f91e0
+
+   R8 = 0000000000000000   R9 = 00007f3e433f94c0
+  R10 = 0000000000000000  R11 = 0000000000000000
+  R12 = 00007f4104aac348  R13 = 00007f3e433f9a80
+  R14 = 00007f3e433f9610  R15 = 0000000000000000
+
+  RIP = 00007f4104a2ad1f  EFL = 0000000000000000
+
+   CS = 0000   FS = 0000   GS = 0000
+
+Stack Trace (captured):
+[  0] 0x00007f4104a24063 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00319587
+[  1] 0x00007f4104a2425c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00320092 _ZN10foundation4core4diag15stacktrace_base7captureEm+00000028
+[  2] 0x00007f4104a269f8 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00330232
+[  3] 0x00007f4104a26c93 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00330899
+[  4] 0x00007f40f9372542 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01094978
+[  5] 0x00007f40f9375e3f /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01109567
+[  6] 0x00007f40f9375ff8 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01110008
+[  7] 0x00007f40f937647d /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01111165
+[  8] 0x00007f4103ad37b6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/../../sys/os/glnxa64/libstdc++.so.6+00710582
+[  9] 0x00007f4103ad3821 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/../../sys/os/glnxa64/libstdc++.so.6+00710689
+[ 10] 0x00007f4103ad3ab4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/../../sys/os/glnxa64/libstdc++.so.6+00711348
+[ 11] 0x00007f4104a200d9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00303321 _ZN7mwboost15throw_exceptionINS_10lock_errorEEEvRKT_+00000000
+[ 12] 0x00007f3df8cad272 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/ddux/ddux_logging/ddux_logging/mwddux_logging.so+01049202 _ZN7mwboost6threadC1IRFvNS_10shared_ptrIN4ddux7logging15EventDispatcherEEEERKS6_JEEEOT_OT0_DpOT1_+00000786
+[ 13] 0x00007f3df8ca34dd /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/ddux/ddux_logging/ddux_logging/mwddux_logging.so+01008861
+[ 14] 0x00007f3df8cbee9f /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/ddux/ddux_logging/ddux_logging/mwddux_logging.so+01121951
+[ 15] 0x00007f40fbb53b48 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/matlab_startup_plugins/graphics/opengl_startup_plugin/../../../../../bin/glnxa64/libmwddux_loggingapi.so+00555848
+[ 16] 0x00007f40fbb54ee7 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/matlab_startup_plugins/graphics/opengl_startup_plugin/../../../../../bin/glnxa64/libmwddux_loggingapi.so+00560871
+[ 17] 0x00007f3e590d7b32 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/spf/clients/ddux_client/libmwdduxclient.so+00117554
+[ 18] 0x00007f40fbbc9081 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/matlab_startup_plugins/graphics/opengl_startup_plugin/../../../../../bin/glnxa64/libmwddux_loggingapi.so+01036417 _ZN4ddux5Timer13CallbackProxy11waitHandlerERKN7mwboost6system10error_codeE+00000337
+[ 19] 0x00007f40fbbca49a /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/matlab_startup_plugins/graphics/opengl_startup_plugin/../../../../../bin/glnxa64/libmwddux_loggingapi.so+01041562 _ZN7mwboost4asio6detail12wait_handlerISt5_BindIFMN4ddux5Timer13CallbackProxyEFvRKNS_6system10error_codeEEPS6_St12_PlaceholderILi1EEEENS0_15any_io_executorEE11do_completeEPvPNS1_19scheduler_operationESA_m+00000730
+[ 20] 0x00007f41046fcbb3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmst.so+01076147 _ZN7mwboost4asio6detail9scheduler10do_run_oneERNS1_27conditionally_enabled_mutex11scoped_lockERNS1_21scheduler_thread_infoERKNS_6system10error_codeE+00000899
+[ 21] 0x00007f40fbb76841 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/matlab_startup_plugins/graphics/opengl_startup_plugin/../../../../../bin/glnxa64/libmwddux_loggingapi.so+00698433 _ZN7mwboost4asio6detail9scheduler3runERNS_6system10error_codeE+00000257
+[ 22] 0x00007f40fbb76a11 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/matlab_startup_plugins/graphics/opengl_startup_plugin/../../../../../bin/glnxa64/libmwddux_loggingapi.so+00698897 _ZN7mwboost4asio10io_context3runEv+00000049
+[ 23] 0x00007f410354f277 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwboost_thread.so.1.78.0+00045687
+[ 24] 0x00007f4103877ac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 25] 0x00007f4103909850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+** This crash report has been saved to disk as /home/gridsan/jpenot/matlab_crash_dump.2099645-1 **
+
+
+
+MATLAB is exiting because of fatal error
+/var/spool/slurmd/job27733136/slurm_script: line 7: 2099645 Killed                  matlab -nodisplay -r "DSC4_SC_run001(${SLURM_ARRAY_TASK_ID}); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT

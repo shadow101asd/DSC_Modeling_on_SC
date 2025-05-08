@@ -1,0 +1,50 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+MAXSATS =
+    87
+
+Single objective optimization:
+15 Variables
+5 Integer variables
+1 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              200          0.3144           1.683        0
+    2              300          0.2709           1.485        0
+    3              400          0.2709          0.8718        1
+    4              500          0.2545           1.334        0
+    5              600          0.2545          0.6858        1
+    6              700          0.2545          0.5995        2
+    7              800          0.2511          0.5411        0
+    8              900          0.2466          0.4815        0
+    9             1000          0.2466          0.6835        1
+   10             1100          0.2466          0.5559        2
+   11             1200          0.2445          0.6427        0
+   12             1300          0.2414          0.8579        0
+   13             1400          0.2414          0.6501        1
+   14             1500          0.2414          0.6303        2
+   15             1600          0.2405            0.47        0
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+  Columns 1 through 7
+    3.0000   12.0000   12.0000    9.0000   45.0000    1.0149    1.2277
+  Columns 8 through 14
+    1.1533    0.8790    1.3446    4.3702    5.1111    4.1369    4.8208
+  Column 15
+    0.4307

@@ -1,0 +1,90 @@
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+free(): corrupted unsorted chunks
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+
+--------------------------------------------------------------------------------
+          Segmentation violation detected at 2025-01-09 10:57:09 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 1643192
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+
+Fault Count: 4
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 140477709940288
+
+Register State (from fault):
+  RAX = 00000007fc3b8d57  RBX = 00007fc383ffeab0
+  RCX = 0000000000000000  RDX = 00007fc3dded1750
+  RSP = 00007fc383ffdfc0  RBP = 00007fc383ffe2b0
+  RSI = 00007fc383ffe180  RDI = 00007fc383ffe1d8
+
+   R8 = 00007fc3744b51a0   R9 = 0000000000000000
+  R10 = 00007fc3c4140cc0  R11 = 509e654d4e8d9d8f
+  R12 = 00007fc383ffe1d8  R13 = 00007fc3b8d57590
+  R14 = 00007fc3b8d228f0  R15 = 00007fc383ffe1d0
+
+  RIP = 00007fc3d95aa392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007fc3d95aa392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007fc3d95aabcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  2] 0x00007fc3d95aa2b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  3] 0x00007fc3d95aabcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  4] 0x00007fc3d95aa2b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  5] 0x00007fc3d95ab2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  6] 0x00007fc3e162a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  7] 0x00007fc3e162469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  8] 0x00007fc3e162267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  9] 0x00007fc3e161da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 10] 0x00007fc3e161d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 11] 0x00007fc3e44dcac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 12] 0x00007fc3e456e850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+** This crash report has been saved to disk as /home/gridsan/jpenot/matlab_crash_dump.1643192-1 **
+
+
+
+MATLAB is exiting because of fatal error
+/var/spool/slurmd/job27733110/slurm_script: line 7: 1643192 Killed                  matlab -nodisplay -r "DSC4_SC_run001(${SLURM_ARRAY_TASK_ID}); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT

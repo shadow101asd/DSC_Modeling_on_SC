@@ -1,0 +1,35 @@
+function f = DSC_TVG_Plotting_fromDSC6(figure_num, filename, inputfilename, Ntotal)
+%DSC_TVG_Plotting Summary of this function goes here
+%   Detailed explanation goes here
+
+load(filename)
+load(inputfilename)
+
+[Nbranches, aMOG, eMOG, NC1, aC1, aC2] = unpackVars(X_opt);
+NC2 = Ntotal - 2*Nbranches - NC1;
+
+% MOG 
+Ki = [aMOG; 0.25; 0.0; 0.0; pi; 0.0]; % Second element (eccentricity) isn't actually used here
+XSatsMOG = NSATSpropagateFromKepleriansSHELLS(Ki,muSu,etR,Nbranches,eMOG,2);
+
+% Circular Loops
+XSatsC1 = NSATSpropagateFromKepleriansCIRC(aC1,pi,muSu,etR,NC1);
+XSatsC2 = NSATSpropagateFromKepleriansCIRC(aC2,pi,muSu,etR,NC2);
+
+% Merge
+XSats = cat(3, XSatsMOG, XSatsC1, XSatsC2);
+
+f = DSC_TVG_Plotting_from_Xs(figure_num, XSats, XEa, XMa, "Earth", "Mars", "blue", "red", etR);
+
+end
+
+
+function [Nbranches, aMOG, eMOG, NC1, aC1, aC2] = unpackVars(X)
+    AU = 1.496e8; % 1 AU in km
+    Nbranches = X(1);
+    aMOG = X(2) * AU;
+    eMOG = X(3);
+    NC1 = X(4);
+    aC1 = X(5) * AU;
+    aC2 = X(6) * AU;
+end

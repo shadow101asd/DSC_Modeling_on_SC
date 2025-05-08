@@ -1,0 +1,65 @@
+thread_monitor Resource temporarily unavailable in pthread_create
+
+--------------------------------------------------------------------------------
+          Segmentation violation detected at 2025-01-10 07:59:00 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 4126554
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+
+Fault Count: 1
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 140550335620672
+
+Register State (from fault):
+  RAX = 0000000000000001  RBX = 0000000000000002
+  RCX = 0000000000000009  RDX = 6d65747379537465
+  RSP = 00007fd46cd3c1b0  RBP = 00007fd46cd3c270
+  RSI = 6d65747379537465  RDI = 00007fd430ce7c86
+
+   R8 = 00007fd47c501be0   R9 = 0000000000000002
+  R10 = 00007fd430ce7c86  R11 = 00007fd430ce7c9e
+  R12 = 0000000000000002  R13 = 00007fd47c501be0
+  R14 = 00007fd46cd3c2a0  R15 = 00007fd46cd3c290
+
+  RIP = 00007fd430ce2bfc  EFL = 0000000000010206
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007fd430ce2bfc /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/matlab_startup_plugins/matlab_graphics_ui/../../../../bin/glnxa64/libmwuix.so+00490492 _Z20UIX_CheckDisplayArgsiPPKc+00000140
+[  1] 0x00007fd484b7e618 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01140248
+[  2] 0x00007fd484b538f7 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+00964855 _ZN11mcrInstance4initEN10foundation3usm10management7ContextINS1_5scope3MvmEEE+00005607
+[  3] 0x00007fd484d8c498 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwMVMLocal.so+00468120 _ZN10mvm_server6inproc8LocalMVM11privateInitERKSt10shared_ptrIS1_EP11mcrInstance+00000104
+[  4] 0x00007fd484d8c5e5 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwMVMLocal.so+00468453 _ZN10mvm_server6inproc8LocalMVM6createERKN7mwboost10shared_ptrIN3mvm6detail14DefaultSessionEEERKNS3_INS0_12LocalFactoryEEERKNS4_14SessionOptionsERKNS4_10MVMOptionsE+00000293
+[  5] 0x00007fd484da3972 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwMVMLocal.so+00563570
+[  6] 0x00007fd484da3df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwMVMLocal.so+00564723
+[  7] 0x00007fd484da610d /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwMVMLocal.so+00573709 _ZN10mvm_server6inproc12LocalFactory13createMVMImplEN3mvm10MVMOptionsEb+00003421
+[  8] 0x00007fd484da63f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwMVMLocal.so+00574457 _ZN10mvm_server6inproc12LocalFactory9createMVMEN3mvm10MVMOptionsE+00000057
+[  9] 0x00007fd484db0358 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwMVMLocal.so+00615256
+[ 10] 0x00007fd484db0501 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwMVMLocal.so+00615681
+[ 11] 0x00007fd48f46f9f6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmvm.so+03254774
+[ 12] 0x00007fd484b2ec05 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+00814085
+[ 13] 0x00007fd48e4b8277 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwboost_thread.so.1.78.0+00045687
+[ 14] 0x00007fd48e7e0ac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 15] 0x00007fd48e872850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+** This crash report has been saved to disk as /home/gridsan/jpenot/matlab_crash_dump.4126554-1 **
+
+
+
+MATLAB is exiting because of fatal error
+/var/spool/slurmd/job27739760/slurm_script: line 7: 4126554 Killed                  matlab -nodisplay -r "DSC4_SC_run(${SLURM_ARRAY_TASK_ID},'002'); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT

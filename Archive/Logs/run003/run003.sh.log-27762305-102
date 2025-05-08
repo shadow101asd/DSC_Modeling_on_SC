@@ -1,0 +1,47 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+MAXSATS =
+   102
+
+Single objective optimization:
+5 Variables
+3 Integer variables
+1 Nonlinear inequality constraints
+1 Linear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              400           1.369           1.472        0
+    2              600          0.5553           1.433        0
+    3              800          0.3724            1.52        0
+    4             1000          0.3664           1.255        0
+    5             1200          0.2975           1.463        0
+    6             1400          0.2975           1.379        1
+    7             1600          0.2975           1.436        2
+    8             1800          0.2975           1.386        3
+    9             2000          0.2886           1.303        0
+   10             2200          0.2886           1.393        1
+   11             2400          0.2886           1.055        2
+   12             2600          0.2886           1.276        3
+   13             2800          0.2886           1.085        4
+   14             3000          0.2886           1.221        5
+   15             3200          0.2886          0.9904        6
+   16             3400          0.2886           1.094        7
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+    0.0202    0.4031    1.0000    6.0000   15.0000

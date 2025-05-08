@@ -1,0 +1,50 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+MAXSATS =
+    16
+
+Single objective optimization:
+5 Variables
+3 Integer variables
+1 Nonlinear inequality constraints
+1 Linear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              400          0.6594            1.38        0
+    2              597          0.6594           1.605        1
+    3              794          0.6458           1.508        0
+    4              991          0.6272           1.458        0
+    5             1188          0.6272           1.456        1
+    6             1385          0.6272           1.403        2
+    7             1582          0.6272           1.417        3
+    8             1779          0.6272           1.426        4
+    9             1976          0.6272           1.418        5
+   10             2173          0.5861            1.32        0
+   11             2370          0.5861           1.308        1
+   12             2567           0.537           1.319        0
+   13             2764           0.537           1.284        1
+   14             2961           0.537           1.237        2
+   15             3158           0.537           1.274        3
+   16             3355           0.537           1.304        4
+   17             3552           0.537           1.256        5
+   18             3749           0.537           1.159        6
+   19             3946          0.5369            1.14        0
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+    0.0099    0.0162    1.0000    1.0000   16.0000

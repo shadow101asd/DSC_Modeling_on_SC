@@ -1,0 +1,14 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+{Error using assert
+Index is too small for the simple architectures to be meaningful!
+Error in DSC_Simple_SC_run (line 5)
+assert(idx >= 10, "Index is too small for the simple architectures to be meaningful!")} 

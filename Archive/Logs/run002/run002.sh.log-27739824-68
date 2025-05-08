@@ -1,0 +1,57 @@
+thread_monitor Resource temporarily unavailable in pthread_create
+thread_monitor Resource temporarily unavailable in pthread_create
+
+--------------------------------------------------------------------------------
+          Segmentation violation detected at 2025-01-10 07:59:04 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 3352247
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+
+Fault Count: 1
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 140620408510016
+
+Register State (from fault):
+  RAX = 00007fe53c00008f  RBX = 0000000000000000
+  RCX = 0000000000000004  RDX = 000ffca7800011e0
+  RSP = 00007fe4bd7f4b30  RBP = 0000000000000001
+  RSI = 00007fe51d56bf80  RDI = 00007fe51d56bf80
+
+   R8 = 00007fe53c200d40   R9 = 00007fe50c001600
+  R10 = 00007fe549373c78  R11 = 29fa89457c21438b
+  R12 = 00007fe54a07c838  R13 = 00007fe51d56bf80
+  R14 = 00007fe54a07dee8  R15 = 00007fe53c20ca50
+
+  RIP = 00007fe549ea73fc  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007fe549ea73fc                    /lib/x86_64-linux-gnu/libc.so.6+00283644
+[  1] 0x00007fe549ea7610                    /lib/x86_64-linux-gnu/libc.so.6+00284176 on_exit+00000000
+[  2] 0x00007fe54701df25 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00122661
+[  3] 0x00007fe54701d9fe /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121342
+[  4] 0x00007fe54701d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  5] 0x00007fe549ef6ac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  6] 0x00007fe549f88850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+** This crash report has been saved to disk as /home/gridsan/jpenot/matlab_crash_dump.3352247-1 **
+
+
+
+MATLAB is exiting because of fatal error
+/var/spool/slurmd/job27739824/slurm_script: line 7: 3352247 Killed                  matlab -nodisplay -r "DSC4_SC_run(${SLURM_ARRAY_TASK_ID},'002'); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT

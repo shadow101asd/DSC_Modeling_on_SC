@@ -1,0 +1,77 @@
+
+--------------------------------------------------------------------------------
+             std::terminate() detected at 2025-01-09 10:57:11 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 1641754
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+  Window System            : No active display
+
+Fault Count: 1
+
+
+Abnormal termination:
+std::terminate()
+
+Current Thread: 'MCR 0 interpret' id 140050473928256
+
+Register State (captured):
+  RAX = 0000000000000000  RBX = 00007f613e1ec2c8
+  RCX = 0000000000000000  RDX = 00007f613e1e5eb0
+  RSP = 00007f600abf6410  RBP = 00007f600abf67f0
+  RSI = 00007f613e1cc025  RDI = 00007f600abf6420
+
+   R8 = 0000000000000000   R9 = 00007f600abf6700
+  R10 = 0000000000000000  R11 = 0000000000000000
+  R12 = 00007f613e1fc348  R13 = 00007f600abf6cc0
+  R14 = 00007f600abf6850  R15 = 0000000000000000
+
+  RIP = 00007f613e17ad1f  EFL = 0000000000000000
+
+   CS = 0000   FS = 0000   GS = 0000
+
+Stack Trace (captured):
+[  0] 0x00007f613e174063 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00319587
+[  1] 0x00007f613e17425c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00320092 _ZN10foundation4core4diag15stacktrace_base7captureEm+00000028
+[  2] 0x00007f613e1769f8 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00330232
+[  3] 0x00007f613e176c93 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00330899
+[  4] 0x00007f6134375542 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01094978
+[  5] 0x00007f6134378e3f /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01109567
+[  6] 0x00007f6134378ff8 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01110008
+[  7] 0x00007f613437947d /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01111165
+[  8] 0x00007f613d2237b6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/../../sys/os/glnxa64/libstdc++.so.6+00710582
+[  9] 0x00007f613d223821 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/../../sys/os/glnxa64/libstdc++.so.6+00710689
+[ 10] 0x00007f611c894803 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwm_lxe.so+07292931
+[ 11] 0x00007f611c5278d2 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwm_lxe.so+03700946
+[ 12] 0x00007f611c945c64 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwm_lxe.so+08019044
+[ 13] 0x00007f611c93f095 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwm_lxe.so+07991445
+[ 14] 0x00007f611c946c8e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwm_lxe.so+08023182
+[ 15] 0x00007f611ca63fd2 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwm_lxe.so+09191378
+[ 16] 0x00007f611ca643f5 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwm_lxe.so+09192437
+[ 17] 0x00007f611ca50417 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwm_lxe.so+09110551 _ZN9MathWorks3lxe14CreateIrEngineENS0_13LxeBridgeTypeEPNS0_12type_factoryERNS0_14ILxeDispatcherERNS0_8IAstToIrERNS0_20IIndexingEnvironmentERNS0_13XvalueFactoryEPNS0_23ForeignFunctionStateMapERNS0_23PendingExceptionManagerERNS0_22IOwnershipProxyFactoryEmmm+00000967
+[ 18] 0x00007f612de6e9cd /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwlxemainservices.so+04172237
+[ 19] 0x00007f612de8b8db /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwlxemainservices.so+04290779 _ZN9MathWorks3lxe16StartupLxeEngineERKNS_11interpreter24InterpreterContextConfigE+00001851
+[ 20] 0x00007f61343292d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+00783060
+[ 21] 0x00007f613433c1d3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+00860627
+[ 22] 0x00007f61343541ed /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+00958957
+[ 23] 0x00007f613432e038 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+00802872
+[ 24] 0x00007f613432e4ad /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+00804013
+[ 25] 0x00007f613cc9f277 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwboost_thread.so.1.78.0+00045687
+[ 26] 0x00007f613cfc7ac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 27] 0x00007f613d059850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+** This crash report has been saved to disk as /home/gridsan/jpenot/matlab_crash_dump.1641754-1 **
+
+
+
+MATLAB is exiting because of fatal error
+/var/spool/slurmd/job27733119/slurm_script: line 7: 1641754 Killed                  matlab -nodisplay -r "DSC4_SC_run001(${SLURM_ARRAY_TASK_ID}); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT

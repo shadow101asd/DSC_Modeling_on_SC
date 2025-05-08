@@ -1,0 +1,204 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+DSC_Simple_A1_SC_run
+NSats =
+    79
+
+Single objective optimization:
+5 Variables
+1 Integer variables
+2 Linear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              187          0.2554          0.5295        0
+    2              284          0.2471           0.428        0
+    3              381           0.244          0.4285        0
+    4              478          0.2338          0.4007        0
+    5              575          0.2338          0.3972        1
+    6              672          0.2338          0.3869        2
+    7              769          0.2338          0.3617        3
+    8              866          0.2296          0.3383        0
+    9              963          0.2296          0.3212        1
+   10             1060          0.2275          0.3017        0
+   11             1157          0.2275          0.2907        1
+   12             1254          0.2266          0.2782        0
+   13             1351          0.2266          0.2677        1
+   14             1448          0.2245          0.2558        0
+   15             1545          0.2245          0.2777        1
+   16             1642          0.2224          0.2638        0
+   17             1739           0.221          0.2589        0
+   18             1836           0.221          0.2625        1
+   19             1933           0.221           0.271        2
+   20             2030          0.2206           0.259        0
+   21             2127            0.22          0.2473        0
+   22             2224           0.218          0.2498        0
+   23             2321          0.2145          0.2546        0
+   24             2418          0.2143          0.2398        0
+   25             2515          0.2143          0.2415        1
+   26             2612          0.2143           0.254        2
+   27             2709          0.2125           0.236        0
+   28             2806          0.2125          0.2443        1
+   29             2903          0.2125          0.2511        2
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+   30             3000          0.2116          0.2755        0
+   31             3097          0.2116          0.2462        1
+   32             3194          0.2116          0.2464        2
+   33             3291          0.2116          0.2683        3
+   34             3388          0.2116          0.2647        0
+   35             3485          0.2115           0.248        0
+   36             3582          0.2115           0.264        1
+   37             3679          0.2114          0.2629        0
+   38             3776          0.2113          0.2565        0
+   39             3873          0.2111          0.2477        0
+   40             3970          0.2111          0.2318        1
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+    3.0000    1.1926    0.0767    0.9428    1.4406
+DSC_Simple_A2_SC_run
+NSats =
+    79
+
+Single objective optimization:
+4 Variables
+1 Integer variables
+1 Linear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              192          0.2608          0.4634        0
+    2              290          0.2493          0.3922        0
+    3              388          0.2493           0.382        1
+    4              486          0.2477          0.3637        0
+    5              584           0.247          0.3528        0
+    6              682          0.2382          0.3311        0
+    7              780          0.2357          0.3182        0
+    8              878          0.2357          0.3317        1
+    9              976          0.2281          0.3055        0
+   10             1074          0.2281          0.2849        1
+   11             1172          0.2281          0.2992        2
+   12             1270           0.228          0.2889        0
+   13             1368           0.228          0.3248        1
+   14             1466           0.228          0.2844        2
+   15             1564           0.228          0.2733        3
+   16             1662           0.228          0.2713        4
+   17             1760           0.228          0.2826        5
+   18             1858           0.228          0.2675        6
+   19             1956          0.2275          0.2585        0
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+    1.0000    1.3156    0.0317    1.1451
+DSC_Simple_A3_SC_run
+NSats =
+    79
+
+Single objective optimization:
+4 Variables
+1 Integer variables
+1 Linear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              200          0.2509          0.4017        0
+    2              298           0.242          0.3742        0
+    3              396          0.2388          0.3617        0
+    4              494          0.2366          0.3291        0
+    5              592          0.2237          0.3154        0
+    6              690          0.2237          0.3149        1
+    7              788          0.2237          0.3062        0
+    8              886          0.2237          0.2968        1
+    9              984          0.2213          0.2923        0
+   10             1082          0.2176          0.2895        0
+   11             1180          0.2176          0.3002        1
+   12             1278          0.2176          0.2843        2
+   13             1376          0.2144          0.2784        0
+   14             1474          0.2144           0.267        1
+   15             1572          0.2144          0.2655        2
+   16             1670          0.2144          0.2625        3
+   17             1768          0.2144          0.2693        4
+   18             1866          0.2128          0.2685        0
+   19             1964          0.2128          0.2536        1
+   20             2062          0.2128          0.2527        2
+   21             2160          0.2128          0.2463        3
+   22             2258          0.2128           0.241        4
+   23             2356          0.2128          0.2462        5
+   24             2454          0.2128          0.2612        6
+   25             2552          0.2127          0.2461        0
+   26             2650          0.2127          0.2509        0
+   27             2748          0.2127          0.2394        1
+   28             2846          0.2127          0.2384        2
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+    3.0000    1.1829    0.0738    1.4398
+DSC_Simple_A4_SC_run
+NSats =
+    79
+
+Single objective optimization:
+3 Variables
+1 Integer variables
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              200          0.2488           0.364        0
+    2              298          0.2485          0.3224        0
+    3              396          0.2417          0.2988        0
+    4              494          0.2344          0.2874        0
+    5              592          0.2344          0.2856        1
+    6              690          0.2326          0.2676        0
+    7              788          0.2316          0.2751        0
+    8              886          0.2315          0.2719        0
+    9              984          0.2314          0.2659        0
+   10             1082          0.2295          0.2585        0
+   11             1180          0.2273          0.2561        0
+   12             1278          0.2273          0.2722        1
+   13             1376          0.2273           0.252        2
+   14             1474          0.2273          0.2554        3
+   15             1572          0.2266          0.2651        0
+   16             1670          0.2266          0.2543        1
+   17             1768          0.2266          0.2582        2
+   18             1866          0.2266          0.2564        3
+   19             1964          0.2266          0.2463        4
+   20             2062          0.2266          0.2404        5
+   21             2160          0.2266          0.2471        6
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+    3.0000    1.1832    0.0850

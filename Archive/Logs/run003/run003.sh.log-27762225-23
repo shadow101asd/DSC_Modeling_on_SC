@@ -1,0 +1,49 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+MAXSATS =
+    23
+
+Single objective optimization:
+5 Variables
+3 Integer variables
+1 Nonlinear inequality constraints
+1 Linear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              400          0.5979           1.454        0
+    2              597          0.5794           1.454        0
+    3              794          0.5767           1.436        0
+    4              991          0.5767           1.449        1
+    5             1188          0.5588           1.389        0
+    6             1385          0.5588           1.393        1
+    7             1582          0.5406           1.389        0
+    8             1779          0.5406           1.389        1
+    9             1976          0.5406           1.402        2
+   10             2173          0.5406           1.395        3
+   11             2370          0.5168           1.381        0
+   12             2567          0.5168           1.334        1
+   13             2764          0.5168           1.315        2
+   14             2961          0.5168           1.265        3
+   15             3158          0.5168           1.208        4
+   16             3355          0.5168           1.235        5
+   17             3552          0.5168           1.229        6
+   18             3749          0.5168           1.277        0
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+    0.0297    0.3226    1.0000    1.0000   23.0000

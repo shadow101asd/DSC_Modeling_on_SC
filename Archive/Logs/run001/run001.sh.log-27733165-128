@@ -1,0 +1,118 @@
+
+--------------------------------------------------------------------------------
+             std::terminate() detected at 2025-01-09 10:57:14 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 2102988
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+
+Fault Count: 1
+
+
+Abnormal termination:
+std::terminate()
+
+Current Thread: 'GTP_2' id 140667254367808
+
+Register State (captured):
+  RAX = 0000000000000000  RBX = 00007fefd833c2c8
+  RCX = 0000000000000000  RDX = 00007fefd8335eb0
+  RSP = 00007fefa5b9db00  RBP = 00007fefa5b9dee0
+  RSI = 00007fefd831c025  RDI = 00007fefa5b9db10
+
+   R8 = 0000000000000000   R9 = 00007fefa5b9ddf0
+  R10 = 0000000000000000  R11 = 0000000000000000
+  R12 = 00007fefd834c348  R13 = 00007fefa5b9e3b0
+  R14 = 00007fefa5b9df40  R15 = 0000000000000000
+
+  RIP = 00007fefd82cad1f  EFL = 0000000000000000
+
+   CS = 0000   FS = 0000   GS = 0000
+
+Stack Trace (captured):
+[  0] 0x00007fefd82c4063 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00319587
+[  1] 0x00007fefd82c425c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00320092 _ZN10foundation4core4diag15stacktrace_base7captureEm+00000028
+[  2] 0x00007fefd82c69f8 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00330232
+[  3] 0x00007fefd82c6c93 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwfl.so+00330899
+[  4] 0x00007fefccd72542 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01094978
+[  5] 0x00007fefccd75e3f /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01109567
+[  6] 0x00007fefccd75ff8 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01110008
+[  7] 0x00007fefccd7647d /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwmcr.so+01111165
+[  8] 0x00007fefd73737b6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/../../sys/os/glnxa64/libstdc++.so.6+00710582
+[  9] 0x00007fefd7373821 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/../../sys/os/glnxa64/libstdc++.so.6+00710689
+[ 10] 0x00007fefd5d59b3c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwthreadpool.so+00105276
+[ 11] 0x00007fefd5d52ad6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwthreadpool.so+00076502
+[ 12] 0x00007fefd5d53691 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwthreadpool.so+00079505 _ZN10foundation8catapult10threadpool19IOServiceThreadpoolC1Emmb+00000241
+[ 13] 0x00007fefd5d53fba /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwthreadpool.so+00081850 _ZN10foundation8catapult10threadpool19IOServiceThreadpool16createThreadpoolEmmb+00000058
+[ 14] 0x00007fefa53398c6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/spf/servicepublishers/agent/spf/rpcservicepublisher/libmwagentspfrpcservicepublisher.so+00583878
+[ 15] 0x00007fefa537276b /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/spf/servicepublishers/agent/spf/rpcservicepublisher/libmwagentspfrpcservicepublisher.so+00817003
+[ 16] 0x00007fefa5372c0d /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/spf/servicepublishers/agent/spf/rpcservicepublisher/libmwagentspfrpcservicepublisher.so+00818189
+[ 17] 0x00007fefcf96a1b3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00537011
+[ 18] 0x00007fefcf98c95b /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00678235
+[ 19] 0x00007fefcf991b3b /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00699195
+[ 20] 0x00007fefcf993ff5 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00708597
+[ 21] 0x00007fefcf965ace /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00518862
+[ 22] 0x00007fefcf98cc47 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00678983
+[ 23] 0x00007fefd753ad23 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00531747
+[ 24] 0x00007fefd753c7b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[ 25] 0x00007fefd753d096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[ 26] 0x00007fefd754d9d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[ 27] 0x00007fefcf8a4fc3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libConfigurationAdmin.so.1.3.4+00294851
+[ 28] 0x00007fefcf8c229c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libConfigurationAdmin.so.1.3.4+00414364
+[ 29] 0x00007fefcf8b8a51 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libConfigurationAdmin.so.1.3.4+00375377
+[ 30] 0x00007fefcf8b8f86 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libConfigurationAdmin.so.1.3.4+00376710
+[ 31] 0x00007fefcf8b9437 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libConfigurationAdmin.so.1.3.4+00377911
+[ 32] 0x00007fefd75333a3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00500643
+[ 33] 0x00007fefd7533441 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00500801
+[ 34] 0x00007fefd75462d7 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00578263
+[ 35] 0x00007fefd754c437 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00603191 _ZN16cppmicroservices13BundleContext15RegisterServiceERKSt10shared_ptrIKSt13unordered_mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES1_IvESt4hashIS8_ESt8equal_toIS8_ESaISt4pairIKS8_S9_EEEERKS2_IS8_NS_3AnyESB_SD_SaISE_ISF_SN_EEE+00000103
+[ 36] 0x00007fefcf98a67b /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00669307
+[ 37] 0x00007fefcf9666da /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00521946
+[ 38] 0x00007fefcf9971cc /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00721356
+[ 39] 0x00007fefcf966261 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00520801
+[ 40] 0x00007fefcf97e4c9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00619721
+[ 41] 0x00007fefcf98ea2a /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00686634
+[ 42] 0x00007fefcf97e8c3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00620739
+[ 43] 0x00007fefcf97f6c6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00624326
+[ 44] 0x00007fefcf9845b2 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00644530
+[ 45] 0x00007fefcf984e81 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00646785
+[ 46] 0x00007fefcf9853c1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00648129
+[ 47] 0x00007fefd75333a3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00500643
+[ 48] 0x00007fefd7533441 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00500801
+[ 49] 0x00007fefd75462d7 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00578263
+[ 50] 0x00007fefd754c437 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00603191 _ZN16cppmicroservices13BundleContext15RegisterServiceERKSt10shared_ptrIKSt13unordered_mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES1_IvESt4hashIS8_ESt8equal_toIS8_ESaISt4pairIKS8_S9_EEEERKS2_IS8_NS_3AnyESB_SD_SaISE_ISF_SN_EEE+00000103
+[ 51] 0x00007fefcf98a67b /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00669307
+[ 52] 0x00007fefcf9666da /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00521946
+[ 53] 0x00007fefcf9971cc /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00721356
+[ 54] 0x00007fefcf966261 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00520801
+[ 55] 0x00007fefcf97e4c9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00619721
+[ 56] 0x00007fefcf98ea2a /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00686634
+[ 57] 0x00007fefcf97e8c3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00620739
+[ 58] 0x00007fefcf97f6c6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00624326
+[ 59] 0x00007fefcf9845b2 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00644530
+[ 60] 0x00007fefcf984e81 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00646785
+[ 61] 0x00007fefcf9853c1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libDeclarativeServices.so.1.5.3+00648129
+[ 62] 0x00007fefd75333a3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00500643
+[ 63] 0x00007fefd7533441 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00500801
+[ 64] 0x00007fefd75462d7 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00578263
+[ 65] 0x00007fefd754c437 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00603191 _ZN16cppmicroservices13BundleContext15RegisterServiceERKSt10shared_ptrIKSt13unordered_mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES1_IvESt4hashIS8_ESt8equal_toIS8_ESaISt4pairIKS8_S9_EEEERKS2_IS8_NS_3AnyESB_SD_SaISE_ISF_SN_EEE+00000103
+[ 66] 0x00007fefa772de52 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/spf/framework/agent/spf/framework/libmwagentspfframework.so+00355922
+[ 67] 0x00007fefd739cd10 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/../../sys/os/glnxa64/libstdc++.so.6+00879888
+[ 68] 0x00007fefd7117ac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 69] 0x00007fefd71a9850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+** This crash report has been saved to disk as /home/gridsan/jpenot/matlab_crash_dump.2102988-1 **
+
+
+
+MATLAB is exiting because of fatal error
+/var/spool/slurmd/job27733165/slurm_script: line 7: 2102988 Killed                  matlab -nodisplay -r "DSC4_SC_run001(${SLURM_ARRAY_TASK_ID}); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT

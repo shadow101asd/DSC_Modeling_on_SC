@@ -1,0 +1,94 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+MAXSATS =
+   886
+
+Single objective optimization:
+5 Variables
+3 Integer variables
+1 Nonlinear inequality constraints
+1 Linear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              400           1.368           1.472        0
+    2              600           0.415           1.426        0
+    3              800           0.415           1.405        1
+    4             1000           0.415           1.391        2
+    5             1200          0.2247           1.379        0
+    6             1400          0.1562          0.9001        0
+    7             1600          0.1562           1.235        1
+    8             1800          0.1562           1.387        2
+    9             2000          0.1562           1.396        3
+   10             2200          0.1492          0.7077        0
+   11             2400          0.1492           1.344        1
+   12             2600          0.1492           1.326        2
+   13             2800          0.1492          0.7974        3
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+X_opt =
+    0.0332    0.5168    5.0000    5.0000   19.0000
+MAXSATS =
+   646
+
+Single objective optimization:
+5 Variables
+3 Integer variables
+1 Nonlinear inequality constraints
+1 Linear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              400       5.712e-05         0.06589        0
+    2              597       5.712e-05           1.394        1
+    3              794       5.712e-05           1.416        2
+    4              991       5.712e-05           1.404        3
+    5             1188       5.712e-05           1.372        4
+    6             1385       5.712e-05          0.4003        5
+    7             1582       5.712e-05           1.346        6
+    8             1779       5.712e-05           1.361        7
+{Error using zeros
+Requested 12674x12674x366 (438.0GB) array exceeds maximum array size preference
+(187.5GB). This might cause MATLAB to become unresponsive.
+Error in createAdjacencyMatrix (line 6)
+    A = zeros(N,N,nT);
+Error in networkAnalysis (line 9)
+    A = createAdjacencyMatrix(Xs,@distanceBetweenXs,D12);
+Error in DSC4_SC_run/bestLinkBudget (line 72)
+    [~,~,~,~,Dequivs] = networkAnalysis(X1,X2,"Earth","Mars",XSats);
+Error in DSC4_SC_run/wrapperFunc3 (line 55)
+    Out = bestLinkBudget(X1,X2,XSats);
+Error in DSC4_SC_run>@(X)wrapperFunc3(XEa,XMa,Ki,X,etR,muSu) (line 38)
+[X_opt, fval, EXIT_FLAG, OUTPUT] = ga(@(X) wrapperFunc3(XEa,XMa,Ki,X,etR,muSu), ...
+Error in createAnonymousFcn>@(x)fcn(x,FcnArgs{:}) (line 11)
+fcn_handle = @(x) fcn(x,FcnArgs{:});
+Error in gapenalty
+
+Error in gapenalty
+
+Error in ga (line 412)
+    [x,fval,exitFlag,output,population,scores] = gapenalty(FitnessFcn,nvars,...
+Error in DSC4_SC_run (line 38)
+[X_opt, fval, EXIT_FLAG, OUTPUT] = ga(@(X) wrapperFunc3(XEa,XMa,Ki,X,etR,muSu), ...
+Error in DSC4_SC_runN (line 6)
+        DSC4_SC_run(new_idx, run_idx)} 

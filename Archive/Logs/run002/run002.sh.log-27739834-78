@@ -1,0 +1,1605 @@
+thread_monitor Resource temporarily unavailable in pthread_create
+
+--------------------------------------------------------------------------------
+          Segmentation violation detected at 2025-01-10 07:59:04 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 3351777
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+
+Fault Count: 9
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139894630344256
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3bc1bf5ab0
+  RCX = 0000000000000000  RDX = 00007f3bc1bf59f0
+  RSP = 00007f3bc1bf57a0  RBP = 00007f3bc1bf5a90
+  RSI = 00007f3bc1bf5960  RDI = 00007f3bc1bf59b8
+
+   R8 = 00007f3b5000a430   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3bc1bf59b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3bc1bf59b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893254645312
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b6fbfdab0
+  RCX = 0000000000000000  RDX = 00007f3b6fbfd9f0
+  RSP = 00007f3b6fbfd7a0  RBP = 00007f3b6fbfda90
+  RSI = 00007f3b6fbfd960  RDI = 00007f3b6fbfd9b8
+
+   R8 = 00007f3b2001b530   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3b6fbfd9b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3b6fbfd9b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893699216960
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b8a3f7ab0
+  RCX = 0000000000000000  RDX = 00007f3b8a3f7820
+  RSP = 00007f3b
+--------------------------------------------------------------------------------
+          Segmentation violation detected at 2025-01-10 07:59:04 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 3351777
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+
+Fault Count: 15
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139894630344256
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3bc1bf5ab0
+  RCX = 0000000000000000  RDX = 00007f3bc1bf59f0
+  RSP = 00007f3bc1bf57a0  RBP = 00007f3bc1bf5a90
+  RSI = 00007f3bc1bf5960  RDI = 00007f3bc1bf59b8
+
+   R8 = 00007f3b5000a430   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3bc1bf59b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3bc1bf59b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893254645312
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b6fbfdab0
+  RCX = 0000000000000000  RDX = 00007f3b6fbfd9f0
+  RSP = 00007f3b6fbfd7a0  RBP = 00007f3b6fbfda90
+  RSI = 00007f3b6fbfd960  RDI = 00007f3b6fbfd9b8
+
+   R8 = 00007f3b2001b530   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3b6fbfd9b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3b6fbfd9b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893699216960
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b8a3f7ab0
+  RCX = 0000000000000000  RDX = 00007f3b8a3f7820
+  RSP = 00007f3
+--------------------------------------------------------------------------------
+          Segmentation violation detected at 2025-01-10 07:59:04 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 3351777
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+
+Fault Count: 15
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139894630344256
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3bc1bf5ab0
+  RCX = 0000000000000000  RDX = 00007f3bc1bf59f0
+  RSP = 00007f3bc1bf57a0  RBP = 00007f3bc1bf5a90
+  RSI = 00007f3bc1bf5960  RDI = 00007f3bc1bf59b8
+
+   R8 = 00007f3b5000a430   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3bc1bf59b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3bc1bf59b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893254645312
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b6fbfdab0
+  RCX = 0000000000000000  RDX = 00007f3b6fbfd9f0
+  RSP = 00007f3b6fbfd7a0  RBP = 00007f3b6fbfda90
+  RSI = 00007f3b6fbfd960  RDI = 00007f3b6fbfd9b8
+
+   R8 = 00007f3b2001b530   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3b6fbfd9b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3b6fbfd9b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893699216960
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b8a3f7ab0
+  RCX = 0000000000000000  RDX = 00007f3b8a3f7820
+  RSP = 00007f3
+--------------------------------------------------------------------------------
+          Segmentation violation detected at 2025-01-10 07:59:04 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 3351777
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+
+Fault Count: 15
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139894630344256
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3bc1bf5ab0
+  RCX = 0000000000000000  RDX = 00007f3bc1bf59f0
+  RSP = 00007f3bc1bf57a0  RBP = 00007f3bc1bf5a90
+  RSI = 00007f3bc1bf5960  RDI = 00007f3bc1bf59b8
+
+   R8 = 00007f3b5000a430   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3bc1bf59b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3bc1bf59b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893254645312
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b6fbfdab0
+  RCX = 0000000000000000  RDX = 00007f3b6fbfd9f0
+  RSP = 00007f3b6fbfd7a0  RBP = 00007f3b6fbfda90
+  RSI = 00007f3b6fbfd960  RDI = 00007f3b6fbfd9b8
+
+   R8 = 00007f3b2001b530   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3b6fbfd9b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3b6fbfd9b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893699216960
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b8a3f7ab0
+  RCX = 0000000000000000  RDX = 00007f3b8a3f7820
+  RSP = 00007f3b8a3f73b0  RBP = 00007f3b8a3f76a0
+  RSI = 00007f3b8a3f7570  RDI = 00007f3b8a3f75c8
+
+   R8 = 00007f3b080024f0   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3b8a3f75c8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3b8a3f75c0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  2] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  3] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  4] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  5] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  6] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  7] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  8] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  9] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 10] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139894638741056
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3bc23f7ab0
+  RCX = 0000000000000000  RDX = 00007f3bc23f7430
+  RSP = 00007f3bc23f6fc0  RBP = 00007f3bc23f72b0
+  RSI = 00007f3bc23f7180  RDI = 00007f3bc23f71d8
+
+   R8 = 00007f3b48002240   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3bc23f71d8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3bc23f71d0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  2] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  3] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  4] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  5] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  6] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  7] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  8] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  9] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 10] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 11] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 12] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139896043845184
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3c15ff9fb0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3c15ff9ea0  RBP = 00007f3bf80100b0
+  RSI = 00007f3c547357b8  RDI = 00007f3c15ff9f30
+
+   R8 = 00007f3bf80100b0   R9 = 00007f3bf8010fe0
+  R10 = 0000000000000000  R11 = 00007f3bf8000090
+  R12 = 00007f3c15ff9f60  R13 = 00007f3c6673d6d0
+  R14 = 00007f3c15ff9f40  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FSb8a3f73b0  RBP = 00007f3b8a3f76a0
+  RSI = 00007f3b8a3f7570  RDI = 00007f3b8a3f75c8
+
+   R8 = 00007f3b080024f0   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3b8a3f75c8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3b8a3f75c0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  2] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  3] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  4] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  5] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  6] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  7] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  8] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  9] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 10] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139894638741056
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3bc23f7ab0
+  RCX = 0000000000000000  RDX = 00007f3bc23f7430
+  RSP = 00007f3bc23f6fc0  RBP = 00007f3bc23f72b0
+  RSI = 00007f3bc23f7180  RDI = 00007f3bc23f71d8
+
+   R8 = 00007f3b48002240   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3bc23f71d8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3bc23f71d0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  2] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  3] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  4] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  5] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  6] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  7] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  8] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  9] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 10] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 11] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 12] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139896043845184
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3c15ff9fb0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3c15ff9ea0  RBP = 00007f3bf80100b0
+  RSI = 00007f3c547357b8  RDI = 00007f3c15ff9f30
+
+   R8 = 00007f3bf80100b0   R9 = 00007f3bf8010fe0
+  R10 = 0000000000000000  R11 = 00007f3bf8000090
+  R12 = 00007f3c15ff9f60  R13 = 00007f3c6673d6d0
+  R14 = 00007f3c15ff9f40  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 11] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 12] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 13] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 14] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 15] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 16] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 17] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 18] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 19] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139896022853184
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3c14bf4bc0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3c14bf4ab0  RBP = 00007f3bf4001ac0
+  RSI = 00007f3c547357b8  RDI = 00007f3c14bf4b40
+
+   R8 = 00007f3bf4001ac0   R9 = 00007f3bf400c9e0
+  R10 = 0000000000000000  R11 = 00007f3bf4000090
+  R12 = 00007f3c14bf4b70  R13 = 00007f3c6673d6d0
+  R14 = 00007f3c14bf4b50  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSy = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 11] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 12] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 13] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 14] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 15] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 16] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 17] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 18] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 19] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139896022853184
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3c14bf4bc0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3c14bf4ab0  RBP = 00007f3bf4001ac0
+  RSI = 00007f3c547357b8  RDI = 00007f3c14bf4b40
+
+   R8 = 00007f3bf4001ac0   R9 = 00007f3bf400c9e0
+  R10 = 0000000000000000  R11 = 00007f3bf4000090
+  R12 = 00007f3c14bf4b70  R13 = 00007f3c6673d6d0
+  R14 = 00007f3c14bf4b50  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSy
+--------------------------------------------------------------------------------
+          Segmentation violation detected at 2025-01-10 07:59:04 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 3351777
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+
+Fault Count: 15
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139894630344256
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3bc1bf5ab0
+  RCX = 0000000000000000  RDX = 00007f3bc1bf59f0
+  RSP = 00007f3bc1bf57a0  RBP = 00007f3bc1bf5a90
+  RSI = 00007f3bc1bf5960  RDI = 00007f3bc1bf59b8
+
+   R8 = 00007f3b5000a430   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3bc1bf59b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3bc1bf59b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893254645312
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b6fbfdab0
+  RCX = 0000000000000000  RDX = 00007f3b6fbfd9f0
+  RSP = 00007f3b6fbfd7a0  RBP = 00007f3b6fbfda90
+  RSI = 00007f3b6fbfd960  RDI = 00007f3b6fbfd9b8
+
+   R8 = 00007f3b2001b530   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3b6fbfd9b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3b6fbfd9b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893699216960
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b8a3f7ab0
+  RCX = 0000000000000000  RDX = 00007f3b8a3f7820
+  RSP = 00007f3b8a3f73b0  RBP = 00007f3b8a3f76a0
+  RSI = 00007f3b8a3f7570  RDI = 00007f3b8a3f75c8
+
+   R8 = 00007f3b080024f0   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3b8a3f75c8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3b8a3f75c0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  2] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  3] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  4] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  5] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  6] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  7] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  8] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  9] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 10] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139894638741056
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3bc23f7ab0
+  RCX = 0000000000000000  RDX = 00007f3bc23f7430
+  RSP = 00007f3bc23f6fc0  RBP = 00007f3bc23f72b0
+  RSI = 00007f3bc23f7180  RDI = 00007f3bc23f71d8
+
+   R8 = 00007f3b48002240   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3bc23f71d8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3bc23f71d0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  2] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  3] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  4] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  5] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  6] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  7] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  8] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  9] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 10] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 11] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 12] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139896043845184
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3c15ff9fb0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3c15ff9ea0  RBP = 00007f3bf80100b0
+  RSI = 00007f3c547357b8  RDI = 00007f3c15ff9f30
+
+   R8 = 00007f3bf80100b0   R9 = 00007f3bf8010fe0
+  R10 = 0000000000000000  R11 = 00007f3bf8000090
+  R12 = 00007f3c15ff9f60  R13 = 00007f3c6673d6d0
+  R14 = 00007f3c15ff9f40  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 11] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 12] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 13] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 14] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 15] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 16] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 17] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 18] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 19] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139896022853184
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3c14bf4bc0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3c14bf4ab0  RBP = 00007f3bf4001ac0
+  RSI = 00007f3c547357b8  RDI = 00007f3c14bf4b40
+
+   R8 = 00007f3bf4001ac0   R9 = 00007f3bf400c9e0
+  R10 = 0000000000000000  R11 = 00007f3bf4000090
+  R12 = 00007f3c14bf4b70  R13 = 00007f3c6673d6d0
+  R14 = 00007f3c14bf4b50  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSy
+--------------------------------------------------------------------------------
+          Segmentation violation detected at 2025-01-10 07:59:04 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 3351777
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+
+Fault Count: 15
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139894630344256
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3bc1bf5ab0
+  RCX = 0000000000000000  RDX = 00007f3bc1bf59f0
+  RSP = 00007f3bc1bf57a0  RBP = 00007f3bc1bf5a90
+  RSI = 00007f3bc1bf5960  RDI = 00007f3bc1bf59b8
+
+   R8 = 00007f3b5000a430   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3bc1bf59b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3bc1bf59b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893254645312
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b6fbfdab0
+  RCX = 0000000000000000  RDX = 00007f3b6fbfd9f0
+  RSP = 00007f3b6fbfd7a0  RBP = 00007f3b6fbfda90
+  RSI = 00007f3b6fbfd960  RDI = 00007f3b6fbfd9b8
+
+   R8 = 00007f3b2001b530   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3b6fbfd9b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3b6fbfd9b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893699216960
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b8a3f7ab0
+  RCX = 0000000000000000  RDX = 00007f3b8a3f7820
+  RSP = 00007f3b8a3f73b0  RBP = 00007f3b8a3f76a0
+  RSI = 00007f3b8a3f7570  RDI = 00007f3b8a3f75c8
+
+   R8 = 00007f3b080024f0   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3b8a3f75c8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3b8a3f75c0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  2] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  3] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  4] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  5] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  6] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  7] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  8] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  9] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 10] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139894638741056
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3bc23f7ab0
+  RCX = 0000000000000000  RDX = 00007f3bc23f7430
+  RSP = 00007f3bc23f6fc0  RBP = 00007f3bc23f72b0
+  RSI = 00007f3bc23f7180  RDI = 00007f3bc23f71d8
+
+   R8 = 00007f3b48002240   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3bc23f71d8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3bc23f71d0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  2] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  3] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  4] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  5] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  6] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  7] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  8] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  9] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 10] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 11] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 12] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139896043845184
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3c15ff9fb0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3c15ff9ea0  RBP = 00007f3bf80100b0
+  RSI = 00007f3c547357b8  RDI = 00007f3c15ff9f30
+
+   R8 = 00007f3bf80100b0   R9 = 00007f3bf8010fe0
+  R10 = 0000000000000000  R11 = 00007f3bf8000090
+  R12 = 00007f3c15ff9f60  R13 = 00007f3c6673d6d0
+  R14 = 00007f3c15ff9f40  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 11] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 12] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 13] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 14] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 15] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 16] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 17] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 18] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 19] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139896022853184
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3c14bf4bc0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3c14bf4ab0  RBP = 00007f3bf4001ac0
+  RSI = 00007f3c547357b8  RDI = 00007f3c14bf4b40
+
+   R8 = 00007f3bf4001ac0   R9 = 00007f3bf400c9e0
+  R10 = 0000000000000000  R11 = 00007f3bf4000090
+  R12 = 00007f3c14bf4b70  R13 = 00007f3c6673d6d0
+  R14 = 00007f3c14bf4b50  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 11] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 12] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 13] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 14] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 15] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 16] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 17] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 18] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 19] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 20] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 21] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139892684187200
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3b4dbf4fb0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3b4dbf4ea0  RBP = 00007f3acc001290
+  RSI = 00007f3c547357b8  RDI = 00007f3b4dbf4f30
+
+   R8 = 00007f3acc001290   R9 = 00007f3acc003e30
+  R10 = 0000000000000000  R11 = 00007f3acc000090
+  R12 = 00007f3b4dbf4f60  R13 = 00007f3c6673d6d0
+  R14 = 00007f3b4dbf4f40  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 11] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 12] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 13] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 14] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 15] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 16] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 17] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 18] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 19] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893674026560
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3b88bf07d0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3b88bf06c0  RBP = 00007f3ac8000c20
+  RSI = 00007f3c547357b8  RDI = 00007f3b88bf0750
+
+   R8 = 00007f3ac8000c20   R9 = 00007f3ac8003ef0
+  R10 = 0000000000000000  R11 = 00007f3ac8000090
+  R12 = 00007f3b88bf0780  R13 = 00007f3c6673d6d0
+  R14 = 00007f3b88bf0760  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 11] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 12] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 13] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 14] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 15] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 16] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 17] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 18] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 19] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 20] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 21] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/g
+--------------------------------------------------------------------------------
+          Segmentation violation detected at 2025-01-10 07:59:04 -0500
+--------------------------------------------------------------------------------
+
+Configuration:
+  Crash Decoding           : Disabled - No sandbox or build area path
+  Crash Mode               : continue (default)
+  Default Encoding         : US-ASCII
+  GNU C Library            : 2.35 stable
+  MATLAB Architecture      : glnxa64
+  MATLAB Root              : /state/partition1/llgrid/pkg/matlabr2023b
+  MATLAB Version           : 23.2.0.2365128 (R2023b)
+  Operating System         : GridOS 22.04.5
+  Process ID               : 3351777
+  Processor ID             : x86 Family 6 Model 85 Stepping 7, GenuineIntel
+
+Fault Count: 15
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139894630344256
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3bc1bf5ab0
+  RCX = 0000000000000000  RDX = 00007f3bc1bf59f0
+  RSP = 00007f3bc1bf57a0  RBP = 00007f3bc1bf5a90
+  RSI = 00007f3bc1bf5960  RDI = 00007f3bc1bf59b8
+
+   R8 = 00007f3b5000a430   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3bc1bf59b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3bc1bf59b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893254645312
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b6fbfdab0
+  RCX = 0000000000000000  RDX = 00007f3b6fbfd9f0
+  RSP = 00007f3b6fbfd7a0  RBP = 00007f3b6fbfda90
+  RSI = 00007f3b6fbfd960  RDI = 00007f3b6fbfd9b8
+
+   R8 = 00007f3b2001b530   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3b6fbfd9b8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3b6fbfd9b0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  2] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  3] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  4] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  5] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  6] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  7] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[  8] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893699216960
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3b8a3f7ab0
+  RCX = 0000000000000000  RDX = 00007f3b8a3f7820
+  RSP = 00007f3b8a3f73b0  RBP = 00007f3b8a3f76a0
+  RSI = 00007f3b8a3f7570  RDI = 00007f3b8a3f75c8
+
+   R8 = 00007f3b080024f0   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3b8a3f75c8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3b8a3f75c0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  2] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  3] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  4] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  5] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  6] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  7] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[  8] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[  9] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 10] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139894638741056
+
+Register State (from fault):
+  RAX = 00000007f3c00000  RBX = 00007f3bc23f7ab0
+  RCX = 0000000000000000  RDX = 00007f3bc23f7430
+  RSP = 00007f3bc23f6fc0  RBP = 00007f3bc23f72b0
+  RSI = 00007f3bc23f7180  RDI = 00007f3bc23f71d8
+
+   R8 = 00007f3b48002240   R9 = 0000000000000000
+  R10 = 00007f3c3c35d7d0  R11 = b34187f59c06814c
+  R12 = 00007f3bc23f71d8  R13 = 00007f3c00000c20
+  R14 = 00007f3c0000ba70  R15 = 00007f3bc23f71d0
+
+  RIP = 00007f3c4ffb9392  EFL = 0000000000010246
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c4ffb9392 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725906
+[  1] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  2] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  3] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[  4] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[  5] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[  6] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[  7] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[  8] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[  9] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 10] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 11] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 12] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139896043845184
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3c15ff9fb0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3c15ff9ea0  RBP = 00007f3bf80100b0
+  RSI = 00007f3c547357b8  RDI = 00007f3c15ff9f30
+
+   R8 = 00007f3bf80100b0   R9 = 00007f3bf8010fe0
+  R10 = 0000000000000000  R11 = 00007f3bf8000090
+  R12 = 00007f3c15ff9f60  R13 = 00007f3c6673d6d0
+  R14 = 00007f3c15ff9f40  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 11] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 12] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 13] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 14] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 15] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 16] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 17] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 18] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 19] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139896022853184
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3c14bf4bc0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3c14bf4ab0  RBP = 00007f3bf4001ac0
+  RSI = 00007f3c547357b8  RDI = 00007f3c14bf4b40
+
+   R8 = 00007f3bf4001ac0   R9 = 00007f3bf400c9e0
+  R10 = 0000000000000000  R11 = 00007f3bf4000090
+  R12 = 00007f3c14bf4b70  R13 = 00007f3c6673d6d0
+  R14 = 00007f3c14bf4b50  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 11] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 12] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 13] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 14] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 15] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 16] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 17] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 18] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 19] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 20] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 21] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139892684187200
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3b4dbf4fb0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3b4dbf4ea0  RBP = 00007f3acc001290
+  RSI = 00007f3c547357b8  RDI = 00007f3b4dbf4f30
+
+   R8 = 00007f3acc001290   R9 = 00007f3acc003e30
+  R10 = 0000000000000000  R11 = 00007f3acc000090
+  R12 = 00007f3b4dbf4f60  R13 = 00007f3c6673d6d0
+  R14 = 00007f3b4dbf4f40  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 11] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 12] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 13] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 14] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 15] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 16] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 17] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 18] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 19] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893674026560
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3b88bf07d0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3b88bf06c0  RBP = 00007f3ac8000c20
+  RSI = 00007f3c547357b8  RDI = 00007f3b88bf0750
+
+   R8 = 00007f3ac8000c20   R9 = 00007f3ac8003ef0
+  R10 = 0000000000000000  R11 = 00007f3ac8000090
+  R12 = 00007f3b88bf0780  R13 = 00007f3c6673d6d0
+  R14 = 00007f3b88bf0760  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 11] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 12] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 13] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 14] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 15] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 16] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 17] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 18] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 19] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 20] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 21] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 22] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 23] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893552404032
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3b817f3fb0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3b817f3ea0  RBP = 00007f3ac4000c20
+  RSI = 00007f3c547357b8  RDI = 00007f3b817f3f30
+
+   R8 = 00007f3ac4000c20   R9 = 00007f3ac4003170
+  R10 = 0000000000000000  R11 = 00007f3ac4000090
+  R12 = 00007f3b817f3f60  R13 = 00007f3c6673d6d0
+  R14 = 00007f3b817f3f40  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffb9bcf /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00728015
+[ 11] 0x00007f3c4ffb92b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725684
+[ 12] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 13] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 14] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 15] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 16] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 17] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 18] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 19] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+
+Abnormal termination:
+Segmentation violation
+
+Current Thread: 'MCR Main thread' id 139893548205632
+
+Register State (from fault):
+  RAX = 0000000000000020  RBX = 00007f3b813f33a0
+  RCX = 0000000000000000  RDX = 0000000000000028
+  RSP = 00007f3b813f3290  RBP = 00007f3ab8000c20
+  RSI = 00007f3c547357b8  RDI = 00007f3b813f3320
+
+   R8 = 00007f3ab8000c20   R9 = 00007f3ab8003160
+  R10 = 0000000000000000  R11 = 00007f3ab8000090
+  R12 = 00007f3b813f3350  R13 = 00007f3c6673d6d0
+  R14 = 00007f3b813f3330  R15 = 0000000008520980
+
+  RIP = 00007f3c66b61df3  EFL = 0000000000010202
+
+   CS = 0033   FS = 0000   GS = 0000
+
+Stack Trace (from fault):
+[  0] 0x00007f3c66b61df3 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00544243
+[  1] 0x00007f3c66b101f1 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00209393
+[  2] 0x00007f3c66b607b4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00538548
+[  3] 0x00007f3c66b61096 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00540822
+[  4] 0x00007f3c66b719d4 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libCppMicroServices.so.3.7.6+00608724 _ZN16cppmicroservices13BundleContext10GetServiceERKNS_20ServiceReferenceBaseE+00000100
+[  5] 0x00007f3c60131822 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwstoragemicroservicestoragesystem.so+00034850
+[  6] 0x00007f3c62ebfeec /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+01162988 _ZNK10foundation7storage3vfs22StorageSystemReference13buildProviderERKNS0_8provider10StorageIRIE+00000044
+[  7] 0x00007f3c62e5e473 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00762995
+[  8] 0x00007f3c62e73e57 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwflstoragevfs.so+00851543 _ZN10foundation7storage3vfs6FolderC1ERKNS1_20CanonicalAbsoluteIRIENS1_22StorageSystemReferenceE+00000071
+[  9] 0x00007f3c4ffb9325 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00725797
+[ 10] 0x00007f3c4ffba2b0 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libmwsearch_path_impl.so+00729776
+[ 11] 0x00007f3c6382a5f9 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00173561
+[ 12] 0x00007f3c6382469e /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00149150
+[ 13] 0x00007f3c6382267c /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00140924
+[ 14] 0x00007f3c6381da46 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121414
+[ 15] 0x00007f3c6381d9d6 /state/partition1/llgrid/pkg/matlabr2023b/bin/glnxa64/libtbb.so.2+00121302
+[ 16] 0x00007f3c6673bac3                    /lib/x86_64-linux-gnu/libc.so.6+00608963
+[ 17] 0x00007f3c667cd850                    /lib/x86_64-linux-gnu/libc.so.6+01206352
+
+** This crash report has been saved to disk as /home/gridsan/jpenot/matlab_crash_dump.3351777-10 **
+
+
+
+MATLAB is exiting because of fatal error
+/var/spool/slurmd/job27739834/slurm_script: line 7: 3351777 Killed                  matlab -nodisplay -r "DSC4_SC_run(${SLURM_ARRAY_TASK_ID},'002'); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT

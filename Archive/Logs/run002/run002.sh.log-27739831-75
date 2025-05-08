@@ -1,0 +1,6 @@
+Opening log file:  /home/gridsan/jpenot/java.log.9985
+pure virtual method called
+terminate called without an active exception
+
+MATLAB is exiting because of fatal error
+/var/spool/slurmd/job27739831/slurm_script: line 7: 3352321 Killed                  matlab -nodisplay -r "DSC4_SC_run(${SLURM_ARRAY_TASK_ID},'002'); exit" $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT
