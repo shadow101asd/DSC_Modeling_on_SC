@@ -6,8 +6,7 @@ function [graphslist,numedges,paths,Dpaths,Dequivs] = networkAnalysis_BIN(X1,X2,
     Xs = collateXs(X1,X2,XSats);
     D12 = distanceBetweenXs(X1,X2);
     [~,nT,numsats] = size(XSats);
-    % A = createAdjacencyMatrix(Xs,@distanceBetweenXs, max(0.1*D12, 2*min(D12)));
-    A = createAdjacencyMatrix2(Xs,@distanceBetweenXs, D12);
+    A = createAdjacencyMatrix2(Xs,@distanceBetweenXs, D12*margin);
 
     names(numsats+1) = name1;
     names(numsats+2) = name2;

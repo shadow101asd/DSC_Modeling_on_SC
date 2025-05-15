@@ -1,4 +1,4 @@
-function [path, D, edgepath] = bottleneckshortestpath_BINSEARCH(G, nodename1, nodename2, margin)
+function [path, D, edgepath] = bottleneckshortestpath_BINSEARCH(G, nodename1, nodename2, margin, keep_idx)
 %BOTTLENECKSHORTESTPATH_BINSEARCH
     weights = G.Edges.Weight;
 
@@ -6,18 +6,9 @@ function [path, D, edgepath] = bottleneckshortestpath_BINSEARCH(G, nodename1, no
     idx2 = findnode(G, nodename2);
     
     % Init
-    keep_idx = 1:length(weights);
-
-    % if nargin == 4
-    %     % Then we have a warm start
-    %     D_prev = bottleneckDistance(G,previous_path);
-    %     keep_idx = find(weights <= D_prev);
-    % else
-    %     % Use the minspantree() as a heuristic
-    %     T = minspantree(G);
-    %     D_heur = max(T.Edges.Weight);
-    %     keep_idx = find(weights <= D_heur);
-    % end
+    if nargin <= 4
+        keep_idx = 1:length(weights);
+    end
 
     while true
         lambda = mean(weights(keep_idx));

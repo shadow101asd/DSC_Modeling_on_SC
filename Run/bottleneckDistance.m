@@ -7,6 +7,10 @@ function Dmax = bottleneckDistance(graph,path)
     edgeIdx = findedge(graph, path(1:end-1), path(2:end));
 
     % Extract the weights and take the maximum
-    Dmax = max(graph.Edges.Weight(edgeIdx));
+    if all(edgeIdx, 'all')
+        Dmax = max(graph.Edges.Weight(edgeIdx));
+    else
+        Dmax = inf; % Path is infeasible in the passed-in graph
+    end
 end
 
