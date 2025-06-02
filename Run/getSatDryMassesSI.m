@@ -22,7 +22,7 @@ v_LEO = sqrt(muE/(RE+a));
 DV_LEO2EE = abs(V-v_LEO); % km/s
 DV_LEO2EE = DV_LEO2EE*10^3; % convert to m/s
 
-m0 = Shuttle_wetMass;
+m0 = Shuttle_wetMass; % Is this correct? I think this is supposed to include the payload mass... The current approach is only slightly wrong as far as I can tell... Would have to solve an equation for payload mass here.
 mEE = m0  * exp(-DV_LEO2EE/(Shuttle_Isp*g0));
 
 % Find payload mass after second leg of Hohmann transfer
