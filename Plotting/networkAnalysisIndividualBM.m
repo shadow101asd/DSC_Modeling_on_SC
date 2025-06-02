@@ -1,3 +1,4 @@
+
 % Individual run benchmarking
 
 AU = 149600000; % AU in km
@@ -5,19 +6,21 @@ AU = 149600000; % AU in km
 run_idx = '008';
 load("../Inputs/run"+run_idx+".mat", "muSu", "XEa", "XMa", "etR");
 
-Nsats = 200;
+Nsats = 500;
 arch  = "B";
 load("../Data/run"+run_idx+"/"+arch+"/"+int2str(Nsats)+".mat", "XSats_opt");
 
-% Testing
+%% Testing
 
 [~,~,~,Dpaths_old,Dequivs_old] = networkAnalysis(XEa,XMa,"Earth","Mars",XSats_opt);
 
-[~,~,~,Dpaths_fast,Dequivs_fast] = networkAnalysis_FAST(XEa,XMa,"Earth","Mars",XSats_opt, 1.5);
+[~,~,~,Dpaths_fast,Dequivs_fast] = networkAnalysis_FAST(XEa,XMa,"Earth","Mars",XSats_opt, 1.2);
 
 [~,~,~,Dpaths_BIN,Dequivs_BIN] = networkAnalysis_BIN(XEa,XMa,"Earth","Mars",XSats_opt);
-
+ 
 [~,~,~,Dpaths_BIN_fast,Dequivs_BIN_fast] = networkAnalysis_BIN_fast(XEa,XMa,"Earth","Mars",XSats_opt);
+
+% [Dequivs, D_bottleneck_avg] = networkAnalysis_Gfast(XEa,XMa,"Earth","Mars",XSats_opt,1.2);
 
 %% Plotting
 

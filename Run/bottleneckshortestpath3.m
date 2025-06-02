@@ -1,6 +1,6 @@
 function [path, D, edgepath, D_Bottleneck] = bottleneckshortestpath3(g, nodename1, nodename2, reconstruct_path_bool)
 %BOTTLENECKSHORTESTPATH
-    T = minspantree(g, Method="dense", Root=nodename1);
+    T = minspantree(g, Method="sparse", Root=nodename1);
     [path1, D1, edgepath_t] = mst_path(T,nodename1,nodename2);
 
 
