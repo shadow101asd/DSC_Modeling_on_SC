@@ -6,7 +6,7 @@ function [graphslist, numedges, paths, Dpaths, Dequivs] = networkAnalysis_BIN_fa
     Xs = collateXs(X1, X2, XSats);
     D12 = distanceBetweenXs(X1, X2);
     [~, nT, numsats] = size(XSats);
-    A = createAdjacencyMatrix2(Xs, @distanceBetweenXs, D12 * margin);
+    A = createAdjacencyMatrix_euclid_distance(Xs(1:3,:,:), D12 * margin);
 
     % Create node names
     names = strings(numsats+2,1);

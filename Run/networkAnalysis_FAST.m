@@ -5,7 +5,7 @@ function [graphslist,numedges,paths,Dpaths,Dequivs] = networkAnalysis_FAST(X1,X2
     Xs = collateXs(X1,X2,XSats);
     D12_i = distanceBetweenXs(X1(:,1),X2(:,1));
     [~,nT,numsats] = size(XSats);
-    A = createAdjacencyMatrix2(Xs,@distanceBetweenXs);
+    A = createAdjacencyMatrix_euclid_distance(Xs(1:3,:,:));
 
     names(numsats+1) = name1;
     names(numsats+2) = name2;
