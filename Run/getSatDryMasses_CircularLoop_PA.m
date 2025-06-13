@@ -1,4 +1,4 @@
-function [m_dry_per_sat, exitflag] = getSatDryMasses_CircularLoop_PA(Rf,mu,NSats,Shuttle_Isp,Sat_Isp,Shuttle_wetMass,Shuttle_dryMass,maxShuttlePayload, maxO)
+function [m_dry_per_sat, exitflag] = getSatDryMasses_CircularLoop_PA(Rf,mu,NSats,Shuttle_Isp,Sat_Isp,Shuttle_wetMass,Shuttle_dryMass,maxShuttlePayload, maxO, deployment_frac)
     % Constants
     AU = 1.496e8; % 1 AU in km
     g0 = 9.81; % m/s^2
@@ -48,7 +48,7 @@ function [m_dry_per_sat, exitflag] = getSatDryMasses_CircularLoop_PA(Rf,mu,NSats
 
     Dfs = DPhis/(2*pi);
     Dfs(ceil(NSats/2)+1:end) = abs(Dfs(ceil(NSats/2)+1:end) - 1);
-    Dfs = Dfs/maxO; % Can achieve a given offset after maxO orbits
+    Dfs = Dfs/maxO * deployment_frac; % Can achieve a given offset after maxO orbits. Also incorporate the fractional ring (spread out over some frac. of the circle with this given deployment)
 
     % Get DVs
     
@@ -59,6 +59,6 @@ function [m_dry_per_sat, exitflag] = getSatDryMasses_CircularLoop_PA(Rf,mu,NSats
     % Get dry mass per satellite
 
     S = sum(exp(DVs/(Sat_Isp*g0)));
-    m_dry_per_sat = totalShuttlePayload_mass./S;
+    m_dry_per_sat = totalShuttlePayload_mass/S;
 
 end

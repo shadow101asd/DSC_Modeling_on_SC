@@ -71,19 +71,19 @@ function [Out, XSats] = wrapperFuncB(X,X1,X2,etR,mu,Ntotal)
 end
 
 function [NbEa, eMOGEa, NbMa, eMOGMa, aC] = unpackVars(X)
-    AU = 1.496e8; % 1 AU in km
+    AU_l = 1.496e8; % 1 AU in km
     NbEa = X(1);
     eMOGEa = X(2);
     NbMa = X(3);
     eMOGMa = X(4);
-    aC = X(5) * AU;
+    aC = X(5) * AU_l;
 end
 
 function metric = bestLinkBudget(X1,X2,XSats)
-    AU = 1.496e8; % 1 AU in km
+    AU_l = 1.496e8; % 1 AU in km
     % TLDR: What's the metric that we're optimizing over?
     [~,~,~,~,Dequivs] = networkAnalysis(X1,X2,"Earth","Mars",XSats);
-    metric = mean(Dequivs)/AU;
+    metric = mean(Dequivs)/AU_l;
 end
 
 end

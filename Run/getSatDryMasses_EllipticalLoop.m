@@ -1,4 +1,4 @@
-function [m_dry_per_sat, exitflag] = getSatDryMasses_EllipticalLoop(Rf,eps,mu,NSats,Shuttle_Isp,Sat_Isp,Shuttle_wetMass,Shuttle_dryMass,maxShuttlePayload, maxO)
+function [m_dry_per_sat, exitflag] = getSatDryMasses_EllipticalLoop(Rf,eps,mu,NSats,Shuttle_Isp,Sat_Isp,Shuttle_wetMass,Shuttle_dryMass,maxShuttlePayload, maxO, deployment_frac)
     % The only possible approach is phasing
 
     % Constants
@@ -50,7 +50,7 @@ function [m_dry_per_sat, exitflag] = getSatDryMasses_EllipticalLoop(Rf,eps,mu,NS
 
     Dfs = DPhis/(2*pi);
     Dfs(ceil(NSats/2)+1:end) = abs(Dfs(ceil(NSats/2)+1:end) - 1);
-    Dfs = Dfs/maxO; % Can achieve a given offset after maxO orbits
+    Dfs = Dfs/maxO * deployment_frac; % Can achieve a given offset after maxO orbits. Also incorporate the fractional ring (spread out over some frac. of the circle with this given deployment)
 
     % Get DVs (Adapted to Elliptical Orbits)
     
@@ -60,6 +60,6 @@ function [m_dry_per_sat, exitflag] = getSatDryMasses_EllipticalLoop(Rf,eps,mu,NS
     % Get dry mass per satellite
 
     S = sum(exp(DVs/(Sat_Isp*g0)));
-    m_dry_per_sat = totalShuttlePayload_mass./S;
-
+    m_dry_per_sat = totalShuttlePayload_mass/S;
+    exitflag = 1;
 end
