@@ -1,0 +1,337 @@
+function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shuttle_config_name, plotting_bool)
+
+    disp("Nl: " + Nl) % Print number of launches, for tracking
+    disp("Nf: " + Nf) % Print number of features/blocks, for tracking
+
+    % Constants
+
+    AU = 1.496e8; % 1 AU in km
+    
+    % Load ephemerides and other pregenerated data
+    load("../Inputs/run"+run_idx+".mat", "muSu", "XEa", "XMa", "etR");
+    
+    % Compute bounds on semi-major axes of features
+    as = [mean(Cartesian2Keplerian(XEa, muSu)), mean(Cartesian2Keplerian(XMa, muSu))];
+    min_a = min(as)/AU; 
+    max_a = max(as)/AU; 
+
+    % Load and process satellite and terminal specs
+    load("../Inputs/SE/"+sat_config_name+".mat", "Sat_specs", "Earth_specs", "Mars_specs", "Comms_specs");
+    
+    % Load Starship specs
+    load("../Inputs/SE/"+shuttle_config_name+".mat", "Shuttle_specs");
+
+    % Can't precompute link budget matrix due to variable number of
+    % satellites
+
+    % Set up optimization
+    lb_ef     = [1 0  1 min_a 0   1e-6	    1e-6      0 1];
+    ub_ef     = [6 Nl 2 max_a 0.7 2*pi-1e-6 2*pi-1e-6 1 1];
+    % ub_ef     = [8 Nl 2 max_a 1 2*pi 1 5];
+    intcon_ef = [1 2 3 9];
+    
+    nvars_pf = 9;
+    nvars = nvars_pf*Nf;
+
+    lb = repmat(lb_ef, [1, Nf]);
+    ub = repmat(ub_ef, [1, Nf]);
+
+    lb(2) = 1; % Enforce at least one launch in the entire constellation
+
+    intcon = zeros(1,4*Nf);
+    for i = 1:Nf
+        intcon(1+4*(i-1):4*i) = intcon_ef + (i-1)*nvars_pf;
+    end
+    
+    A = zeros([Nf, nvars]);
+    b = zeros([Nf, 1]);
+    
+    % Remove symmetries to shrink design space by a factor of 1/Nf factorial
+    for i = 1:(Nf-1)
+        A(i, 1 + (i-1)*nvars_pf) = 1;
+        A(i, 1 + i*nvars_pf) = -1;
+    end
+    
+    % Enforce total # of launches less than Nl input
+    A(end, 2:nvars_pf:end) = 1;
+    b(end) = Nl;
+
+
+    nonlcon = @(x) deal(A*x' - b, []);
+  
+    A = [];
+    b = []; % Testing
+    
+
+    % Run the Genetic Algorithm
+    
+    if plotting_bool % Tie in appropriate custom plotting function
+        plotFcnWrapper = @(options, state, flag) ...
+                        plotBestConstellation(options, state, flag, ...
+                          XEa, XMa, muSu, Shuttle_specs, ...
+                          Comms_specs, Sat_specs, Earth_specs, ...
+                          Mars_specs, Nf);
+        gaoptions = optimoptions(gaoptions, 'PlotFcn', plotFcnWrapper);
+    end
+
+    [X_opt, ~, EXIT_FLAG, output] = ga(@(X) wrapperFunc_RF_2P(X, XEa, XMa, etR, muSu, Shuttle_specs, Comms_specs, Sat_specs, Earth_specs, Mars_specs, Nf), ...
+                                        nvars,A,b,[],[],lb,ub,nonlcon,intcon,gaoptions);
+    % 
+    % [X_opt, fval, EXIT_FLAG, OUTPUT] = ga(@(X) sum(X), ...
+    %                                     nvars,[],[],[],[],lb,ub,[],intcon,gaoptions);
+
+    % Save data
+
+    [Out, XSats, NSats] = wrapperFunc_RF_2P(X_opt, XEa, XMa, etR, muSu, Shuttle_specs, Comms_specs, Sat_specs, Earth_specs, Mars_specs, Nf);
+    
+    B = -Out;
+    XSats_i = XSats(:,1,:); % Initial Satellite Positions and Velocities
+    
+    filename = "../Data/run"+run_idx+"/Nf"+int2str(Nf)+"Nl"+int2str(Nl)+".mat";
+
+    if isfile(filename)
+        old_B = load(filename, "B").B;
+        if old_B < B
+            save(filename, "B", "X_opt", "NSats", "XSats_i", "output", "lb", "ub");
+        end
+    else
+        save(filename, "B", "X_opt", "NSats", "XSats_i", "output", "lb", "ub");
+    end
+
+end
+
+function [Out, XSats, NSats] = wrapperFunc_RF_2P(X, X1, X2, etR, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf)
+    
+    % Reshape X for convenience
+    X = reshape(X, 9, Nf)';
+
+    % Compute NSats for each feature
+
+    NSats = zeros([Nf, 1]);
+    D_antennas = zeros([Nf, 1]);
+    for i = 1:Nf
+        [a, b] = getNSats(X(i,:), {X1, X2}, mu, Shuttle_specs, Sat_specs);
+        NSats(i) = a;
+        D_antennas(i) = b;
+    end
+
+    % Compute Link Budget Matrix
+    R_1km = buildAdjacency_LinkBudgetMatrix(NSats, Comms_specs, Sat_specs, P1_specs, P2_specs, D_antennas); % Units: bps*km^2
+
+    % Compute XSats
+    
+    XSats = [];
+    for i = 1:Nf
+        XSats_i = getXSats(X(i,:), {X1, X2}, mu, etR, NSats(i));
+        if isempty(XSats)
+            XSats = XSats_i;
+        else
+            XSats = cat(3,XSats, XSats_i);
+        end
+    end
+
+    % Evaluate Bandwidth
+    Out = bestLinkBudget_bandwidth(X1,X2,XSats,R_1km);
+end
+
+function [Block_ID, N_launches, Planet_ID, a, e, w, f0, frac, Npl] = unpackVars(X)
+    AU = 149600000; % 1AU in km
+
+    Block_ID = X(1);
+    N_launches = X(2);
+    Planet_ID = X(3);
+    a = X(4) * AU; % convert to km
+    e = X(5);
+    w = X(6);
+    f0 = X(7);
+    frac = X(8);
+    Npl = X(9);
+
+    if Block_ID == 7 || Block_ID == 8
+        N_launches = max(N_launches, 1);
+    end
+end
+
+function [NSats, D_antennas] = getNSats(X, XPs, mu, Shuttle_specs, Sat_specs)
+    maxO = 3;
+
+    [Block_ID, N_launches, Planet_ID, a, e, ~, ~, frac, Npl] = unpackVars(X);
+
+    if N_launches == 0 % We can end early
+        NSats = 0;
+        D_antennas = 0;
+        return
+    end
+    
+    % Define function for finding mpersat as a function of Nsats only, for
+    % each case
+
+    switch(Block_ID)
+        case 1 % Regular MOG
+            frac_pl = 1/N_launches;
+            mps_func = @(N) getMOG_SatDryMasses(a,e,mu,N,Shuttle_specs.Isp,Sat_specs.Isp,Shuttle_specs.wetMass,Shuttle_specs.dryMass,Shuttle_specs.maxPayload, frac_pl);
+
+        case 2 % MOG @ Planet
+
+            % Get Corresponding Planet Info
+            XP = XPs{Planet_ID};
+            aP = mean(Cartesian2Keplerian(XP,mu));
+
+            frac_pl = 1/N_launches;
+            mps_func = @(N) getMOG_SatDryMasses(aP,e,mu,N,Shuttle_specs.Isp,Sat_specs.Isp,Shuttle_specs.wetMass,Shuttle_specs.dryMass,Shuttle_specs.maxPayload, frac_pl);
+
+        case 3 % MOG Including Planet
+
+            % Get Corresponding Planet Info
+            XP = XPs{Planet_ID};
+            [aP, eP] = Cartesian2Keplerian(XP,mu);
+            aP = mean(aP);
+            eP = mean(eP);
+
+            frac_pl = 1/N_launches;
+            mps_func = @(N) getMOG_SatDryMasses(aP,eP,mu,N,Shuttle_specs.Isp,Sat_specs.Isp,Shuttle_specs.wetMass,Shuttle_specs.dryMass,Shuttle_specs.maxPayload, frac_pl);
+
+        case 4 % Circular Ring
+
+            frac_pl = frac / N_launches;
+            mps_func = @(N) getSatDryMasses_CircularLoop(a,mu,N,Shuttle_specs.Isp,Sat_specs.Isp,Shuttle_specs.wetMass,Shuttle_specs.dryMass,Shuttle_specs.maxPayload, maxO, frac_pl);
+
+        case 5 % Elliptical Ring
+
+            frac_pl = frac / N_launches;
+            mps_func = @(N) getSatDryMasses_EllipticalLoop(a,e,mu,N,Shuttle_specs.Isp,Sat_specs.Isp,Shuttle_specs.wetMass,Shuttle_specs.dryMass,Shuttle_specs.maxPayload, maxO, frac_pl);
+            
+        case 6 % Ring Along a Planet's Orbit
+
+            % Get Corresponding Planet Info
+            XP = XPs{Planet_ID};
+            [aP, eP] = Cartesian2Keplerian(XP,mu);
+            aP = mean(aP);
+            eP = mean(eP);
+
+            frac_pl = frac / N_launches;
+            mps_func = @(N) getSatDryMasses_EllipticalLoop(aP,eP,mu,N,Shuttle_specs.Isp,Sat_specs.Isp,Shuttle_specs.wetMass,Shuttle_specs.dryMass,Shuttle_specs.maxPayload, maxO, frac_pl);
+
+        case 7 % Satellite @ Lagrange Point
+
+            % TODO: make functions for these
+            error("Not yet implemented.")
+
+        case 8 % Lone Satellite
+            
+            % TODO: make functions for these
+            f0 = frac*2*pi; % Rescale to correct domain
+            error("Not yet implemented.")
+             
+        otherwise
+            error("Incorrect Building Block ID")
+    end
+    
+    % Find Nsats per launch
+    [NSats_pl, D_antennas] = compute_Nsats_per_Shuttle_RF(Shuttle_specs, Sat_specs, Npl, mps_func);
+
+    % Find total Nsats in the block
+    NSats = NSats_pl * N_launches;
+
+    if isnan(NSats) % Clean up output
+        NSats = 0;
+        D_antennas = NaN;
+    end
+
+end
+
+
+
+function XSats = getXSats(X, XPs, mu, etR, Nsats)
+   
+    % Generate Cartesian Coordinates of the satellites described by this
+    % row of the genome
+
+    [Block_ID, ~, Planet_ID, a, e, w, f0, frac, Npl] = unpackVars(X);
+
+    switch(Block_ID)
+        case 1 % Regular MOG
+
+            Ki = [a; 0.25; 0.0; 0.0; w; 0.0]; % Second element (eccentricity) isn't actually used here
+            XSats = NSATSpropagateFromKepleriansSHELLS(Ki,mu,etR,Nsats,e,1);
+
+        case 2 % MOG @ Planet
+
+            XSats = generateMOGNearPlanet(XPs{Planet_ID}, mu, etR, e, 1, Nsats, true);
+            
+        case 3 % MOG Including Planet
+
+            XSats = generateMOGIncludingPlanet(XPs{Planet_ID}, mu, etR, Nsats);
+
+        case 4 % Circular Ring
+
+            XSats = NSATSpropagateFromKepleriansCIRC(a,f0,mu,etR,Nsats,frac);
+
+        case 5 % Elliptical Ring TODO
+            
+            Xcenter = Keplerian2Cartesian(a,e,0,0,w,f0,mu);
+            XSats = generateXsAlongOrbit(Xcenter, mu, etR, Nsats, frac);
+            
+        case 6 % Ring Along a Planet's Orbit
+
+            XSats = generateXsAlongOrbit(XPs{Planet_ID}, mu, etR, Nsats, frac);
+
+        case 7 % Satellite @ Lagrange Point TODO
+
+            L4_L5 = round(frac);
+
+        case 8 % Lone Satellite TODO
+
+            
+             
+        otherwise
+            error("Incorrect Building Block ID")
+    end
+
+end
+
+function state = plotBestConstellation(options, state, flag, X1, X2, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf)
+    % Called by ga() at each generation
+
+    % h = 420; % Figure number
+
+    % Reuse GA figure
+    h = findall(0, 'Type', 'figure', 'Name', 'Genetic Algorithm');
+    if isempty(h)
+        h = figure('Name', 'Genetic Algorithm');
+    else
+        figure(h); clf;
+    end
+
+    % Get best individual
+
+    [B,best_idx] = min(state.Score);
+    bestGenome = state.Population(best_idx,:);  % the best of current gen
+            
+    % Compute XSats and associated metrics for plotting
+    
+    dummy_etR = 1;
+
+    [~, XSats, NSats] = wrapperFunc_RF_2P(bestGenome, X1(:,1), X2(:,1), dummy_etR, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf);
+    XSats_flat = reshape(XSats, [6,sum(NSats)]);
+    AU = 149600000; % 1 AU in km
+
+    % Plot or update your custom plot
+    figure(h);  % Bring focus to figure
+    
+    scatter(0, 0, "yellow", 'filled', 'hexagram');
+    hold on
+    scatter(X1(1,1)/AU, X1(2,1)/AU, "blue", 'filled');
+    scatter(X2(1,1)/AU, X2(2,1)/AU, "red", 'filled');
+    scatter(XSats_flat(1,:)/AU, XSats_flat(2,:)/AU, "black", "square");
+    legend("Sun", "Earth", "Mars", "Relay Satellites")
+    hold off
+
+    xlim([-1.7, 1.7])
+    ylim([-1.7, 1.7])
+    xlabel("x [AU]");
+    ylabel("y [AU]");
+    pbaspect([1 1 1])    
+    title("Current Best Constellation: " + int2str(sum(NSats)) + " Satellites Delivering an Average Bandwidth of " + num2str(-B) + " Mbps.")
+
+end

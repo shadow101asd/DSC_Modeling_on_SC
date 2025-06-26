@@ -1,7 +1,11 @@
-function XSats = generateXsAlongOrbit(XPlanet, mu, etR, numsats)
+function XSats = generateXsAlongOrbit(XPlanet, mu, etR, numsats, frac)
 %GENERATEKNSALONGORBIT
 %Similar to NSATpropagateFromKeplerians, but to place satellites along the real orbit of
 %planets
+
+if nargin <= 4
+    frac = 1; % Default assumption is that we're deploying a full ring
+end
 
 if numsats >= 1
     [a_d, enorm_d, i_d, Om_d, w_d, f0_d] = Cartesian2Keplerian(XPlanet, mu);
@@ -12,9 +16,11 @@ if numsats >= 1
     
     Kns(:,numsats) = zeros(6,1);
     T_orbit = 2*pi*sqrt(a^3/mu);
-    time_interval = T_orbit/(numsats+1);
+    time_interval = T_orbit/(numsats+1) * frac;
     
-    for n = 1:numsats
+    N1 = ceil(numsats/2);
+    N2 = numsats - N1;
+    for n = 1:N1
         Kn = Ki;
         
         dt = n*time_interval;
@@ -22,6 +28,15 @@ if numsats >= 1
         Kn(6) = updateTrueAnomaly(a, e, i, Om, w, f0i, mu, dt);
         % Kn(6) = f0i + n*spacing;
         Kns(:,n) = Kn;
+    end
+    for n = 1:N2
+        Kn = Ki;
+        
+        dt = -n*time_interval;
+        % Orbit is non-circular, let's stagger the mean anomaly
+        Kn(6) = updateTrueAnomaly(a, e, i, Om, w, f0i, mu, dt);
+        % Kn(6) = f0i + n*spacing;
+        Kns(:,N1+n) = Kn;
     end
     
     % Obtain Xs

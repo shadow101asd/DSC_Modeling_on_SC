@@ -1,7 +1,7 @@
 function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDVMOG(aMOG, eMOG, dPhase, mu)
     % Meta-parameters
     day = 86400; % 1 day in seconds
-    temporal_res = 100; % per TMOG TO ADJUST FOR DECENT CONVERGENCE
+    temporal_res = 50; % per TMOG TO ADJUST FOR DECENT CONVERGENCE
     max_periods = 2.0; % in R+
     TMOG = 2*pi*sqrt(aMOG^3/mu); % MOG orbital period
     dt = TMOG/temporal_res; % s
@@ -36,8 +36,9 @@ function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDVMOG(aMOG, eM
             X1 = X1s(:,i);
             X2 = X2s(:,j);
 
-            [theta1, ~] = cart2pol(X1(1), X1(2));
-            [theta2, ~] = cart2pol(X2(1), X2(2));
+            theta1 = atan2(X1(2),X1(1)); % The exact same as cart2pol since we don't care about r
+            theta2 = atan2(X2(2),X2(1));
+
             dtheta = mod(theta2-theta1, 2*pi);
             if dtheta > pi
                 tf = -tf; % Take the long path in the lambert solver

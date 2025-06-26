@@ -1,0 +1,17 @@
+#! /bin/bash
+
+#SBATCH -o run010.sh.log-%j-%a
+#SBATCH -a 1-240
+#SBATCH -c 1
+
+# Parameters of the 2D grid
+max_Nl=60
+max_Nf=4
+
+# Compute row and column from the task ID
+task_id=${SLURM_ARRAY_TASK_ID}
+Nl=$(( (task_id - 1) / max_Nf + 1 ))
+Nf=$(( (task_id - 1) % max_Nf + 1 ))
+
+# Pass to MATLAB
+matlab -nodisplay -r "DSC_Modula_run(${Nl}, ${Nf}, '010'); exit"

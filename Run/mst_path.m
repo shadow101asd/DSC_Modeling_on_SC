@@ -1,4 +1,4 @@
-function [path, D, edgepath] = mst_path(T, s, t)
+function [path, D, edgepath] = mst_path(T, s, t, edgepath_bool)
     if ischar(s) || isstring(s), s = findnode(T, s); end
     if ischar(t) || isstring(t), t = findnode(T, t); end
 

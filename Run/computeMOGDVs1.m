@@ -8,8 +8,7 @@ AU = 1.496e8; % 1 AU in km
 
 if aMOG == AU
     % warning("a = 1AU, computing worst case phasing maneuver over 5 years instead of Hohmann transfer")
-    % [SS_DV, HToF, tODetails] = computePhasingDVCIRC(aMOG, dP/5, mu);
-    error("Doesn't include a=1AU for now...")
+    [SS_DV, HToF, tODetails] = computePhasingDVCIRC(aMOG, pi/5, mu);
 else
     % Hohmann transfer for SS
     [SS_DV, HToF] = computeHohmannTransferCirc2Circ(AU, aMOG, mu);

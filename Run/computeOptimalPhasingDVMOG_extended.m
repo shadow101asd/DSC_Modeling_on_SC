@@ -7,7 +7,7 @@ function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDVMOG_extended
     max_tf_considered = 0.9*TMOG/day; % in days
     m = 0;
     
-    N = 150; % desired # of sample points
+    N = 10; % desired # of sample points
     dt = day*ceil(TMOG*2/day/N); % s THIS CAN BE LARGER NOW WITH THE EXTENSION
 
     % Setup
@@ -37,8 +37,9 @@ function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDVMOG_extended
             X1 = X1s(:,i);
             X2 = X2s(:,j);
 
-            [theta1, ~] = cart2pol(X1(1), X1(2));
-            [theta2, ~] = cart2pol(X2(1), X2(2));
+            theta1 = atan2(X1(2),X1(1)); % The exact same as cart2pol since we don't care about r
+            theta2 = atan2(X2(2),X2(1));
+
             dtheta = mod(theta2-theta1, 2*pi);
             if dtheta > pi
                 tf = -tf; % Take the long path in the lambert solver
@@ -77,7 +78,7 @@ function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDVMOG_extended
     b = [0; 0];
     lb = [0; 0];
     ub = [et1-min_tf_considered*day ; et1]/factor;
-    options = optimoptions("fmincon", "Display", "iter");
+    options = optimoptions("fmincon", "Display", "none", OptimalityTolerance=1e-2);
 
     [x_opt,fval] = fmincon(@(X) lambertWrapper(X, K1, K2, mu, factor), x0, A, b, [], [], lb, ub, [], options);
 

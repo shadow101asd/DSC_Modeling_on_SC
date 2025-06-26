@@ -1,6 +1,10 @@
-function [Sats_MOGMs, Shuttle_FE, Sat_FEs, leftoverShuttle_FM, exitflag] = getSatDryMassesSI(aMOG,eMOG,mu,NSats,Shuttle_Isp,Sat_Isp,Shuttle_wetMass,Shuttle_dryMass,maxShuttlePayload)
+function [Sats_MOGMs, Shuttle_FE, Sat_FEs, leftoverShuttle_FM, exitflag] = getSatDryMassesSI(aMOG,eMOG,mu,NSats,Shuttle_Isp,Sat_Isp,Shuttle_wetMass,Shuttle_dryMass,maxShuttlePayload,frac)
 %getSatDryMassesSI Summary of this function goes here
 %   Detailed explanation goes here
+
+if nargin <= 9
+    frac = 1; % Default assumption is deploying a full MOG
+end
 
 % Constants
 AU = 1.496e8; % 1 AU in km
@@ -40,7 +44,7 @@ leftoverShuttle_FM = mHA-Shuttle_dryMass - m_SATS;
 if m_SATS > 0
     % Find mass of each satellite
     
-    [m_persat, ~, Sat_FEs] = computeSatMForPhasingDeployment(aMOG, eMOG, mu, NSats, Sat_Isp, m_SATS);
+    [m_persat, ~, Sat_FEs] = computeSatMForPhasingDeployment(aMOG, eMOG, mu, NSats, Sat_Isp, m_SATS, frac);
     
     Sats_MOGMs = repmat(m_persat, NSats, 1);
     exitflag = 1;

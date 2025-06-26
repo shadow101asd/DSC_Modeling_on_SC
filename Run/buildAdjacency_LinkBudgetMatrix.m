@@ -1,11 +1,18 @@
-function R = buildAdjacency_LinkBudgetMatrix(NSats, Comms_specs, Sat_specs, A_specs, B_specs)
+function R = buildAdjacency_LinkBudgetMatrix(NSats, Comms_specs, Sat_specs, A_specs, B_specs, D_antennas)
     % To eventually generalize to more customers. A_lb is the datarate *
     % km^2 (just missing the FSPL essentially)
+    
 
     c = 299792458; % speed of light, m/s
     lam = c/Comms_specs.f; % wavelength, m
 
-    [Dtxs, Drxs, Ptxs, ~, eAs, Tsyss] = formSpecVectors(NSats, Sat_specs, A_specs, B_specs);
+
+    if nargin == 5
+        [Dtxs, Drxs, Ptxs, ~, eAs, Tsyss] = formSpecVectors(sum(NSats), Sat_specs, A_specs, B_specs);
+    else % Separate D_antennas passed in
+        [Dtxs, Drxs, Ptxs, ~, eAs, Tsyss] = formSpecVectors2(NSats, Sat_specs, A_specs, B_specs, D_antennas);
+    end
+    
 
     % Compute Delivered Power at 1km distance
     Gtxs = (pi*Dtxs/lam).^2 .* eAs;
