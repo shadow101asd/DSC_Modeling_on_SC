@@ -1,6 +1,6 @@
 #! /bin/bash
 
-#SBATCH -o run010.sh.log-%j-%a
+#SBATCH -o run011.sh.log-%j-%a
 #SBATCH -a 1-240
 #SBATCH -c 4
 
@@ -14,4 +14,4 @@ Nl=$(( (task_id - 1) / max_Nf + 1 ))
 Nf=$(( (task_id - 1) % max_Nf + 1 ))
 
 # Pass to MATLAB
-matlab -nodisplay -r "DSC_Modular_run(${Nl}, ${Nf}, '010'); exit"
+matlab -nodisplay -r "DSC_Modular_run(${Nl}, ${Nf}, '011'); exit"

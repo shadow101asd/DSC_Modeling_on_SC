@@ -2,7 +2,7 @@
 
 #SBATCH -o run010.sh.log-%j-%a
 #SBATCH -a 1-240
-#SBATCH -c 1
+#SBATCH -c 
 
 # Parameters of the 2D grid
 max_Nl=60
@@ -14,4 +14,4 @@ Nl=$(( (task_id - 1) / max_Nf + 1 ))
 Nf=$(( (task_id - 1) % max_Nf + 1 ))
 
 # Pass to MATLAB
-matlab -nodisplay -r "DSC_Modula_run(${Nl}, ${Nf}, '010'); exit"
+matlab -nodisplay -r "DSC_Modular_run(${Nl}, ${Nf}, '010'); exit"

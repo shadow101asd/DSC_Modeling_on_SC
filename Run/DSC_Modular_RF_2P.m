@@ -74,11 +74,13 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
         gaoptions = optimoptions(gaoptions, 'PlotFcn', plotFcnWrapper);
     end
 
+    % Modify gaoptions Population Count to scale linearly with Nf
+    gaoptions.PopulationSize = gaoptions.PopulationSize * Nf; 
+
     [X_opt, ~, EXIT_FLAG, output] = ga(@(X) wrapperFunc_RF_2P(X, XEa, XMa, etR, muSu, Shuttle_specs, Comms_specs, Sat_specs, Earth_specs, Mars_specs, Nf), ...
                                         nvars,A,b,[],[],lb,ub,nonlcon,intcon,gaoptions);
-    % 
-    % [X_opt, fval, EXIT_FLAG, OUTPUT] = ga(@(X) sum(X), ...
-    %                                     nvars,[],[],[],[],lb,ub,[],intcon,gaoptions);
+    
+    disp(X_opt) % Show solution in logs
 
     % Save data
 
@@ -130,8 +132,8 @@ function [Out, XSats, NSats] = wrapperFunc_RF_2P(X, X1, X2, etR, mu, Shuttle_spe
         end
     end
 
-    % Evaluate Bandwidth
-    Out = bestLinkBudget_bandwidth(X1,X2,XSats,R_1km);
+    % Evaluate Bandwidth (pass in max datarate due to hardware limitations)
+    Out = bestLinkBudget_bandwidth(X1,X2,XSats,R_1km,Comms_specs.maxDR_Mbps);
 end
 
 function [Block_ID, N_launches, Planet_ID, a, e, w, f0, frac, Npl] = unpackVars(X)
