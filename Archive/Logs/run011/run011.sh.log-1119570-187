@@ -1,0 +1,81 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Nl: 47
+Nf: 3
+
+Single objective optimization:
+27 Variables
+12 Integer variables
+3 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverscattered
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1             2400          -87.69          -29.29        0
+    2             3595          -106.8          -30.61        0
+    3             4790          -109.3          -32.52        0
+    4             5985          -146.2          -33.74        0
+    5             7180          -146.2          -35.38        1
+    6             8375          -146.2          -37.49        2
+    7             9570          -146.2          -38.63        3
+    8            10765          -149.7          -40.38        0
+    9            11960          -149.7          -42.26        1
+   10            13155          -149.7          -45.27        2
+   11            14350          -149.7          -47.31        3
+   12            15545          -149.7          -50.37        4
+   13            16740          -149.7          -53.58        5
+   14            17935          -149.7          -57.61        6
+   15            19130          -149.7          -59.98        7
+   16            20325          -149.7          -64.27        8
+   17            21520          -149.7          -68.57        9
+   18            22715          -149.7          -72.44       10
+   19            23910          -149.7          -75.63       11
+   20            25105          -149.7          -81.13       12
+   21            26300          -149.7          -86.06       13
+   22            27495          -150.3          -90.02        0
+   23            28690          -150.3           -94.5        1
+   24            29885          -150.3          -98.83        2
+   25            31080          -150.3          -102.7        3
+   26            32275          -150.3          -103.8        4
+   27            33470          -150.3          -106.7        5
+   28            34665          -150.3          -109.1        6
+   29            35860          -150.3          -110.1        7
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+   30            37055          -150.3          -110.2        8
+   31            38250          -150.3          -112.9        9
+   32            39445          -150.3          -112.3       10
+   33            40640          -150.3          -112.8       11
+   34            41835          -150.3          -112.3       12
+   35            43030          -150.3          -111.6       13
+   36            44225          -150.3          -110.7       14
+   37            45420          -150.3          -113.6       15
+   38            46615          -150.3          -113.1       16
+   39            47810          -150.3          -111.9       17
+   40            49005          -150.3          -111.5       18
+   41            50200          -150.3          -111.9       19
+   42            51395          -150.3            -112       20
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+  Columns 1 through 7
+    3.0000    9.0000    2.0000    1.1303    0.6437    5.0760    5.7863
+  Columns 8 through 14
+    0.7554    1.0000    4.0000    1.0000    2.0000    1.3590    0.0034
+  Columns 15 through 21
+    4.4522    0.3732    0.3184    1.0000    4.0000   30.0000    2.0000
+  Columns 22 through 27
+    1.4354    0.3052    2.0864    2.4450    0.9678    1.0000

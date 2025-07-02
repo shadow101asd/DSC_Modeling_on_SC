@@ -1,5 +1,6 @@
-function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shuttle_config_name, plotting_bool)
-
+function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shuttle_config_name, plotting_bool, warm_start_bool, Planet_string)
+    
+    
     disp("Nl: " + Nl) % Print number of launches, for tracking
     disp("Nf: " + Nf) % Print number of features/blocks, for tracking
 
@@ -7,19 +8,31 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
 
     AU = 1.496e8; % 1 AU in km
     
-    % Load ephemerides and other pregenerated data
-    load("../Inputs/run"+run_idx+".mat", "muSu", "XEa", "XMa", "SATNUMS", "etR");
+    % Load ephemerides and other pregenerated data.
     
-    % Compute bounds on semi-major axes of features
-    as = [mean(Cartesian2Keplerian(XEa, muSu)), mean(Cartesian2Keplerian(XMa, muSu))];
-    min_a = min(as)/AU; 
-    max_a = max(as)/AU; 
+    if nargin <= 8
+        Planet_string = 'Mars';
+        disp("No Planet string passed in, defaulting to Mars.")
+    else
+        disp("Planet: " + Planet_string)
+    end
+
+    load("../Inputs/run"+run_idx+".mat", "muSu", "XEa", "etR");
+    PX_string = "X" + Planet_string(1:2);
+    XP2 = load("../Inputs/run"+run_idx+".mat", PX_string).(PX_string);
 
     % Load and process satellite and terminal specs
-    load("../Inputs/SE/"+sat_config_name+".mat", "Sat_specs", "Earth_specs", "Mars_specs", "Comms_specs");
-    
+    load("../Inputs/SE/"+sat_config_name+".mat", "Sat_specs", "Earth_specs", "Comms_specs");
+    P2_specs = load("../Inputs/SE/"+sat_config_name+".mat", Planet_string + "_specs").(Planet_string + "_specs");
+    P2_specs.pstring = Planet_string;
+
     % Load Starship specs
     load("../Inputs/SE/"+shuttle_config_name+".mat", "Shuttle_specs");
+    
+    % Compute bounds on semi-major axes of features
+    as = [mean(Cartesian2Keplerian(XEa, muSu)), mean(Cartesian2Keplerian(XP2, muSu))];
+    min_a = min(as)/AU; 
+    max_a = max(as)/AU; 
 
     % Can't precompute link budget matrix due to variable number of
     % satellites
@@ -58,31 +71,46 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
 
 
     nonlcon = @(x) deal(A*x' - b, []);
+    % nonlcon = []; Testing
   
     A = [];
     b = []; % Testing
     
 
-    % Run the Genetic Algorithm
+    % Tweak gaoptions according to inputs and Nf, Nl
     
     if plotting_bool % Tie in appropriate custom plotting function
         plotFcnWrapper = @(options, state, flag) ...
                         plotBestConstellation(options, state, flag, ...
-                          XEa, XMa, muSu, Shuttle_specs, ...
+                          XEa, XP2, muSu, Shuttle_specs, ...
                           Comms_specs, Sat_specs, Earth_specs, ...
-                          Mars_specs, Nf);
-        gaoptions.PlotFcn = plotFcnWrapper;
+                          P2_specs, Nf);
+        gaoptions = optimoptions(gaoptions, 'PlotFcn', plotFcnWrapper);
     end
 
-    [X_opt, ~, EXIT_FLAG, output] = ga(@(X) wrapperFunc_RF_2P(X, XEa, XMa, etR, muSu, Shuttle_specs, Comms_specs, Sat_specs, Earth_specs, Mars_specs, Nf), ...
+
+    % Modify gaoptions Population Count to scale affinely with Nf
+    gaoptions.PopulationSize = floor(gaoptions.PopulationSize * (1 + (Nf-1)/2)); 
+
+    % Include warmstart if requested
+    if warm_start_bool
+        N_warmstart = floor(0.1*gaoptions.PopulationSize);
+        Initial_Pop = generate_WarmStart_Individuals(N_warmstart, run_idx, Nf, Nl, [ub_ef(1),lb_ef(2:end)], Nf);
+
+        gaoptions.InitialPopulationMatrix = Initial_Pop;
+        disp(int2str(size(Initial_Pop, 1))+"/"+int2str(N_warmstart)+ " individuals found for the warm start.") % for monitoring
+    end
+
+    % Run the Genetic Algorithm
+
+    [X_opt, ~, EXIT_FLAG, output] = ga(@(X) wrapperFunc_RF_2P(X, XEa, XP2, etR, muSu, Shuttle_specs, Comms_specs, Sat_specs, Earth_specs, P2_specs, Nf), ...
                                         nvars,A,b,[],[],lb,ub,nonlcon,intcon,gaoptions);
-    % 
-    % [X_opt, fval, EXIT_FLAG, OUTPUT] = ga(@(X) sum(X), ...
-    %                                     nvars,[],[],[],[],lb,ub,[],intcon,gaoptions);
+    
+    disp(X_opt) % Show solution in logs
 
     % Save data
 
-    [Out, XSats, NSats] = wrapperFunc_RF_2P(X_opt, XEa, XMa, etR, muSu, Shuttle_specs, Comms_specs, Sat_specs, Earth_specs, Mars_specs, Nf);
+    [Out, XSats, NSats] = wrapperFunc_RF_2P(X_opt, XEa, XP2, etR, muSu, Shuttle_specs, Comms_specs, Sat_specs, Earth_specs, P2_specs, Nf);
     
     B = -Out;
     XSats_i = XSats(:,1,:); % Initial Satellite Positions and Velocities
@@ -130,8 +158,8 @@ function [Out, XSats, NSats] = wrapperFunc_RF_2P(X, X1, X2, etR, mu, Shuttle_spe
         end
     end
 
-    % Evaluate Bandwidth
-    Out = bestLinkBudget_bandwidth(X1,X2,XSats,R_1km);
+    % Evaluate Bandwidth (pass in max datarate due to hardware limitations)
+    Out = bestLinkBudget_bandwidth(X1,X2,XSats,R_1km,Comms_specs.maxDR_Mbps,P2_specs.pstring);
 end
 
 function [Block_ID, N_launches, Planet_ID, a, e, w, f0, frac, Npl] = unpackVars(X)
@@ -292,40 +320,59 @@ end
 
 function state = plotBestConstellation(options, state, flag, X1, X2, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf)
     % Called by ga() at each generation
-    persistent h
 
-    if flag == 'init'
-        % Create figure
-        h = figure;
+    % h = 420; % Figure number
+
+    % Reuse GA figure
+    h = findall(0, 'Type', 'figure', 'Name', 'Genetic Algorithm');
+    if isempty(h)
+        h = figure('Name', 'Genetic Algorithm');
     else
-        clf(h)
+        figure(h); clf;
     end
 
     % Get best individual
 
-    [~,best_idx] = min(state.Score);
+    [B,best_idx] = min(state.Score);
     bestGenome = state.Population(best_idx,:);  % the best of current gen
             
     % Compute XSats and associated metrics for plotting
     
     dummy_etR = 1;
-    [B, XSats, NSats] = wrapperFunc_RF_2P(bestGenome, X1(), X2, dummy_etR, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf);
-    XSats_flat = reshape(XSats, [6,NSats]);
+
+    [~, XSats, NSats] = wrapperFunc_RF_2P(bestGenome, X1(:,1), X2(:,1), dummy_etR, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf);
+    XSats_flat = reshape(XSats, [6,sum(NSats)]);
     AU = 149600000; % 1 AU in km
 
     % Plot or update your custom plot
     figure(h);  % Bring focus to figure
-    title('Current Best Constellation: ' + int2str(NSats) + " Satellites Delivering an Average Bandwidth of " + num2str(B) +" Mbps.")
+    
+    scatter(0, 0, "yellow", 'filled', 'hexagram', MarkerEdgeColor='black');
+    hold on
+    scatter(X1(1,1)/AU, X1(2,1)/AU, "blue", 'filled');
+
+    % Break up plotting cases depending on Planet string
+    if  strcmp(string(P2_specs.pstring), "Mars")
+        scatter(X2(1,1)/AU, X2(2,1)/AU, "red", 'filled');
+    elseif  strcmp(string(P2_specs.pstring), "Venus")
+        scatter(X2(1,1)/AU, X2(2,1)/AU, "green", 'filled');
+    elseif strcmp(string(P2_specs.pstring), "Jupiter")
+        scatter(X2(1,1)/AU, X2(2,1)/AU, "purple", 'filled');
+    elseif strcmp(string(P2_specs.pstring), "Mercury")
+        scatter(X2(1,1)/AU, X2(2,1)/AU, "gr", 'filled');
+    else
+        scatter(X2(1,1)/AU, X2(2,1)/AU, "purple", 'filled');
+    end
+
+    scatter(XSats_flat(1,:)/AU, XSats_flat(2,:)/AU, "black", "square");
+    legend("Sun", "Earth", P2_specs.pstring, "Relay Satellites")
+    hold off
 
     xlim([-1.7, 1.7])
     ylim([-1.7, 1.7])
     xlabel("x [AU]");
     ylabel("y [AU]");
-    pbaspect([1 1 1])
-    
-    scatter(0, 0, "yellow", 'filled', 'hexagram');
-    scatter(X1(1,1)/AU, X1(2,1)/AU, "blue", 'filled');
-    scatter(X2(1,1)/AU, X2(2,1)/AU, "red", 'filled');
-    scatter(XSats_flat(1,:)/AU, XSats_flat(2,:)/AU, "black", "square");
-    legend("Sun", "Earth", "Mars", "Relay Satellites")
+    pbaspect([1 1 1])    
+    title("Current Best Constellation: " + int2str(sum(NSats)) + " Satellites Delivering an Average Bandwidth of " + num2str(-B) + " Mbps.")
+
 end

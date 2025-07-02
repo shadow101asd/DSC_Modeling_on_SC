@@ -1,0 +1,48 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Nl: 58
+Nf: 3
+
+Single objective optimization:
+27 Variables
+12 Integer variables
+3 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverscattered
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1             2400          -106.4          -29.53        0
+    2             3595          -115.9          -30.85        0
+    3             4790          -198.6          -33.56        0
+    4             5985          -198.6          -35.56        1
+    5             7180          -198.6          -37.44        2
+    6             8375          -198.6          -39.94        3
+    7             9570          -198.6          -42.95        4
+    8            10765          -198.6          -45.11        5
+    9            11960          -198.6          -48.29        6
+   10            13155          -198.6          -51.26        7
+   11            14350          -198.6          -55.46        8
+   12            15545          -198.6          -59.27        9
+   13            16740          -198.6          -63.95       10
+   14            17935          -198.6           -69.8       11
+   15            19130          -198.6          -73.86       12
+   16            20325          -198.6           -80.4       13
+   17            21520          -198.6           -85.1       14
+   18            22715          -198.6          -88.84       15
+   19            23910          -198.6          -93.73       16
+   20            25105          -198.6          -97.96       17
+   21            26300          -198.6          -101.7       18
+slurmstepd-d-17-7-3: error: *** JOB 1121365 ON d-17-7-3 CANCELLED AT 2025-06-30T12:56:15 ***

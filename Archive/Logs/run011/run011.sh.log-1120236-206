@@ -1,0 +1,69 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Nl: 52
+Nf: 2
+
+Single objective optimization:
+18 Variables
+8 Integer variables
+2 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverscattered
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1             1600          -127.4          -33.79        0
+    2             2395          -176.6          -35.78        0
+    3             3190          -176.6          -39.26        1
+    4             3985          -176.6          -41.87        2
+    5             4780          -176.6          -45.94        3
+    6             5575            -181          -49.32        0
+    7             6370            -181          -51.83        1
+    8             7165          -191.1          -58.08        0
+    9             7960          -191.1          -65.58        1
+   10             8755          -191.1          -69.51        2
+   11             9550          -191.1          -75.14        3
+   12            10345          -191.1          -80.61        4
+   13            11140          -191.1          -84.91        5
+   14            11935          -191.1          -91.01        6
+   15            12730          -191.1          -91.94        7
+   16            13525          -191.1          -96.79        8
+   17            14320          -191.1          -100.6        9
+   18            15115          -191.9          -104.2        0
+   19            15910          -191.9          -106.3        1
+   20            16705          -191.9          -106.6        2
+   21            17500          -191.9          -108.8        3
+   22            18295          -191.9          -109.4        4
+   23            19090          -191.9          -109.2        5
+   24            19885          -197.2          -111.6        0
+   25            20680          -202.8          -109.9        0
+   26            21475          -202.8          -110.9        1
+   27            22270          -202.8          -111.6        2
+   28            23065          -202.8          -113.3        3
+   29            23860          -202.8          -112.3        4
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+   30            24655          -208.6          -115.9        0
+   31            25450          -208.8          -115.1        0
+   32            26245          -208.8          -118.7        1
+   33            27040          -208.8          -119.5        2
+   34            27835          -208.8          -119.8        3
+   35            28630          -213.8            -119        0
+   36            29425          -214.3          -124.3        0
+   37            30220          -214.3          -124.4        1
+   38            31015          -215.2          -124.9        0
+   39            31810          -215.2          -126.7        1
+slurmstepd-d-19-9-3: error: *** JOB 1120236 ON d-19-9-3 CANCELLED AT 2025-06-30T12:56:15 ***

@@ -1,0 +1,44 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Nl: 60
+Nf: 3
+
+Single objective optimization:
+27 Variables
+12 Integer variables
+3 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverscattered
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1             2400            -107          -29.57        0
+    2             3595          -163.4          -31.17        0
+    3             4790          -163.4          -32.91        1
+    4             5985          -163.4          -34.74        2
+    5             7180          -183.8          -38.45        0
+    6             8375          -198.1          -40.18        0
+    7             9570          -198.1          -42.79        1
+    8            10765          -198.1          -45.97        2
+    9            11960          -198.1          -50.85        3
+   10            13155          -198.1          -55.24        4
+   11            14350          -199.5          -62.76        0
+   12            15545          -199.5          -68.72        1
+   13            16740          -201.4          -75.12        0
+   14            17935          -201.4          -81.15        1
+   15            19130          -201.4          -86.13        2
+   16            20325          -201.4          -90.15        3
+   17            21520          -201.4          -95.15        4
+slurmstepd-d-19-8-3: error: *** JOB 1121906 ON d-19-8-3 CANCELLED AT 2025-06-30T12:56:15 ***

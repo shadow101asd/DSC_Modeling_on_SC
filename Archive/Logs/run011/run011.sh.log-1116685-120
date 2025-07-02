@@ -1,0 +1,82 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Nl: 30
+Nf: 4
+
+Single objective optimization:
+36 Variables
+16 Integer variables
+4 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverscattered
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1             3200          -55.54          -28.08        0
+    2             4795          -68.12          -28.41        0
+    3             6390          -78.71          -28.75        0
+    4             7985          -78.71          -29.24        1
+    5             9580          -80.66          -29.87        0
+    6            11175          -99.22          -30.87        0
+    7            12770          -99.22          -32.18        1
+    8            14365          -99.22          -33.06        2
+    9            15960          -99.22          -34.33        3
+   10            17555          -111.6           -36.1        0
+   11            19150          -111.6           -37.3        1
+   12            20745          -111.6          -38.35        2
+   13            22340          -111.6          -39.72        3
+   14            23935          -111.6          -41.66        4
+   15            25530          -111.6          -43.61        5
+   16            27125          -111.6          -46.11        6
+   17            28720          -111.6          -48.17        7
+   18            30315          -111.6          -50.37        8
+   19            31910          -111.8          -52.96        0
+   20            33505          -111.8          -54.56        1
+   21            35100          -111.8          -56.81        2
+   22            36695          -111.8          -58.74        3
+   23            38290          -111.8          -60.38        4
+   24            39885          -111.8          -61.89        5
+   25            41480          -111.8           -64.7        6
+   26            43075          -111.8          -67.02        7
+   27            44670          -111.8          -70.43        8
+   28            46265          -111.8          -73.88        9
+   29            47860          -111.8           -77.3       10
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+   30            49455          -111.8          -81.53       11
+   31            51050          -111.8          -85.23       12
+   32            52645          -111.8          -87.09       13
+   33            54240          -111.8          -89.86       14
+   34            55835          -111.8          -93.18       15
+   35            57430          -111.8          -94.44       16
+   36            59025          -111.8          -95.17       17
+   37            60620          -111.8          -94.52       18
+   38            62215          -111.8          -95.57       19
+   39            63810          -111.8          -95.95       20
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+  Columns 1 through 7
+    1.0000    1.0000    1.0000    1.0025    0.6766    0.7480    5.6585
+  Columns 8 through 14
+    0.6818    1.0000    3.0000    6.0000    2.0000    1.0027    0.6023
+  Columns 15 through 21
+    4.0470    1.1724    0.9790    1.0000    4.0000   23.0000    2.0000
+  Columns 22 through 28
+    1.4948    0.5965    4.7856    5.2533    0.7678    1.0000    6.0000
+  Columns 29 through 35
+         0    1.0000    1.4144    0.0353    0.4547    3.1203    0.8833
+  Column 36
+    1.0000

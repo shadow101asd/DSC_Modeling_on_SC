@@ -21,7 +21,7 @@ function [Bandwidths, paths] = networkAnalysis_maxminB(X1,XPs,name1,namePs,XSats
     Bandwidths = zeros([nT,1]);
 
     for t = 1:nT
-        Bt = B();
+        Bt = B(:,:,t);
         [Band,x0] = find_maxminB(Bt, x0, numsats);
         Bandwidths(t) = Band;
     end

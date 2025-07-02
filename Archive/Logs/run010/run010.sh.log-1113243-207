@@ -1,0 +1,78 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Nl: 52
+Nf: 3
+
+Single objective optimization:
+27 Variables
+12 Integer variables
+3 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1              600          -87.39          -29.35        0
+    2              895          -95.05          -31.53        0
+    3             1190          -95.05          -32.14        1
+    4             1485          -95.05          -32.15        2
+    5             1780          -97.69          -33.59        0
+    6             2075          -97.69          -34.06        1
+    7             2370          -134.9          -34.37        0
+    8             2665          -134.9          -35.73        1
+    9             2960          -134.9          -37.16        2
+   10             3255          -136.5          -39.39        0
+   11             3550          -154.2           -40.7        0
+   12             3845          -154.2          -40.27        1
+   13             4140          -154.2          -40.43        2
+   14             4435          -154.2          -40.83        3
+   15             4730          -154.2          -39.99        4
+   16             5025          -154.2          -39.85        5
+   17             5320          -154.2          -42.01        6
+   18             5615          -154.7          -44.11        0
+   19             5910          -154.7          -43.47        1
+   20             6205          -154.7          -41.62        2
+   21             6500          -161.4          -43.53        0
+   22             6795          -174.8          -44.58        0
+   23             7090          -174.8          -43.58        1
+   24             7385          -179.6          -47.25        0
+   25             7680          -179.6          -46.86        1
+   26             7975          -179.6          -46.76        2
+   27             8270          -190.8          -47.44        0
+   28             8565          -190.8          -45.52        1
+   29             8860          -190.8          -48.15        2
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+   30             9155          -190.8          -45.76        3
+   31             9450          -190.8           -45.3        4
+   32             9745          -190.8          -44.39        5
+   33            10040          -190.8          -44.29        6
+   34            10335          -190.8          -47.27        7
+   35            10630          -190.8          -46.23        8
+   36            10925          -190.8          -45.75        9
+   37            11220          -190.8          -46.49       10
+   38            11515          -190.8          -46.73       11
+   39            11810          -190.8          -48.08       12
+   40            12105          -190.8          -48.09       13
+   41            12400          -190.8          -47.84       14
+   42            12695          -190.8          -47.31       15
+   43            12990          -190.8          -50.61       16
+   44            13285          -190.8          -52.12       17
+   45            13580          -190.8          -49.99       18
+   46            13875          -190.8          -52.32       19
+   47            14170          -190.8          -52.53       20
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.

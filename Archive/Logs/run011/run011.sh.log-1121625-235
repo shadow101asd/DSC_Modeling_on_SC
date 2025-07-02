@@ -1,0 +1,47 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Nl: 59
+Nf: 3
+
+Single objective optimization:
+27 Variables
+12 Integer variables
+3 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverscattered
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1             2400          -106.4          -29.55        0
+    2             3595          -189.2          -31.15        0
+    3             4790          -189.2           -32.6        1
+    4             5985          -189.2          -34.91        2
+    5             7180          -189.2          -37.21        3
+    6             8375          -189.2          -39.42        4
+    7             9570          -189.2          -41.09        5
+    8            10765          -189.2          -43.54        6
+    9            11960          -189.2          -45.88        7
+   10            13155          -189.2          -49.96        8
+   11            14350          -189.2          -54.12        9
+   12            15545          -189.2          -59.16       10
+   13            16740          -192.8          -64.17        0
+   14            17935          -192.8          -69.33        1
+   15            19130          -192.8          -75.63        2
+   16            20325          -204.4          -80.95        0
+   17            21520          -204.4          -86.12        1
+   18            22715          -207.1          -89.67        0
+   19            23910          -207.1          -94.78        1
+   20            25105          -207.1          -99.27        2
+slurmstepd-d-3-9-3: error: *** JOB 1121625 ON d-3-9-3 CANCELLED AT 2025-06-30T12:56:15 ***
