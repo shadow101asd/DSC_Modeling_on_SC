@@ -136,7 +136,7 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
         ub_intsRfixed(9:nvars_pf:end) = X_opt(9:nvars_pf:end);
 
         % Run fmincon
-        fmincon_opts = optimoptions('fmincon', 'Algorithm', 'sqp', 'Display', 'iter', 'UseParallel', true);
+        fmincon_opts = optimoptions('fmincon', 'Algorithm', 'sqp', 'Display', 'iter', 'UseParallel', false);
         
         if plotting_bool % Tie in appropriate plotting function for fmincon
             fmincon_opts = optimoptions(fmincon_opts, 'PlotFcn', 'optimplotfval');
