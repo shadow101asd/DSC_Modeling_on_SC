@@ -44,8 +44,8 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
     % satellites
 
     % Set up optimization
-    lb_ef     = [1 0  1 min_a 0   1e-6	    1e-6      0 1];
-    ub_ef     = [6 Nl    2 max_a 0.7 2*pi-1e-6  2*pi-1e-6 1 1];
+    lb_ef     = [1 0  1 min_a 0   1e-6	     1e-6      0 1];
+    ub_ef     = [6 Nl 2 max_a 0.7 2*pi-1e-6  2*pi-1e-6 1 1];
     % ub_ef     = [8 Nl 2 max_a 1 2*pi 1 5];
     intcon_ef = [1 2 3 9];
     
@@ -136,7 +136,7 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
         ub_intsRfixed(9:nvars_pf:end) = X_opt(9:nvars_pf:end);
 
         % Run fmincon
-        fmincon_opts = optimoptions('fmincon', 'Algorithm', 'sqp', 'Display', 'iter', 'UseParallel', false);
+        fmincon_opts = optimoptions('fmincon', 'Algorithm', 'sqp', 'Display', 'iter', 'UseParallel', true);
         
         if plotting_bool % Tie in appropriate plotting function for fmincon
             fmincon_opts = optimoptions(fmincon_opts, 'PlotFcn', 'optimplotfval');
@@ -152,7 +152,13 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
     [Out, XSats, NSats] = wrapperFunc_RF_2P(X_opt, XEa, XP2, etR, muSu, Shuttle_specs, Comms_specs, Sat_specs, Earth_specs, P2_specs, Nf);
     
     B = -Out;
-    XSats_i = XSats(:,1,:); % Initial Satellite Positions and Velocities
+
+    try 
+        XSats_i = XSats(:,1,:); % Initial Satellite Positions and Velocities
+    catch ME
+        XSats_i = [];
+        warning("Optimal solution includes no satellites.")
+    end
     
     filename = "../Data/run"+run_idx+"/Nf"+int2str(Nf_original)+"Nl"+int2str(Nl)+".mat";
 
@@ -402,7 +408,7 @@ function state = plotBestConstellation(options, state, flag, X1, X2, mu, Shuttle
     elseif strcmp(string(P2_specs.pstring), "Jupiter")
         scatter(X2(1,1)/AU, X2(2,1)/AU, "purple", 'filled');
     elseif strcmp(string(P2_specs.pstring), "Mercury")
-        scatter(X2(1,1)/AU, X2(2,1)/AU, "grey", 'filled');
+        scatter(X2(1,1)/AU, X2(2,1)/AU, MarkerFaceColor=[.7 .7 .7], MarkerEdgeColor=[0 0 0]);
     else
         scatter(X2(1,1)/AU, X2(2,1)/AU, "black", 'filled');
     end
