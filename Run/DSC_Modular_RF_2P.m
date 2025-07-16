@@ -1,4 +1,4 @@
-function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shuttle_config_name, plotting_bool, warm_start_bool, Planet_string)
+function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shuttle_config_name, plotting_bool, warm_start_bool, Planet_string, fmincon_bool)
     
     Nf_original = Nf; % make a copy for file saving
     disp("Nl = " + Nl) % Print number of launches, for tracking
@@ -21,6 +21,7 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
     else
         disp("Planet: " + Planet_string)
     end
+    
 
     load("../Inputs/run"+run_idx+".mat", "muSu", "XEa", "etR");
     PX_string = "X" + Planet_string(1:2);
@@ -44,7 +45,7 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
 
     % Set up optimization
     lb_ef     = [1 0  1 min_a 0   1e-6	    1e-6      0 1];
-    ub_ef     = [6 Nl 2 max_a 0.7 2*pi-1e-6 2*pi-1e-6 1 1];
+    ub_ef     = [6 Nl    2 max_a 0.7 2*pi-1e-6  2*pi-1e-6 1 1];
     % ub_ef     = [8 Nl 2 max_a 1 2*pi 1 5];
     intcon_ef = [1 2 3 9];
     
@@ -78,8 +79,8 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
     nonlcon = @(x) deal(A*x' - b, []);
     % nonlcon = []; Testing
   
-    A = [];
-    b = []; % Testing
+    % A = [];
+    % b = []; % Testing
     
 
     % Tweak gaoptions according to inputs and Nf, Nl
@@ -106,12 +107,45 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
         disp(int2str(size(Initial_Pop, 1))+"/"+int2str(N_warmstart)+ " individuals found for the warm start.") % for monitoring
     end
 
-    % Run the Genetic Algorithm
 
-    [X_opt, ~, EXIT_FLAG, output] = ga(@(X) wrapperFunc_RF_2P(X, XEa, XP2, etR, muSu, Shuttle_specs, Comms_specs, Sat_specs, Earth_specs, P2_specs, Nf), ...
-                                        nvars,A,b,[],[],lb,ub,nonlcon,intcon,gaoptions);
+    % Run the Genetic Algorithm
+    func = @(X) wrapperFunc_RF_2P(X, XEa, XP2, etR, muSu, Shuttle_specs, Comms_specs, Sat_specs, Earth_specs, P2_specs, Nf);
     
-    disp(X_opt) % Show solution in logs
+    [X_opt, fval, EXIT_FLAG, output] = ga(func, nvars,[],[],[],[],lb,ub,nonlcon,intcon,gaoptions);
+    
+    disp("GA Output: " + num2str(-fval)) % Show solution in logs
+
+    % Hybrid function
+    if nargin <= 9
+        fmincon_bool = true; % Default to true
+    end
+    if fmincon_bool
+        disp("Finishing with hybrid_fcn: fmincon");
+        
+        % Modify lb and ub to fix integer variables
+        lb_intsRfixed = lb;
+        lb_intsRfixed(1:nvars_pf:end) = X_opt(1:nvars_pf:end);
+        lb_intsRfixed(2:nvars_pf:end) = X_opt(2:nvars_pf:end);
+        lb_intsRfixed(3:nvars_pf:end) = X_opt(3:nvars_pf:end);
+        lb_intsRfixed(9:nvars_pf:end) = X_opt(9:nvars_pf:end);
+
+        ub_intsRfixed = ub;
+        ub_intsRfixed(1:nvars_pf:end) = X_opt(1:nvars_pf:end);
+        ub_intsRfixed(2:nvars_pf:end) = X_opt(2:nvars_pf:end);
+        ub_intsRfixed(3:nvars_pf:end) = X_opt(3:nvars_pf:end);
+        ub_intsRfixed(9:nvars_pf:end) = X_opt(9:nvars_pf:end);
+
+        % Run fmincon
+        fmincon_opts = optimoptions('fmincon', 'Algorithm', 'sqp', 'Display', 'iter', 'UseParallel', true);
+        
+        if plotting_bool % Tie in appropriate plotting function for fmincon
+            fmincon_opts = optimoptions(fmincon_opts, 'PlotFcn', 'optimplotfval');
+        end
+
+        [X_opt, fval_f] = fmincon(func, X_opt, [], [], [], [], lb_intsRfixed, ub_intsRfixed, [], fmincon_opts);
+
+        disp("Fmincon Output: " + num2str(-fval_f)) % Show fval in logs
+    end
 
     % Save data
 
@@ -130,6 +164,10 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
     else
         save(filename, "B", "X_opt", "NSats", "XSats_i", "output", "lb", "ub");
     end
+    
+    % Final message.
+    disp("Final solution: " + num2str(X_opt))
+    disp("evaluating to a bandwidth of " + num2str(B) + " Mbps.")
 
 end
 
@@ -170,15 +208,15 @@ end
 function [Block_ID, N_launches, Planet_ID, a, e, w, f0, frac, Npl] = unpackVars(X)
     AU = 149600000; % 1AU in km
 
-    Block_ID = X(1);
-    N_launches = X(2);
-    Planet_ID = X(3);
+    Block_ID = round(X(1));
+    N_launches = round(X(2));
+    Planet_ID = round(X(3));
     a = X(4) * AU; % convert to km
     e = X(5);
     w = X(6);
     f0 = X(7);
     frac = X(8);
-    Npl = X(9);
+    Npl = round(X(9));
 
     if Block_ID == 7 || Block_ID == 8
         N_launches = max(N_launches, 1);
@@ -381,3 +419,14 @@ function state = plotBestConstellation(options, state, flag, X1, X2, mu, Shuttle
     title("Current Best Constellation: " + int2str(sum(NSats)) + " Satellites Delivering an Average Bandwidth of " + num2str(-B) + " Mbps.")
 
 end
+
+
+% function [Out, XSats, NSats] = finish_with_fmincon(Xopt, X1, X2, etR, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf, lb, ub, A, b)
+% 
+%     fun = @(X) wrapperFunc_RF_2P(X, X1, X2, etR, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf);
+% 
+%     % Modify bounds to 
+%     lb_intsRfixed 
+% 
+% 
+% end

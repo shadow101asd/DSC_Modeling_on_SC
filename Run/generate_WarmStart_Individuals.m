@@ -8,7 +8,7 @@ function Initial_Pop = generate_WarmStart_Individuals(Nmax, run_idx, Nf_max, Nl_
     % Collect Existing Datapoints
 
     Nf_range = 1:Nf_max;
-    Nl_range = 1:Nl_max;
+    Nl_range = 1:(Nl_max+floor(Nmax/(Nf_max*2)));
     
     Bs = NaN([length(Nl_range), length(Nf_range)]);
     for Nf = Nf_range
@@ -34,6 +34,24 @@ function Initial_Pop = generate_WarmStart_Individuals(Nmax, run_idx, Nf_max, Nl_
     
     for i = 1:N_sel
         X_opt = load("../Data/run"+run_idx+"/Nf"+int2str(Nfs_selected(i))+"Nl"+int2str(Nls_selected(i))+".mat").X_opt;
+        
+        % If backpropagating, adjust Nls of a random feature to make a valid
+        % warm start. (in both directions actually)
+        
+        while true
+            Nl_comp = sum(X_opt(2:length(empty_feature_snippet):end));
+            if Nl_comp > Nl_max
+                rand_idx_Nl = 2 + length(empty_feature_snippet)*(randi(Nfs_selected(i), 1, "double")-1);
+                X_opt(rand_idx_Nl) = X_opt(rand_idx_Nl) - 1;
+            elseif Nl_comp < Nl_max
+                rand_idx_Nl = 2 + length(empty_feature_snippet)*(randi(Nfs_selected(i), 1, "double")-1);
+                X_opt(rand_idx_Nl) = X_opt(rand_idx_Nl) + 1;
+            else
+                break
+            end
+        end
+       
+
         Initial_Pop(i, 1:length(X_opt)) = X_opt;
     end
 

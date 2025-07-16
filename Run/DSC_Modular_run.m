@@ -1,6 +1,6 @@
 function [] = DSC_Modular_run(Nl, Nf, run_idx, Planet_string)
     gaoptions = optimoptions("ga", Display="iter", FunctionTolerance=1e-5, ...
-        MaxStallGenerations=20, PopulationSize=400, UseParallel=true);
+        MaxStallGenerations=3, PopulationSize=20, UseParallel=true);
     
 
     sat_config_name = "RF_all8m";

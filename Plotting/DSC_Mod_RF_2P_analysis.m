@@ -1,8 +1,8 @@
 %% Collect Data from DSC_Modular_RF_2P Runs
 
-run_idx = '013';
-Nf_range = 1:3;
-Nl_range = 1:30;
+run_idx = '012';
+Nf_range = 1:2;
+Nl_range = 1:100;
 
 Bs = NaN([length(Nl_range), length(Nf_range)]);
 for Nf = Nf_range
@@ -20,7 +20,7 @@ end
 
 %% Plotting
 
-figure(13)
+figure(str2double(run_idx))
 plot(Nl_range, Bs)
 
 lgd = [];
@@ -28,5 +28,5 @@ for Nf = Nf_range
     lgd = [lgd, "Nf = " + int2str(Nf)];
 end
 legend(lgd)
-ylim([0 400])
-title("Run 13: Ongoing")
+ylim([0 ceil(max(max(Bs))/500)*500])
+title("Run " + run_idx + ": Ongoing")
