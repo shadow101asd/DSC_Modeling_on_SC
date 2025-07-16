@@ -1,0 +1,119 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2023 The MathWorks, Inc.
+                  R2023b (23.2.0.2365128) 64-bit (glnxa64)
+                              August 23, 2023
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+Nl: 57
+Nf: 2
+60/60 individuals found for the warm start.
+
+Single objective optimization:
+18 Variables
+8 Integer variables
+2 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1             1200          -244.7          -37.39        0
+    2             1795          -244.7          -39.32        1
+    3             2390          -244.7          -40.58        2
+    4             2985          -244.7           -41.3        3
+    5             3580          -244.7           -42.6        4
+    6             4175          -244.7          -42.21        5
+    7             4770          -244.7          -42.62        6
+    8             5365          -244.7          -42.72        7
+    9             5960          -244.7          -42.76        8
+   10             6555          -244.7          -43.95        9
+   11             7150          -244.7           -44.2       10
+   12             7745          -244.7          -45.94       11
+   13             8340          -246.4           -46.9        0
+   14             8935          -246.4          -45.99        1
+   15             9530          -246.4          -47.77        2
+   16            10125          -246.4          -49.68        3
+   17            10720          -246.4          -50.21        4
+   18            11315          -246.4          -49.71        5
+   19            11910          -246.4          -51.03        6
+   20            12505          -246.4          -50.23        7
+   21            13100          -246.4          -52.58        8
+   22            13695          -246.4          -53.54        9
+   23            14290          -246.4          -54.41       10
+   24            14885          -246.4          -56.19       11
+   25            15480          -246.4          -56.28       12
+   26            16075          -246.4          -56.69       13
+   27            16670          -246.4           -61.8       14
+   28            17265          -246.4          -60.98       15
+   29            17860          -246.4          -64.28       16
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+   30            18455          -246.4          -67.41       17
+   31            19050          -246.4          -69.38       18
+   32            19645          -246.4          -72.98       19
+   33            20240          -246.4          -77.01       20
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+  Columns 1 through 7
+    2.0000   39.0000    1.0000    1.4842    0.5787    4.1789    3.9280
+  Columns 8 through 14
+    0.5108    1.0000    6.0000   18.0000    2.0000    1.4524    0.1719
+  Columns 15 through 18
+    1.8528    3.3156    0.2559    1.0000
+Nl: 57
+Nf: 3
+80/80 individuals found for the warm start.
+
+Single objective optimization:
+27 Variables
+12 Integer variables
+3 Nonlinear inequality constraints
+
+Options:
+CreationFcn:       @gacreationuniformint
+CrossoverFcn:      @crossoverlaplace
+SelectionFcn:      @selectiontournament
+MutationFcn:       @mutationpower
+
+                                  Best          Mean         Stall
+Generation      Func-count     Penalty         Penalty    Generations
+    1             1600          -246.4          -34.09        0
+    2             2395          -246.4           -32.6        1
+    3             3190          -246.4           -32.6        2
+    4             3985          -246.4          -33.97        3
+    5             4780          -246.4          -34.11        4
+    6             5575          -246.4          -35.28        5
+    7             6370          -246.4          -35.34        6
+    8             7165          -246.4          -36.14        7
+    9             7960          -246.4          -37.32        8
+   10             8755          -246.4          -37.29        9
+   11             9550          -246.4             -37       10
+   12            10345          -246.4          -38.48       11
+   13            11140          -246.4          -38.06       12
+   14            11935          -246.4           -38.5       13
+   15            12730          -246.4          -38.08       14
+   16            13525          -246.4          -39.32       15
+   17            14320          -246.4          -38.46       16
+   18            15115          -246.4          -39.53       17
+   19            15910          -246.4          -38.48       18
+   20            16705          -246.4          -39.62       19
+   21            17500          -246.4          -39.42       20
+ga stopped because the average change in the penalty function value is less than options.FunctionTolerance and 
+the constraint violation is less than options.ConstraintTolerance.
+  Columns 1 through 7
+    2.0000   39.0000    1.0000    1.4842    0.5787    4.1789    3.9280
+  Columns 8 through 14
+    0.5108    1.0000    6.0000   18.0000    2.0000    1.4524    0.1719
+  Columns 15 through 21
+    1.8528    3.3156    0.2559    1.0000    6.0000         0    1.0000
+  Columns 22 through 27
+    1.0000         0    0.0000    0.0000         0    1.0000
