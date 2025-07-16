@@ -306,7 +306,7 @@ function [NSats, D_antennas] = getNSats(X, XPs, mu, Shuttle_specs, Sat_specs)
 
     if isnan(NSats) % Clean up output
         NSats = 0;
-        D_antennas = NaN;
+        D_antennas = 0;
     end
 
 end

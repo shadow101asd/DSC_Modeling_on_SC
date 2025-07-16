@@ -11,6 +11,7 @@ function [Sats_MOGMs, Shuttle_FE, Sat_FEs, leftoverShuttle_FM, exitflag] = getMO
     % exitflag_2 = 0; % Not considering MOG phasing at the moment
 
     if exitflag_1 == 0 && exitflag_2 == 0
+        Sats_MOGMs = NaN;
         exitflag = 0;
         return
     end
