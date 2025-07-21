@@ -2,6 +2,8 @@ function f0new = updateTrueAnomaly(a, e, i, Om, w, f0, mu, dt)
 %UPDATETRUEANOMALY Summary of this function goes here
 %   Detailed explanation goes here
 
+%#codegen
+
 % Compute current eccentric anomaly
 
 Ecur = 2*atan(sqrt((1-e)/(1+e))*tan(f0/2));
@@ -25,7 +27,7 @@ Meupdated = Mecur + n*dt;
 % Use Newton-Raphson: Runs faster than fzero afaict
 
 tol = 1e-5;
-max_iter = 10;
+max_iter = 15;
 
 % Initial guess (Mupdated is good when e is small)
 Eupdated = Meupdated;
@@ -44,6 +46,7 @@ for k = 1:max_iter
     end
 end
 
-% Optional: warn if not converged
+% Warn if not converged, but still report result
+f0new = atan2((sin(Eupdated)*sqrt(1-e^2)),(cos(Eupdated)-e));
 warning('Newton method did not converge. Residual: %g', abs(f));
 end

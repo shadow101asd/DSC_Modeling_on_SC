@@ -14,7 +14,7 @@ function [graphslist,numedges,paths,Bandwidths] = networkAnalysis_bandwidth(X1,X
         [~,nT,numsats] = size(XSats);
     end
     
-    A = createAdjacencyMatrix_euclid_distance_block_dense(Xs(1:3,:,:)); % block version used for avoiding memory issues for large Nsats
+    A = createAdjacencyMatrix_euclid_distance_block_dense(Xs(1:3,:,:), [], 100); % block version used for avoiding memory issues for large Nsats
     B = -R ./ A.^2 * 1e-6; % Bandwidth adjacency matrix, Mbps. Negative signs are because bsp3 attempts to minimize edge weights.
 
     names(numsats+1) = name1;

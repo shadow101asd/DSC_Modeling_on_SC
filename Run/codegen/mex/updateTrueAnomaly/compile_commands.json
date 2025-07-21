@@ -1,0 +1,62 @@
+[
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/updateTrueAnomaly",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=updateTrueAnomaly_mex -c  updateTrueAnomaly_data.c -o build/maca64/updateTrueAnomaly_data.o",
+    "file": "updateTrueAnomaly_data.c",
+    "output": "build/maca64/updateTrueAnomaly_data.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/updateTrueAnomaly",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=updateTrueAnomaly_mex -c  rt_nonfinite.c -o build/maca64/rt_nonfinite.o",
+    "file": "rt_nonfinite.c",
+    "output": "build/maca64/rt_nonfinite.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/updateTrueAnomaly",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=updateTrueAnomaly_mex -c  updateTrueAnomaly_initialize.c -o build/maca64/updateTrueAnomaly_initialize.o",
+    "file": "updateTrueAnomaly_initialize.c",
+    "output": "build/maca64/updateTrueAnomaly_initialize.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/updateTrueAnomaly",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=updateTrueAnomaly_mex -c  updateTrueAnomaly_terminate.c -o build/maca64/updateTrueAnomaly_terminate.o",
+    "file": "updateTrueAnomaly_terminate.c",
+    "output": "build/maca64/updateTrueAnomaly_terminate.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/updateTrueAnomaly",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=updateTrueAnomaly_mex -c  updateTrueAnomaly.c -o build/maca64/updateTrueAnomaly.o",
+    "file": "updateTrueAnomaly.c",
+    "output": "build/maca64/updateTrueAnomaly.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/updateTrueAnomaly",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=updateTrueAnomaly_mex -c  interface/_coder_updateTrueAnomaly_api.c -o build/maca64/_coder_updateTrueAnomaly_api.o",
+    "file": "interface/_coder_updateTrueAnomaly_api.c",
+    "output": "build/maca64/_coder_updateTrueAnomaly_api.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/updateTrueAnomaly",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=updateTrueAnomaly_mex -c  interface/_coder_updateTrueAnomaly_mex.c -o build/maca64/_coder_updateTrueAnomaly_mex.o",
+    "file": "interface/_coder_updateTrueAnomaly_mex.c",
+    "output": "build/maca64/_coder_updateTrueAnomaly_mex.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/updateTrueAnomaly",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=updateTrueAnomaly_mex -c  updateTrueAnomaly_mexutil.c -o build/maca64/updateTrueAnomaly_mexutil.o",
+    "file": "updateTrueAnomaly_mexutil.c",
+    "output": "build/maca64/updateTrueAnomaly_mexutil.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/updateTrueAnomaly",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=updateTrueAnomaly_mex -c  interface/_coder_updateTrueAnomaly_info.c -o build/maca64/_coder_updateTrueAnomaly_info.o",
+    "file": "interface/_coder_updateTrueAnomaly_info.c",
+    "output": "build/maca64/_coder_updateTrueAnomaly_info.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/updateTrueAnomaly",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=updateTrueAnomaly_mex -c  /Applications/MATLAB_R2024a.app/extern/version/c_mexapi_version.c -o build/maca64/c_mexapi_version.o",
+    "file": "/Applications/MATLAB_R2024a.app/extern/version/c_mexapi_version.c",
+    "output": "build/maca64/c_mexapi_version.o"
+  }
+]

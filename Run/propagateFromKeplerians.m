@@ -3,12 +3,14 @@ function [Xs] = propagateFromKeplerians(Ki,mu,etR)
     %orbital elements. All orbital elements are assumed constant except for the
     %true anomaly.
 
+    %#codegen
+
     [~, nT] = size(etR);
     dt = (etR(nT)-etR(1))/(nT-1);
     [a,e,i,Om,w,f0i] = unpackKeplerian(Ki);
-
+    
+    Xs = zeros([6, nT]); % preallocating
     Xs(:,1) = Keplerian2Cartesian(a,e,i,Om,w,f0i,mu);
-    Xs(:,nT) = Xs(:,1); % preallocating
     
     f0last = f0i;
     for n = 2:nT

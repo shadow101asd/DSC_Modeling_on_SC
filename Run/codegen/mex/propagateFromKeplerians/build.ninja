@@ -1,0 +1,51 @@
+# CompilerName=clang
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root/build/maca64
+matlabdir = /Applications/MATLAB_R2024a.app
+startdir = /Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run
+
+# Toolchain information
+cc = /usr/bin/xcrun -sdk macosx14.4 clang
+cxx = /usr/bin/xcrun -sdk macosx14.4 clang++
+linker = /usr/bin/xcrun -sdk macosx14.4 clang
+linkerxx = /usr/bin/xcrun -sdk macosx14.4 clang++
+
+cflags =  -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I "$root" -I "$startdir" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DMODEL=propagateFromKeplerians_mex -c 
+
+cxxflags =  -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -fobjc-arc -std=c++14 -stdlib=libc++ -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c++11 -I "$root" -I "$startdir" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DMODEL=propagateFromKeplerians_mex -c 
+
+ldflags =  -Wl,-twolevel_namespace  -arch arm64 -mmacosx-version-min=11.0 -Wl,-syslibroot,/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -bundle   -L"$matlabdir/bin/maca64" -lmx -lmex -lmat -lc++  -Wl,-rpath,@loader_path -o propagateFromKeplerians_mex.mexmaca64 -lemlrt -lcovrt -lut -lmwmathutil  -Wl,-exported_symbols_list,propagateFromKeplerians_mex.map
+
+linkobjs = 
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in -o $out
+
+rule cxx
+    command = $cxx $cxxflags $in -o $out
+
+rule link
+    command = $linker $in $linkobjs $ldflags
+
+rule linkxx
+    command = $linkerxx $in $linkobjs $ldflags
+
+# Build
+build $builddir/propagateFromKeplerians_data.o : cc $root/propagateFromKeplerians_data.c
+build $builddir/rt_nonfinite.o : cc $root/rt_nonfinite.c
+build $builddir/propagateFromKeplerians_initialize.o : cc $root/propagateFromKeplerians_initialize.c
+build $builddir/propagateFromKeplerians_terminate.o : cc $root/propagateFromKeplerians_terminate.c
+build $builddir/propagateFromKeplerians.o : cc $root/propagateFromKeplerians.c
+build $builddir/Keplerian2Cartesian.o : cc $root/Keplerian2Cartesian.c
+build $builddir/_coder_propagateFromKeplerians_api.o : cc $root/interface/_coder_propagateFromKeplerians_api.c
+build $builddir/_coder_propagateFromKeplerians_mex.o : cc $root/interface/_coder_propagateFromKeplerians_mex.c
+build $builddir/_coder_propagateFromKeplerians_info.o : cc $root/interface/_coder_propagateFromKeplerians_info.c
+build $builddir/c_mexapi_version.o : cc $matlabdir/extern/version/c_mexapi_version.c
+
+# Link
+build $root/propagateFromKeplerians_mex.mexmaca64 : link $builddir/propagateFromKeplerians_data.o $builddir/rt_nonfinite.o $builddir/propagateFromKeplerians_initialize.o $builddir/propagateFromKeplerians_terminate.o $builddir/propagateFromKeplerians.o $builddir/Keplerian2Cartesian.o $builddir/_coder_propagateFromKeplerians_api.o $builddir/_coder_propagateFromKeplerians_mex.o $builddir/_coder_propagateFromKeplerians_info.o $builddir/c_mexapi_version.o 

@@ -5,4 +5,4 @@
 #SBATCH -c 4
 
 # Pass to MATLAB
-matlab -nodisplay -r "DSC_Modular_run_Sequential(${SLURM_ARRAY_TASK_ID}, 1, '014', 'Mercury'); exit"
+matlab -nodisplay -r "DSC_Modular_run_Sequential(${SLURM_ARRAY_TASK_ID}, 1, '014', 'Jupiter'); exit"

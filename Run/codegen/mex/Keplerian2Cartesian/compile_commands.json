@@ -1,0 +1,104 @@
+[
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  Keplerian2Cartesian_data.c -o build/maca64/Keplerian2Cartesian_data.o",
+    "file": "Keplerian2Cartesian_data.c",
+    "output": "build/maca64/Keplerian2Cartesian_data.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  rt_nonfinite.c -o build/maca64/rt_nonfinite.o",
+    "file": "rt_nonfinite.c",
+    "output": "build/maca64/rt_nonfinite.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  Keplerian2Cartesian_initialize.c -o build/maca64/Keplerian2Cartesian_initialize.o",
+    "file": "Keplerian2Cartesian_initialize.c",
+    "output": "build/maca64/Keplerian2Cartesian_initialize.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  Keplerian2Cartesian_terminate.c -o build/maca64/Keplerian2Cartesian_terminate.o",
+    "file": "Keplerian2Cartesian_terminate.c",
+    "output": "build/maca64/Keplerian2Cartesian_terminate.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  Keplerian2Cartesian.c -o build/maca64/Keplerian2Cartesian.o",
+    "file": "Keplerian2Cartesian.c",
+    "output": "build/maca64/Keplerian2Cartesian.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  norm.c -o build/maca64/norm.o",
+    "file": "norm.c",
+    "output": "build/maca64/norm.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  assertCompatibleDims.c -o build/maca64/assertCompatibleDims.o",
+    "file": "assertCompatibleDims.c",
+    "output": "build/maca64/assertCompatibleDims.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  interface/_coder_Keplerian2Cartesian_api.c -o build/maca64/_coder_Keplerian2Cartesian_api.o",
+    "file": "interface/_coder_Keplerian2Cartesian_api.c",
+    "output": "build/maca64/_coder_Keplerian2Cartesian_api.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  interface/_coder_Keplerian2Cartesian_mex.c -o build/maca64/_coder_Keplerian2Cartesian_mex.o",
+    "file": "interface/_coder_Keplerian2Cartesian_mex.c",
+    "output": "build/maca64/_coder_Keplerian2Cartesian_mex.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  eml_int_forloop_overflow_check.c -o build/maca64/eml_int_forloop_overflow_check.o",
+    "file": "eml_int_forloop_overflow_check.c",
+    "output": "build/maca64/eml_int_forloop_overflow_check.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  cos.c -o build/maca64/cos.o",
+    "file": "cos.c",
+    "output": "build/maca64/cos.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  sin.c -o build/maca64/sin.o",
+    "file": "sin.c",
+    "output": "build/maca64/sin.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  sqrt.c -o build/maca64/sqrt.o",
+    "file": "sqrt.c",
+    "output": "build/maca64/sqrt.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  div.c -o build/maca64/div.o",
+    "file": "div.c",
+    "output": "build/maca64/div.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  Keplerian2Cartesian_emxutil.c -o build/maca64/Keplerian2Cartesian_emxutil.o",
+    "file": "Keplerian2Cartesian_emxutil.c",
+    "output": "build/maca64/Keplerian2Cartesian_emxutil.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  interface/_coder_Keplerian2Cartesian_info.c -o build/maca64/_coder_Keplerian2Cartesian_info.o",
+    "file": "interface/_coder_Keplerian2Cartesian_info.c",
+    "output": "build/maca64/_coder_Keplerian2Cartesian_info.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/Keplerian2Cartesian",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=Keplerian2Cartesian_mex -c  /Applications/MATLAB_R2024a.app/extern/version/c_mexapi_version.c -o build/maca64/c_mexapi_version.o",
+    "file": "/Applications/MATLAB_R2024a.app/extern/version/c_mexapi_version.c",
+    "output": "build/maca64/c_mexapi_version.o"
+  }
+]

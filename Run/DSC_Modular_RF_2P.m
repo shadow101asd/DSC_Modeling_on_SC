@@ -5,8 +5,7 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
     if Nf <= Nl
         disp("Nf = " + Nf) % Print number of features/blocks, for tracking
     else
-        Nf = Nl;
-        disp("Nf > Nl. Setting Nf = Nl = " + Nf) % Print number of features/blocks, for tracking
+        disp("Nf > Nl. Fixing Nf = Nl = " + Nl) % Print number of features/blocks, for tracking
     end
 
     % Constants
@@ -54,6 +53,10 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
 
     lb = repmat(lb_ef, [1, Nf]);
     ub = repmat(ub_ef, [1, Nf]);
+
+    if Nf > Nl
+        ub(2+Nl*nvars_pf:nvars_pf:end) = 0; % fix later features to 0 launches to reduce search space
+    end
 
     lb(2) = 1; % Enforce at least one launch in the entire constellation
 
@@ -402,14 +405,19 @@ function state = plotBestConstellation(options, state, flag, X1, X2, mu, Shuttle
 
     % Break up plotting cases depending on the specific planet
     if  strcmp(string(P2_specs.pstring), "Mars")
+        lim = 1.7;
         scatter(X2(1,1)/AU, X2(2,1)/AU, "red", 'filled');
     elseif  strcmp(string(P2_specs.pstring), "Venus")
+        lim = 1.5;
         scatter(X2(1,1)/AU, X2(2,1)/AU, "green", 'filled');
     elseif strcmp(string(P2_specs.pstring), "Jupiter")
-        scatter(X2(1,1)/AU, X2(2,1)/AU, "purple", 'filled');
+        lim = 5.5;
+        scatter(X2(1,1)/AU, X2(2,1)/AU, MarkerFaceColor=[.5  0 .5], MarkerEdgeColor=[0 0 0]);
     elseif strcmp(string(P2_specs.pstring), "Mercury")
+        lim = 1.5;
         scatter(X2(1,1)/AU, X2(2,1)/AU, MarkerFaceColor=[.7 .7 .7], MarkerEdgeColor=[0 0 0]);
     else
+        lim = 1.7;
         scatter(X2(1,1)/AU, X2(2,1)/AU, "black", 'filled');
     end
 
@@ -417,12 +425,13 @@ function state = plotBestConstellation(options, state, flag, X1, X2, mu, Shuttle
     legend("Sun", "Earth", P2_specs.pstring, "Relay Satellites")
     hold off
 
-    xlim([-1.7, 1.7])
-    ylim([-1.7, 1.7])
+    xlim([-lim, lim])
+    ylim([-lim, lim])
     xlabel("x [AU]");
     ylabel("y [AU]");
-    pbaspect([1 1 1])    
-    title("Current Best Constellation: " + int2str(sum(NSats)) + " Satellites Delivering an Average Bandwidth of " + num2str(-B) + " Mbps.")
+    pbaspect([1 1 1])
+    Nl = sum(bestGenome(2:length(bestGenome)/Nf:end));
+    title("Current Best Constellation: " + int2str(Nl) + " Launches | " + int2str(sum(NSats)) + " Satellites Delivering an Average Bandwidth of " + num2str(-B) + " Mbps.")
 
 end
 

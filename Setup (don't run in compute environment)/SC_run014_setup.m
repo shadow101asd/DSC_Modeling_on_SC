@@ -23,15 +23,15 @@ et0 = cspice_str2et(date0);
 et1 = cspice_str2et(date1);
 etR = et0:interval:et1; % Row vector of times between start and end date
 
-[muSu, Xs] = generateSpiceEphemerides(ref, 10, etR, [3, 1]);
+[muSu, Xs] = generateSpiceEphemerides(ref, 10, etR, [3, 5]); % Earth and Jupiter
 
 XEa = Xs(:,:,1);
-XMe = Xs(:,:,2);
+XJu = Xs(:,:,2);
 
 
 %% Saving
 
 filepath = "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Inputs/";
 filename = filepath + "run014";
-save(filename, "muSu", "XEa", "XMe", "etR");
+save(filename, "muSu", "XEa", "XJu", "etR");
 

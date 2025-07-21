@@ -1,6 +1,6 @@
 %% Collect Data from DSC_Modular_RF_2P Runs
 
-run_idx = '012';
+run_idx = '014';
 Nf_range = 1:2;
 Nl_range = 1:100;
 
@@ -28,5 +28,7 @@ for Nf = Nf_range
     lgd = [lgd, "Nf = " + int2str(Nf)];
 end
 legend(lgd)
-ylim([0 ceil(max(max(Bs))/500)*500])
+ylim([0 ceil(max(max(Bs))/100)*100])
+xlabel("# of SS Launches")
+ylabel("Datarate [Mbps]")
 title("Run " + run_idx + ": Ongoing")

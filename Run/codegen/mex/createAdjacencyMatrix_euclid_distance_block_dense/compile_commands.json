@@ -1,0 +1,80 @@
+[
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  createAdjacencyMatrix_euclid_distance_block_dense_data.c -o build/maca64/createAdjacencyMatrix_euclid_distance_block_dense_data.o",
+    "file": "createAdjacencyMatrix_euclid_distance_block_dense_data.c",
+    "output": "build/maca64/createAdjacencyMatrix_euclid_distance_block_dense_data.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  rt_nonfinite.c -o build/maca64/rt_nonfinite.o",
+    "file": "rt_nonfinite.c",
+    "output": "build/maca64/rt_nonfinite.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  createAdjacencyMatrix_euclid_distance_block_dense_initialize.c -o build/maca64/createAdjacencyMatrix_euclid_distance_block_dense_initialize.o",
+    "file": "createAdjacencyMatrix_euclid_distance_block_dense_initialize.c",
+    "output": "build/maca64/createAdjacencyMatrix_euclid_distance_block_dense_initialize.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  createAdjacencyMatrix_euclid_distance_block_dense_terminate.c -o build/maca64/createAdjacencyMatrix_euclid_distance_block_dense_terminate.o",
+    "file": "createAdjacencyMatrix_euclid_distance_block_dense_terminate.c",
+    "output": "build/maca64/createAdjacencyMatrix_euclid_distance_block_dense_terminate.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  createAdjacencyMatrix_euclid_distance_block_dense.c -o build/maca64/createAdjacencyMatrix_euclid_distance_block_dense.o",
+    "file": "createAdjacencyMatrix_euclid_distance_block_dense.c",
+    "output": "build/maca64/createAdjacencyMatrix_euclid_distance_block_dense.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  squeeze.c -o build/maca64/squeeze.o",
+    "file": "squeeze.c",
+    "output": "build/maca64/squeeze.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  assertValidSizeArg.c -o build/maca64/assertValidSizeArg.o",
+    "file": "assertValidSizeArg.c",
+    "output": "build/maca64/assertValidSizeArg.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  sum.c -o build/maca64/sum.o",
+    "file": "sum.c",
+    "output": "build/maca64/sum.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  interface/_coder_createAdjacencyMatrix_euclid_distance_block_dense_api.c -o build/maca64/_coder_createAdjacencyMatrix_euclid_distance_block_dense_api.o",
+    "file": "interface/_coder_createAdjacencyMatrix_euclid_distance_block_dense_api.c",
+    "output": "build/maca64/_coder_createAdjacencyMatrix_euclid_distance_block_dense_api.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  interface/_coder_createAdjacencyMatrix_euclid_distance_block_dense_mex.c -o build/maca64/_coder_createAdjacencyMatrix_euclid_distance_block_dense_mex.o",
+    "file": "interface/_coder_createAdjacencyMatrix_euclid_distance_block_dense_mex.c",
+    "output": "build/maca64/_coder_createAdjacencyMatrix_euclid_distance_block_dense_mex.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  createAdjacencyMatrix_euclid_distance_block_dense_emxutil.c -o build/maca64/createAdjacencyMatrix_euclid_distance_block_dense_emxutil.o",
+    "file": "createAdjacencyMatrix_euclid_distance_block_dense_emxutil.c",
+    "output": "build/maca64/createAdjacencyMatrix_euclid_distance_block_dense_emxutil.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  interface/_coder_createAdjacencyMatrix_euclid_distance_block_dense_info.c -o build/maca64/_coder_createAdjacencyMatrix_euclid_distance_block_dense_info.o",
+    "file": "interface/_coder_createAdjacencyMatrix_euclid_distance_block_dense_info.c",
+    "output": "build/maca64/_coder_createAdjacencyMatrix_euclid_distance_block_dense_info.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/createAdjacencyMatrix_euclid_distance_block_dense",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=createAdjacencyMatrix_euclid_distance_block_dense_mex -c  /Applications/MATLAB_R2024a.app/extern/version/c_mexapi_version.c -o build/maca64/c_mexapi_version.o",
+    "file": "/Applications/MATLAB_R2024a.app/extern/version/c_mexapi_version.c",
+    "output": "build/maca64/c_mexapi_version.o"
+  }
+]

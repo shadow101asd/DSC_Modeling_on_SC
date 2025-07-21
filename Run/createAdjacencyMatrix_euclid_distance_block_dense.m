@@ -12,12 +12,16 @@ function A = createAdjacencyMatrix_euclid_distance_block_dense(Xs, cutoff, block
 %   Output:
 %       A - [N, N, nT] dense symmetric adjacency matrix
 
+%#codegen
+
+    arguments
+        Xs (3, :, :) double
+        cutoff (1, :) double = [] % default value
+        blockSize (1,1) double = 100 % default value
+    end
+
     [~, nT, N] = size(Xs);
     A = zeros(N, N, nT);  % Preallocate full result
-
-    if nargin < 3 || isempty(blockSize)
-        blockSize = 100;  % Default block size
-    end
 
     for t = 1:nT
         Xt = squeeze(Xs(:, t, :))';  % [N x 3]

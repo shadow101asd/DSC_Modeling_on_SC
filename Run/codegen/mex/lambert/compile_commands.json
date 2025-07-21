@@ -1,0 +1,98 @@
+[
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  lambert_data.c -o build/maca64/lambert_data.o",
+    "file": "lambert_data.c",
+    "output": "build/maca64/lambert_data.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  rt_nonfinite.c -o build/maca64/rt_nonfinite.o",
+    "file": "rt_nonfinite.c",
+    "output": "build/maca64/rt_nonfinite.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  lambert_initialize.c -o build/maca64/lambert_initialize.o",
+    "file": "lambert_initialize.c",
+    "output": "build/maca64/lambert_initialize.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  lambert_terminate.c -o build/maca64/lambert_terminate.o",
+    "file": "lambert_terminate.c",
+    "output": "build/maca64/lambert_terminate.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  lambert.c -o build/maca64/lambert.o",
+    "file": "lambert.c",
+    "output": "build/maca64/lambert.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  mod.c -o build/maca64/mod.o",
+    "file": "mod.c",
+    "output": "build/maca64/mod.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  power.c -o build/maca64/power.o",
+    "file": "power.c",
+    "output": "build/maca64/power.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  interface/_coder_lambert_api.c -o build/maca64/_coder_lambert_api.o",
+    "file": "interface/_coder_lambert_api.c",
+    "output": "build/maca64/_coder_lambert_api.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  interface/_coder_lambert_mex.c -o build/maca64/_coder_lambert_mex.o",
+    "file": "interface/_coder_lambert_mex.c",
+    "output": "build/maca64/_coder_lambert_mex.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  sqrt.c -o build/maca64/sqrt.o",
+    "file": "sqrt.c",
+    "output": "build/maca64/sqrt.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  asin.c -o build/maca64/asin.o",
+    "file": "asin.c",
+    "output": "build/maca64/asin.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  acos.c -o build/maca64/acos.o",
+    "file": "acos.c",
+    "output": "build/maca64/acos.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  acosh.c -o build/maca64/acosh.o",
+    "file": "acosh.c",
+    "output": "build/maca64/acosh.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  asinh.c -o build/maca64/asinh.o",
+    "file": "asinh.c",
+    "output": "build/maca64/asinh.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  interface/_coder_lambert_info.c -o build/maca64/_coder_lambert_info.o",
+    "file": "interface/_coder_lambert_info.c",
+    "output": "build/maca64/_coder_lambert_info.o"
+  },
+  {
+    "directory": "/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run/codegen/mex/lambert",
+    "command": "/usr/bin/xcrun -sdk macosx14.4 clang -fno-common -arch arm64 -mmacosx-version-min=11.0 -fexceptions -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -fwrapv -ffp-contract=off  -DMATLAB_MEX_FILE -O2 -DNDEBUG -std=c99 -I \".\" -I \"/Users/jpenot/Documents/MATLAB/SC/DSC_Modeling_on_SC/Run\" -I \"./interface\" -I \"/Applications/MATLAB_R2024a.app/extern/include\" -I \".\" -DMODEL=lambert_mex -c  /Applications/MATLAB_R2024a.app/extern/version/c_mexapi_version.c -o build/maca64/c_mexapi_version.o",
+    "file": "/Applications/MATLAB_R2024a.app/extern/version/c_mexapi_version.c",
+    "output": "build/maca64/c_mexapi_version.o"
+  }
+]
