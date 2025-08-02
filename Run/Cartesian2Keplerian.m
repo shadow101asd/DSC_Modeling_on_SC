@@ -54,7 +54,7 @@ function [a, enorm, i, Om, w, f0] = Cartesian2Keplerian(X, mu)
         end
     else
         if norm(i) < 1e-6 * sqrt(n) % if equatorial
-            f0 = acos(r(1, :)./R); % lambda_true
+            f0 = atan2(r(2, :), r(1, :)); % lambda_true
         end
     end
 end
