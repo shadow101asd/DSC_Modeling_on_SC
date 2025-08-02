@@ -49,12 +49,14 @@ function [a, enorm, i, Om, w, f0] = Cartesian2Keplerian(X, mu)
     if norm(enorm) < 1e-6 * sqrt(n) % if circular
         if norm(i) < 1e-6 * sqrt(n) % if equatorial
             f0 = atan2(r(2, :), r(1, :)); % lambda_true
+            w = atan2(e(2,:), e(1,:));
         else
             f0 = acos(dot(N,r)./(Nnorm.*R)); % u
         end
     else
         if norm(i) < 1e-6 * sqrt(n) % if equatorial
             f0 = atan2(r(2, :), r(1, :)); % lambda_true
+            w = atan2(e(2,:), e(1,:));
         end
     end
 end
