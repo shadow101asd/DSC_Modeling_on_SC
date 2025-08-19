@@ -1,5 +1,5 @@
-function [DV, ToF, DV1, DV2, periapsis, worseDV] = computeHohmannTransferCirc2Ell(R1,a2,ecc2,mu)
-%computeHohmannTransferCirc2Circ Summary
+function [DV, ToF, DV1, DV2, periapsis, worseDV] = computeHohmannTransferCirc2Ell(R1,a2,ecc2,mu,required_apside)
+%computeHohmannTransferCirc2Ell Summary
 %   Returns the DV and ToF of a Hohmann transfer between an initial
 %   circular orbit and an arrival elliptical orbit.
 %   If R1 = a2, ToF is zero since we consider that there is no
@@ -21,6 +21,10 @@ function [DV, ToF, DV1, DV2, periapsis, worseDV] = computeHohmannTransferCirc2El
 %
 %   All returned DVs are magnitudes (taken as positive)
 
+if nargin <= 4 
+    required_apside = "none"; % For backwards compatibility
+end
+
 if R1 == a2 && ecc2 == 0 % There is no need for a Hohmann Transfer!
     DV = 0.0;
     ToF = 0.0;
@@ -34,7 +38,7 @@ else
     % Two cases to check: transfer to periapsis, and transfer to apoapsis
     
     % Periapsis
-    R2p = a2*(1+ecc2); % Periapsis distance from Sun [km]
+    R2p = a2*(1-ecc2); % Periapsis distance from Sun [km]
     a_tp = (R1+R2p)/2;
     DV1_p = abs(sqrt(mu/R1)*(sqrt(2*R2p/(R1+R2p)) - 1));
 
@@ -46,7 +50,7 @@ else
     DV_p = DV1_p + DV2_p;
     
     % Apoapsis
-    R2a = a2*(1-ecc2); % Apoapsis distance from Sun [km]
+    R2a = a2*(1+ecc2); % Apoapsis distance from Sun [km]
     a_ta = (R1+R2a)/2;
     DV1_a = abs(sqrt(mu/R1)*(sqrt(2*R2a/(R1+R2a)) - 1));
     
@@ -56,6 +60,13 @@ else
 
     DV2_a = abs(v_tatra - v2a);
     DV_a = DV1_a + DV2_a;
+
+    % Enforce required apsides
+    if required_apside == "periapsis"
+        DV_a = Inf;
+    elseif required_apside == "apoapsis"
+        DV_p = Inf;
+    end
 
     % Take cheapest transfer and compute outputs:
 
