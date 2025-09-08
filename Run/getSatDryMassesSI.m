@@ -26,22 +26,13 @@ v_LEO = sqrt(muE/(RE+a));
 DV_LEO2EE = abs(V-v_LEO); % km/s
 DV_LEO2EE = DV_LEO2EE*10^3; % convert to m/s
 
-m0 = Shuttle_wetMass; % Is this correct? I think this is supposed to include the payload mass... The current approach is only slightly wrong as far as I can tell... Would have to solve an equation for payload mass here.
-mEE = m0  * exp(-DV_LEO2EE/(Shuttle_Isp*g0));
-
-% Find payload mass after second leg of Hohmann transfer
-
 DV2 = abs(DV2) * 10^3; % Make sure it's positive and in m/s
-mHA = mEE  * exp(-DV2/(Shuttle_Isp*g0));
-Shuttle_FE = m0 - mHA;
 
-% End of new cheaper approach
+m_SATS = computeMaxPayloadMass(maxShuttlePayload, DV_LEO2EE+DV2, Shuttle_dryMass, Shuttle_wetMass-Shuttle_dryMass, Shuttle_Isp, g0);    
+Shuttle_FE = []; % todo if still relevant
+leftoverShuttle_FM = [];
 
-% Starship Block III can carry up to 200t paylaod to LEO before refuelling
-m_SATS = min(maxShuttlePayload, mHA-Shuttle_dryMass); % kg
-leftoverShuttle_FM = mHA-Shuttle_dryMass - m_SATS;
-
-if m_SATS > 0
+if ~isnan(m_SATS)
     % Find mass of each satellite
     
     [m_persat, ~, Sat_FEs] = computeSatMForPhasingDeployment(aMOG, eMOG, mu, NSats, Sat_Isp, m_SATS, frac);
@@ -51,6 +42,6 @@ if m_SATS > 0
 else
     Sats_MOGMs = NaN;
     Sat_FEs = NaN;
-    exitflag = 0; % Infeasible launch and insertion (negative payload mass)
+    exitflag = 0; % Infeasible launch and insertion
 end
 end

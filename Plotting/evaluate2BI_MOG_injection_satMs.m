@@ -16,9 +16,9 @@ AU = 149600000; % 1 AU in km
 % Analysis parameters
 
 NSats = 10;
-NA = 500;
-NE = 500;
-aMOGs = AU*linspace(0.4, 6, NA);
+NA = 1500;
+NE = 750;
+aMOGs = AU*linspace(0.4, 49.9, NA);
 eMOGs = linspace(0.001, 0.99, NE);
 
 %% Hohmann
@@ -30,7 +30,7 @@ Sat_fuels = zeros([NA NE]);
 leftoverShuttle_FMs = zeros([NA NE]);
 
 
-for i = 1:NA
+parfor i = 1:NA
     for j = 1:NE
         aMOG = aMOGs(i);
         eMOG = eMOGs(j);
@@ -54,7 +54,7 @@ Shuttle_FEs_1BI = zeros([NA NE]);
 Sat_fuels_1BI = zeros([NA NE]);
 leftoverShuttle_FMs_1BI = zeros([NA NE]);
 
-for i = 1:NA
+parfor i = 1:NA
     for j = 1:NE
         aMOG = aMOGs(i);
         eMOG = eMOGs(j);
@@ -78,12 +78,16 @@ Shuttle_FEs_SI = zeros([NA NE]);
 Sat_fuels_SI = zeros([NA NE]);
 leftoverShuttle_FMs_SI = zeros([NA NE]);
 
-for i = 1:NA
+tic
+parfor i = 1:NA
     for j = 1:NE
         aMOG = aMOGs(i);
         eMOG = eMOGs(j);
+
         [Sats_MOGM, Shuttle_FE, Sat_FE, leftoverShuttle_FM] = ...
             getSatDryMassesSI(aMOG,eMOG,muSu,NSats,raptorVac_Isp,sat_Isp,StarshipBIII_wetM,StarshipBIII_dryM,maxSSPayload2LEO);
+        
+        
         Sat_masses_SI(i,j) = Sats_MOGM(1);
         % Shuttle_FEs_SI(i,j) = Shuttle_FE;
         % Sat_fuels_SI(i,j) = Sat_FE;
@@ -93,7 +97,7 @@ for i = 1:NA
         progress = int2str((i-1)*NE+j + 2*NA*NE) + "/" + int2str(3*NA*NE) + " analyses run"
     end
 end
-
+toc
 
 
 %% Plotting
@@ -128,25 +132,27 @@ ylabel("MOG semi-major axis [AU]");
 zlabel("MOG Satellite Mass [kg]");
 title("MOG Satellite Masses with NSats = " + num2str(NSats) + ", Spread-out Insertion")
 
+%%
 min_val = 1e2;
 max_val = maxSSPayload2LEO/NSats;
-
-figure(668)
-% contourf(X, Y, Sat_masses/fakeNsats, 2000, LineColor='none')
 x = [min(X) max(X)];
 y = [min(Y) max(Y)];
+
+%%
+figure(668)
+% contourf(X, Y, Sat_masses/fakeNsats, 2000, LineColor='none')
 h1 = imagesc(x,y,Sat_masses);
 set(h1, 'AlphaData', 1-isnan(Sat_masses));
 title("MOG Satellite Masses with NSats = " + num2str(NSats) + ", Hohmann Insertion")
 set(gca,'ColorScale','log','YDir','normal', 'CLim', [min_val max_val]);
 xlabel("MOG eccentricity eMOG")
 ylabel("aMOG [AU]")
-ylim([0 6])
+ylim([0 ceil(max(aMOGs/AU))])
 
 c = colorbar;
 ylabel(c,'Dry mass per satellite [kg]', FontSize=12);
-colormap turbo
-
+colormap parula
+%%
 figure(1668)
 h2 = imagesc(x,y,Sat_masses_1BI);
 set(h2, 'AlphaData', 1-isnan(Sat_masses_1BI));
@@ -154,12 +160,12 @@ title("MOG Satellite Masses with NSats = " + num2str(NSats) + ", 1-burn Insertio
 set(gca,'ColorScale','log','YDir','normal', 'CLim', [min_val max_val]);
 xlabel("MOG eccentricity eMOG")
 ylabel("aMOG [AU]")
-ylim([0 6])
+ylim([0 ceil(max(aMOGs/AU))])
 
 c = colorbar;
 ylabel(c,'Dry mass per satellite [kg]', FontSize=12);
-colormap turbo
-
+colormap parula
+%%
 figure(1669)
 h3 = imagesc(x,y,Sat_masses_SI);
 set(h3, 'AlphaData', 1-isnan(Sat_masses_SI));
@@ -167,11 +173,11 @@ title("MOG Satellite Masses with NSats = " + num2str(NSats) + ", Spreadout Inser
 set(gca,'ColorScale','log','YDir','normal', 'CLim', [min_val max_val]);
 xlabel("MOG eccentricity eMOG")
 ylabel("aMOG [AU]")
-ylim([0 6])
+ylim([0 ceil(max(aMOGs/AU))])
 
 c = colorbar;
 ylabel(c,'Dry mass per satellite [kg]', FontSize=12);
-colormap turbo
+colormap parula
 
 %% AAS/AIAA Figures
 

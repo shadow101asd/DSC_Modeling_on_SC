@@ -44,7 +44,7 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
 
     % Set up optimization
     lb_ef     = [1 0  1 min_a 0   1e-6	     1e-6      0 1];
-    ub_ef     = [6 Nl 2 max_a 0.7 2*pi-1e-6  2*pi-1e-6 1 1];
+    ub_ef     = [6 Nl 2 max_a 0.7 2*pi-1e-6  2*pi-1e-6 1 3];
     % ub_ef     = [8 Nl 2 max_a 1 2*pi 1 5];
     intcon_ef = [1 2 3 9];
     

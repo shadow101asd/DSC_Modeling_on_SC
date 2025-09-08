@@ -48,7 +48,14 @@ function [Nsats_per_shuttle, D_antennas, Npl_final, N_layers, active_constraint,
 
     % Mass Considerations
 
-    m_antenna = Sat_specs.rho_antenna * pi*D_antennas^2/2 * sqrt(1/4 + 16*(Sat_specs.FoverD)^2);
+    % m_antenna = Sat_specs.rho_antenna * pi*D_antennas^2/2 * sqrt(1/4 + 16*(Sat_specs.FoverD)^2); % This was incorrect.
+    % m_antenna = Sat_specs.rho_antenna * pi*D_antennas^2/2 * sqrt(1/4 + 1/(16^2*(Sat_specs.FoverD)^2)); % This is what the formula should have been. Replaced with higher-fidelity equation
+    
+    % Replace with higher-fidelity equation (which is correct, and actually
+    % yields smaller antenna masses! Need to eventually rerun Mercury +
+    % Jupiter runs...)
+    m_antenna = Sat_specs.rho_antenna * 64*pi/3 * (Sat_specs.FoverD)^2 * D_antennas * ((1/4 + 1/(64*(Sat_specs.FoverD)^2))^(3/2) - 1/8);
+
     m_persat = Sat_specs.mainBusMass + Sat_specs.Nedges * m_antenna;
 
     m_persat_V = mass_func(Nsats_V);

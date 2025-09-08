@@ -1,6 +1,6 @@
 %% Collect Data from DSC_Modular_RF_2P Runs
 
-run_idx = '014';
+run_idx = '012';
 Nf_range = 1:2;
 Nl_range = 1:100;
 

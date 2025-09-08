@@ -2,7 +2,7 @@ function max_payload_mass = computeMaxPayloadMass(payload_mass_limit, DVs, m_dry
     % Make sure all units are in kg and m/s!
 
     eK = exp(sum(DVs)/(g0*Isp));
-    m_payload = (m_prop_initial + m_dry*(1-eK))/(eK - 1); % To doublecheck algebra
+    m_payload = (m_prop_initial + m_dry*(1-eK))/(eK - 1); % To doublecheck algebra --> done
     
     if m_payload >= 0
         max_payload_mass = min(m_payload, payload_mass_limit);

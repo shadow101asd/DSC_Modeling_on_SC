@@ -20,33 +20,37 @@ Meupdated = Mecur + n*dt;
 % Compute Updated Eccentric Anomaly from Meupdated
 % Numerical method:
 
-% fun = @(E) E - e*sin(E) - Meupdated;
-% Eupdated = fzero(fun, Ecur); % Ecur used as initial guess
-
-
-% Use Newton-Raphson: Runs faster than fzero afaict
-
-tol = 1e-5;
-max_iter = 15;
-
-% Initial guess (Mupdated is good when e is small)
-Eupdated = Meupdated;
-
-for k = 1:max_iter
-    f = Eupdated - e*sin(Eupdated) - Meupdated;
-    fp = 1 - e*cos(Eupdated);
-    dE = -f / fp;
-    Eupdated = Eupdated + dE;
-
-    % Convergence criteria
-    if abs(dE) < tol
-        % Compute Updated True Anomaly from Eupdated
-        f0new = atan2((sin(Eupdated)*sqrt(1-e^2)),(cos(Eupdated)-e));
-        return;
+if e < 0.9
+    % Use Newton-Raphson: Runs faster than fzero afaict
+    
+    tol = 1e-5;
+    max_iter = 20;
+    
+    % Initial guess (Mupdated is good when e is small)
+    Eupdated = Meupdated;
+    
+    for k = 1:max_iter
+        f = Eupdated - e*sin(Eupdated) - Meupdated;
+        fp = 1 - e*cos(Eupdated);
+        dE = -f / fp;
+        Eupdated = Eupdated + dE;
+    
+        % Convergence criteria
+        if abs(dE) < tol
+            % Compute Updated True Anomaly from Eupdated
+            f0new = atan2((sin(Eupdated)*sqrt(1-e^2)),(cos(Eupdated)-e));
+            return;
+        end
     end
+    
+    % Warn if not converged, but still report result
+    f0new = atan2((sin(Eupdated)*sqrt(1-e^2)),(cos(Eupdated)-e));
+    warning('Newton method did not converge. Residual: %g', abs(f));
+else
+    % fzero is more robust for large eccentricities
+    fun = @(E) E - e*sin(E) - Meupdated;
+    Eupdated = fzero(fun, Ecur); % Ecur used as initial guess
+    f0new = atan2((sin(Eupdated)*sqrt(1-e^2)),(cos(Eupdated)-e));
 end
 
-% Warn if not converged, but still report result
-f0new = atan2((sin(Eupdated)*sqrt(1-e^2)),(cos(Eupdated)-e));
-warning('Newton method did not converge. Residual: %g', abs(f));
 end

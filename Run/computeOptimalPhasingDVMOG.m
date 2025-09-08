@@ -1,7 +1,7 @@
 function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDVMOG(aMOG, eMOG, dPhase, mu)
     % Meta-parameters
     day = 86400; % 1 day in seconds
-    temporal_res = 50; % per TMOG TO ADJUST FOR DECENT CONVERGENCE
+    temporal_res = 200; % per TMOG TO ADJUST FOR DECENT CONVERGENCE
     max_periods = 2.0; % in R+
     TMOG = 2*pi*sqrt(aMOG^3/mu); % MOG orbital period
     dt = TMOG/temporal_res; % s
@@ -62,6 +62,10 @@ function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDVMOG(aMOG, eM
                     details.t1 = etR(i);
                     details.t2 = etR(j);
                     details.toP_days = abs(tf);
+                    details.V1 = V1;
+                    details.V2 = V2;
+                    details.R1 = R1;
+                    details.R2 = R2;
                 end
             end
 

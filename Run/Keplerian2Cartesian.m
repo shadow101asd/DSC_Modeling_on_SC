@@ -9,9 +9,16 @@ function y = Keplerian2Cartesian(a, e, i, Om, w, f0, mu)
     %   w   - argument of periapsis [rad]
     %   f0  - true anomaly [rad]
     %   mu  - gravitational parameter (scalar or 1×n)
+    % 
+    % Alternative input: one Keplerian passed in
     %
     % Output:
     %   y   - 6×n matrix [r; v] in inertial frame
+
+    if nargin == 2 % alternative case
+        mu = e;
+        [a,e,i,Om,w,f0] = unpackKeplerian(a);
+    end
 
     % Handle eccentricity vector case
     if size(e, 1) == 3

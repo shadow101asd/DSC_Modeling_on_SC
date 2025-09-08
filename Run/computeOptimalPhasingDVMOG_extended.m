@@ -1,13 +1,13 @@
 function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDVMOG_extended(aMOG, eMOG, dPhase, mu)
     % Meta-parameters
     day = 86400; % 1 day in seconds
-    max_periods = 2.0; % in R+
+    max_periods = 1.5; % in R+ | ORIGINAL DATA WAS FOUND WITH 2.0, ANIMATIONS MADE WITH 1.5
     TMOG = 2*pi*sqrt(aMOG^3/mu); % MOG orbital period
     min_tf_considered = 0.2*TMOG/day; % in days
     max_tf_considered = 0.9*TMOG/day; % in days
     m = 0;
     
-    N = 10; % desired # of sample points
+    N = 100; % desired # of sample points
     dt = day*ceil(TMOG*2/day/N); % s THIS CAN BE LARGER NOW WITH THE EXTENSION
 
     % Setup
@@ -47,7 +47,14 @@ function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDVMOG_extended
             
             R1 = X1(1:3)';
             R2 = X2(1:3)';
-            [V1, V2, ~, exitflag] = lambert(R1, R2, tf, m, mu);
+            
+            try
+                [V1, V2, ~, exitflag] = lambert_mex(R1, R2, tf, m, mu);
+            catch ME
+                % use uncompiled version if the compiled version fails (or
+                % doesn't exist?)
+                [V1, V2, ~, exitflag] = lambert(R1, R2, tf, m, mu); 
+            end
 
             if exitflag == 1
                 DV1_ij = abs(norm(V1-X1(4:6)'));
@@ -87,13 +94,17 @@ function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDVMOG_extended
     best_t1 = x_opt(1)*factor;
     best_t2 = x_opt(2)*factor;
     ToP = best_t2-best_t1;
-    [best_DV, DV1, DV2] = lambertWrapper(x_opt, K1, K2, mu, factor);
+    [best_DV, DV1, DV2, details_L] = lambertWrapper(x_opt, K1, K2, mu, factor);
     details.t1 = best_t1;
     details.t2 = best_t2;
     details.toP_days = (best_t2-best_t1)/day;
+    details.V1 = details_L.V1;
+    details.V2 = details_L.V2;
+    details.R1 = details_L.R1;
+    details.R2 = details_L.R2;
     
 
-    function [DV, DV1, DV2] = lambertWrapper(X, K1, K2, mu, factor)
+    function [DV, DV1, DV2, details] = lambertWrapper(X, K1, K2, mu, factor)
         t1 = X(1)*factor;
         t2 = X(2)*factor;
         tf_w = (t2 - t1)/day;
@@ -120,6 +131,10 @@ function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDVMOG_extended
            DV2 = abs(norm(V2_w-X2_w(4:6)'));
     
            DV = DV1 + DV2;
+           details.V1 = V1_w;
+           details.V2 = V2_w;
+           details.R1 = R1_w;
+           details.R2 = R2_w;
         end
         
     end
