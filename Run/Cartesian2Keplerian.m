@@ -30,7 +30,7 @@ function [a, enorm, i, Om, w, f0] = Cartesian2Keplerian(X, mu)
     i = acos(h(3,:)./H);
     Om = acos(N(1,:)./Nnorm);
     w = acos(dot(N,e)./(Nnorm.*enorm));
-    f0 = acos(dot(e,r)./(enorm.*R));
+    f0 = real(acos(dot(e,r)./(enorm.*R))); % real is for numerical robustness
 
     % Check conditions for angle Keplerian elements
 
@@ -50,12 +50,14 @@ function [a, enorm, i, Om, w, f0] = Cartesian2Keplerian(X, mu)
         if norm(i) < 1e-6 * sqrt(n) % if equatorial
             f0 = atan2(r(2, :), r(1, :)); % lambda_true
             w = atan2(e(2,:), e(1,:));
+            Om = 0; % by convention
         else
             f0 = acos(dot(N,r)./(Nnorm.*R)); % u
         end
     else
         if norm(i) < 1e-6 * sqrt(n) % if equatorial
             w = atan2(e(2,:), e(1,:));
+            Om = 0; % by convention
         end
     end
 end

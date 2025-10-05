@@ -3,7 +3,7 @@ function XSats = generateMOGIncludingPlanet(XPlanet, mu, etR, numsatsperMOG)
 %Similar to KnsfromK, but to place satellites in a NSats + 1 MOG that
 %includes the planet described by XPlanet
 
-% Should be robust to both real ephemeride data and ideaized planar cases.
+% Should be robust to both real ephemeride data and idealized planar cases.
 
 if numsatsperMOG >= 1
     [aP, eP, iP, OmP, wP, f0P] = Cartesian2Keplerian(XPlanet(:,1), mu);

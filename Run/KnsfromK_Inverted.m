@@ -6,8 +6,13 @@ function Kns = KnsfromK_Inverted(Ki,numsats,mu)
     for n = 1:numsats
         Kn = Ki;
         spacing = 2*pi/numsats;
-        if e > 1e-4 % Orbit non-circular, change argument of periapsis w
-            Kn(5) = w + spacing*(n-1);
+
+        if abs(i) > 1e-4
+            Kn(4) = Om + spacing*(n-1);
+        else
+            if e > 1e-4 % Orbit non-circular, change argument of periapsis w
+                Kn(5) = w + spacing*(n-1);
+            end
         end
 
         % Regardless, stagger mean anomaly linearly out in time using

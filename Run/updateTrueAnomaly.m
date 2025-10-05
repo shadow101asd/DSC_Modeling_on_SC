@@ -26,7 +26,8 @@ if e < 0.9
     tol = 1e-5;
     max_iter = 20;
     
-    % Initial guess (Mupdated is good when e is small)
+    % Initial guess (Mupdated is good when e is small). Can include
+    % additional series expansion terms?
     Eupdated = Meupdated;
     
     for k = 1:max_iter

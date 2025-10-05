@@ -44,8 +44,7 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
 
     % Set up optimization
     lb_ef     = [1 0  1 min_a 0   1e-6	     1e-6      0 1];
-    ub_ef     = [6 Nl 2 max_a 0.7 2*pi-1e-6  2*pi-1e-6 1 3];
-    % ub_ef     = [8 Nl 2 max_a 1 2*pi 1 5];
+    ub_ef     = [6 Nl 2 max_a 0.7 2*pi-1e-6  2*pi-1e-6 1 1];
     intcon_ef = [1 2 3 9];
     
     nvars_pf = 9;
@@ -53,6 +52,16 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
 
     lb = repmat(lb_ef, [1, Nf]);
     ub = repmat(ub_ef, [1, Nf]);
+
+    % Forcing architecture exploration
+    % lb(1) = 2;
+    % ub(1) = 2;
+    % lb(1+nvars_pf) = 3;
+    % ub(1+nvars_pf) = 3;    
+    % lb(1+2*nvars_pf) = 4;
+    % ub(1+2*nvars_pf) = 4;
+    % lb(3) = 2;
+    % lb(3+nvars_pf) = 2; % both at Mars
 
     if Nf > Nl
         ub(2+Nl*nvars_pf:nvars_pf:end) = 0; % fix later features to 0 launches to reduce search space
@@ -89,17 +98,18 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
     % Tweak gaoptions according to inputs and Nf, Nl
     
     if plotting_bool % Tie in appropriate custom plotting function
-        plotFcnWrapper = @(options, state, flag) ...
+        outputFcnWrapper = @(options, state, flag) ...
                         plotBestConstellation(options, state, flag, ...
                           XEa, XP2, muSu, Shuttle_specs, ...
                           Comms_specs, Sat_specs, Earth_specs, ...
-                          P2_specs, Nf);
-        gaoptions = optimoptions(gaoptions, 'PlotFcn', plotFcnWrapper);
+                          P2_specs, Nf, etR);
+        gaoptions = optimoptions(gaoptions, 'OutputFcn', outputFcnWrapper);
+        gaoptions = optimoptions(gaoptions, 'PlotFcn', @gaplotbestf_only);
     end
 
 
     % Modify gaoptions Population Count to scale affinely with Nf
-    gaoptions.PopulationSize = floor(gaoptions.PopulationSize * (1 + (Nf-1)/2)); 
+    gaoptions.PopulationSize = floor(gaoptions.PopulationSize/2 * (Nf+1)); 
 
     % Include warmstart if requested
     if warm_start_bool
@@ -141,8 +151,16 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
         % Run fmincon
         fmincon_opts = optimoptions('fmincon', 'Algorithm', 'sqp', 'Display', 'iter', 'UseParallel', true);
         
-        if plotting_bool % Tie in appropriate plotting function for fmincon
+        if plotting_bool % Tie in appropriate plotting and output functions for fmincon
+
             fmincon_opts = optimoptions(fmincon_opts, 'PlotFcn', 'optimplotfval');
+
+            outputFcnWrapper_fmincon = @(x, optimValues, state) ...
+                                plotBestConstellation_fmincon(x, optimValues, state, ...
+                                XEa, XP2, muSu, Shuttle_specs, ...
+                                Comms_specs, Sat_specs, Earth_specs, ...
+                                P2_specs, Nf, etR);
+            fmincon_opts = optimoptions(fmincon_opts, 'OutputFcn', outputFcnWrapper_fmincon);
         end
 
         [X_opt, fval_f] = fmincon(func, X_opt, [], [], [], [], lb_intsRfixed, ub_intsRfixed, [], fmincon_opts);
@@ -152,7 +170,7 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
 
     % Save data
 
-    [Out, XSats, NSats] = wrapperFunc_RF_2P(X_opt, XEa, XP2, etR, muSu, Shuttle_specs, Comms_specs, Sat_specs, Earth_specs, P2_specs, Nf);
+    [Out, XSats, NSats, bandwidths] = wrapperFunc_RF_2P(X_opt, XEa, XP2, etR, muSu, Shuttle_specs, Comms_specs, Sat_specs, Earth_specs, P2_specs, Nf);
     
     B = -Out;
 
@@ -167,11 +185,11 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
 
     if isfile(filename)
         old_B = load(filename, "B").B;
-        if old_B < B
-            save(filename, "B", "X_opt", "NSats", "XSats_i", "output", "lb", "ub");
+        if (old_B <= B) || (abs(old_B-B) < 5e-3)  % better or within some acceptable tolerance
+            save(filename, "B", "X_opt", "NSats", "XSats_i", "output", "lb", "ub", "bandwidths");
         end
     else
-        save(filename, "B", "X_opt", "NSats", "XSats_i", "output", "lb", "ub");
+        save(filename, "B", "X_opt", "NSats", "XSats_i", "output", "lb", "ub", "bandwidths");
     end
     
     % Final message.
@@ -180,7 +198,8 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
 
 end
 
-function [Out, XSats, NSats] = wrapperFunc_RF_2P(X, X1, X2, etR, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf)
+
+function [Out, XSats, NSats, bandwidths] = wrapperFunc_RF_2P(X, X1, X2, etR, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf)
     
     % Reshape X for convenience
     X = reshape(X, 9, Nf)';
@@ -211,8 +230,10 @@ function [Out, XSats, NSats] = wrapperFunc_RF_2P(X, X1, X2, etR, mu, Shuttle_spe
     end
 
     % Evaluate Bandwidth (pass in max datarate due to hardware limitations)
-    Out = bestLinkBudget_bandwidth(X1,X2,XSats,R_1km,Comms_specs.maxDR_Mbps,P2_specs.pstring);
+    [meanB, ~, ~, bandwidths] = bestLinkBudget_bandwidth(X1,X2,XSats,R_1km,Comms_specs.maxDR_Mbps,P2_specs.pstring);
+    Out = -meanB; % negative since ga minimizes the objective function
 end
+
 
 function [Block_ID, N_launches, Planet_ID, a, e, w, f0, frac, Npl] = unpackVars(X)
     AU = 149600000; % 1AU in km
@@ -231,6 +252,7 @@ function [Block_ID, N_launches, Planet_ID, a, e, w, f0, frac, Npl] = unpackVars(
         N_launches = max(N_launches, 1);
     end
 end
+
 
 function [NSats, D_antennas] = getNSats(X, XPs, mu, Shuttle_specs, Sat_specs)
     maxO = 3;
@@ -321,13 +343,12 @@ function [NSats, D_antennas] = getNSats(X, XPs, mu, Shuttle_specs, Sat_specs)
 end
 
 
-
 function XSats = getXSats(X, XPs, mu, etR, Nsats)
    
     % Generate Cartesian Coordinates of the satellites described by this
     % row of the genome
 
-    [Block_ID, ~, Planet_ID, a, e, w, f0, frac, Npl] = unpackVars(X);
+    [Block_ID, ~, Planet_ID, a, e, w, f0, frac, ~] = unpackVars(X);
 
     switch(Block_ID)
         case 1 % Regular MOG
@@ -370,34 +391,39 @@ function XSats = getXSats(X, XPs, mu, etR, Nsats)
 
 end
 
-function state = plotBestConstellation(options, state, flag, X1, X2, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf)
+
+function [state, options, optchanged] = plotBestConstellation(options, state, flag, X1, X2, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf, etR)
+
     % Called by ga() at each generation
 
-    % h = 420; % Figure number
-
-    % Reuse GA figure
-    h = findall(0, 'Type', 'figure', 'Name', 'Genetic Algorithm');
-    if isempty(h)
-        h = figure('Name', 'Genetic Algorithm');
-    else
-        figure(h); clf;
-    end
-
     % Get best individual
-
-    [B,best_idx] = min(state.Score);
+    [~,best_idx] = min(state.Score);
     bestGenome = state.Population(best_idx,:);  % the best of current gen
+            
+    plotBestConstellation_fmincon(bestGenome, [], [], X1, X2, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf, etR);
+
+    % Options weren't changed
+    optchanged = false;
+end
+
+
+function stop = plotBestConstellation_fmincon(x, optimValues, state, X1, X2, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf, etR)
+    % Called by fmincon() at each generation
             
     % Compute XSats and associated metrics for plotting
     
-    dummy_etR = 1;
-
-    [~, XSats, NSats] = wrapperFunc_RF_2P(bestGenome, X1(:,1), X2(:,1), dummy_etR, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf);
-    XSats_flat = reshape(XSats, [6,sum(NSats)]);
+    [B, XSats, NSats, bandwidths] = wrapperFunc_RF_2P(x, X1, X2, etR, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf);
+    XSats_flat = reshape(XSats(:,1,:), [6,sum(NSats)]);
     AU = 149600000; % 1 AU in km
 
-    % Plot or update your custom plot
-    figure(h);  % Bring focus to figure
+    % Plot/Update HRN Plot
+
+    hA = findall(0,'Type','figure','Tag','Best_HRN');
+    if ~isempty(hA)
+        figure(hA);   % bring it to the front
+    else
+        figure(Name="Current Best HRN", NumberTitle="off", Tag="Best_HRN")
+    end
     
     scatter(0, 0, "yellow", 'filled', 'hexagram', MarkerEdgeColor='black');
     hold on
@@ -430,18 +456,74 @@ function state = plotBestConstellation(options, state, flag, X1, X2, mu, Shuttle
     xlabel("x [AU]");
     ylabel("y [AU]");
     pbaspect([1 1 1])
-    Nl = sum(bestGenome(2:length(bestGenome)/Nf:end));
+    Nl = sum(x(2:length(x)/Nf:end));
     title("Current Best Constellation: " + int2str(Nl) + " Launches | " + int2str(sum(NSats)) + " Satellites Delivering an Average Bandwidth of " + num2str(-B) + " Mbps.")
+    
 
+    % Plot bandwidths as well
+    hB = findall(0,'Type','figure','Tag','Bandwidth_Plot');
+    if ~isempty(hB)
+        figure(hB);   % bring it to the front
+    else
+        figure(Name="Bandwidth Plot", NumberTitle="off", Tag="Bandwidth_Plot")
+    end
+    plot((1:3:3*length(bandwidths))/(365.25),bandwidths, LineWidth=1)
+    hold on
+    yline(mean(bandwidths), LineWidth=2)
+    yline(min(bandwidths), Color="red", LineWidth=2)
+    hold off
+    xlabel("Simulation time [years]")
+    ylabel("Bandwidth [Mbps]")
+    legend("Network Bandwidth", "Mean Bandwidth", "Min Bandwidth")
+    set(gca, FontSize=14)
+    ylim([0 50*ceil(max(bandwidths)/50)])
+
+    % Don't stop
+    stop = false;
 end
 
 
-% function [Out, XSats, NSats] = finish_with_fmincon(Xopt, X1, X2, etR, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf, lb, ub, A, b)
-% 
-%     fun = @(X) wrapperFunc_RF_2P(X, X1, X2, etR, mu, Shuttle_specs, Comms_specs, Sat_specs, P1_specs, P2_specs, Nf);
-% 
-%     % Modify bounds to 
-%     lb_intsRfixed 
-% 
-% 
-% end
+function state = gaplotbestf_only(~,state,flag)
+    %GAPLOTBESTF_ONLY Plots the best score only.
+    %   STATE = GAPLOTBESTF(OPTIONS,STATE,FLAG) plots the best score only.
+    %
+    %   Example:
+    %    Create an options structure that will use GAPLOTBESTF
+    %    as the plot function
+    %     options = optimoptions('ga','PlotFcn',@gaplotbestf_only);
+
+    %   Copyright 2003-2023 The MathWorks, Inc.
+
+    % Persistent variables
+    persistent theBestPlot
+
+    % Ensure hold state is "on". If not, restore hold state on cleanup
+    if ~ishold(gca)
+        hold("on");
+        c = onCleanup(@() hold("off"));
+    end
+
+    switch flag
+        case "init"
+            % Create plots
+            theBestPlotTag = "gaplotbestf";
+            theBestPlot = matlab.internal.optimfun.plotfcns.Factory.gaplotbestf(theBestPlotTag, state);
+
+            % Create legend.
+            legend(getString(message("globaloptim:gaplotcommon:LabelBestFitness")));
+        case "iter"
+            % Update plots
+            theBestPlot.update(state);
+    end
+
+    % Set custom title for this plot. Both underlying plots share the same
+    % axes so just need to set one
+    if any(strcmp(flag, ["init", "iter"]))
+        if theBestPlot.IsAvailableForUpdate
+            title(theBestPlot.Axes, "Current Best: " + num2str(theBestPlot.Plot_I.YData(end)));
+        else
+            title(theBestPlot.Axes, getString(message("MATLAB:optimfun:funfun:optimplots:UnsupportedFunction", "gaplotbestf")));
+        end
+    end
+end
+

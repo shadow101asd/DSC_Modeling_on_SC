@@ -49,6 +49,9 @@ function [m_dry_per_sat, exitflag] = getSatDryMasses_CircularLoop_PA(Rf,mu,NSats
     Dfs = DPhis/(2*pi);
     Dfs(ceil(NSats/2)+1:end) = abs(Dfs(ceil(NSats/2)+1:end) - 1);
     Dfs = Dfs/maxO * deployment_frac; % Can achieve a given offset after maxO orbits. Also incorporate the fractional ring (spread out over some frac. of the circle with this given deployment)
+    % This actually seems wrong - we should have negative Dfs as well... to
+    % fix one day. Should be something like this: (i-1/2)*1/NSats - 1/2 for
+    % odd
 
     % Get DVs
     

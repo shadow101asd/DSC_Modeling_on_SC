@@ -1,4 +1,4 @@
-function [metric, minB, maxB, bandwidths] = bestLinkBudget_bandwidth(X1,X2,XSats,R,maxDR_Mbps,P2_name)
+function [meanB, minB, maxB, bandwidths] = bestLinkBudget_bandwidth(X1,X2,XSats,R,maxDR_Mbps,P2_name)
     if nargin <= 5
         P2_name = "Mars";
     end
@@ -13,5 +13,5 @@ function [metric, minB, maxB, bandwidths] = bestLinkBudget_bandwidth(X1,X2,XSats
 
     minB = min(bandwidths);
     maxB = max(bandwidths);
-    metric = -mean(bandwidths); % negative since ga minimizes the objective function
+    meanB = mean(bandwidths);
 end

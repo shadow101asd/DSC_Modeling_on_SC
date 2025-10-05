@@ -1,16 +1,17 @@
 function [] = DSC_Modular_run(Nl, Nf, run_idx, Planet_string)
     gaoptions = optimoptions("ga", Display="iter", FunctionTolerance=1e-5, ...
-        MaxStallGenerations=20, PopulationSize=20, UseParallel=false);
+        MaxStallGenerations=1, PopulationSize=250, UseParallel=true);
     
 
     sat_config_name = "RF_all8m";
     shuttle_config_name = "SS_BIII";
-    plotting_bool = true;
+    plotting_bool = false;
     warm_start_bool = true;
+    fmincon_bool = true;
 
     % Run
     if nargin >= 4
-        DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shuttle_config_name, plotting_bool, warm_start_bool, Planet_string)
+        DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shuttle_config_name, plotting_bool, warm_start_bool, Planet_string, fmincon_bool)
     else
        DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shuttle_config_name, plotting_bool, warm_start_bool)
     end
