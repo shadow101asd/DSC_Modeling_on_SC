@@ -6,7 +6,7 @@ AU = 149600000; % 1 AU in km
 
 outline_res = 500;
 
-interval = 3600*24*0.5; % 0.5 days
+interval = 3600*24*5; % 0.5 days
 sim_end = 3600*24*365.25*5; % 5 years
 etR = 0:interval:sim_end; % Row vector of times between start and end date
 
@@ -99,7 +99,7 @@ XOutline = generateMOGNearPlanet(XO, muSu, etR, eMOG, 1, outline_res, false);
 
 fig_num = 3242342;
 fig = figure(fig_num);
-set(fig, 'Visible', 'off', 'Units', 'pixels', 'Position', [200 200 700 600], 'Resize', 'off');
+set(fig, 'Visible', 'on', 'Units', 'pixels', 'Position', [200 200 700 600], 'Resize', 'off');
 % avoid GUI rendering issues
 
 % Status indicators

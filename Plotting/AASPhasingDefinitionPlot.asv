@@ -1,0 +1,18 @@
+
+
+AU = 149600000;
+muSu = 1.327124400419393e+11;
+eMOG = 0.6;
+aMOG = AU;
+resolution = 1000;
+cross_resolution = 8;
+
+X1s = generate2DP_Flower(AU, eMOG, pi/2, 0, 1, -1, 1, muSu, resolution);
+X1s = reshape(X1s, [6,resolution]);
+
+% Plotting
+
+figure(23231)
+plot(X1s(1,:)/AU, X1s(2,:)/AU)
+xlim([-1.25 1.25])
+ylim([0 2.5])

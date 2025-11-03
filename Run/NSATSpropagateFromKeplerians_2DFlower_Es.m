@@ -1,5 +1,5 @@
 function XSats = NSATSpropagateFromKeplerians_2DFlower_Es(Ki,numsats,W,M,E,etR,mu,emin,emax,Es_distribution_name)
-%NSATSPROPAGATEFROMKEPLERIANSCIRC
+%NSATSpropagateFromKeplerians_2DFlower_Es
 
 % if nargin <= 5 
 %     % Default assumption is a full formation % To do later...
