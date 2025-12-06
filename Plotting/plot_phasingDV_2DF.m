@@ -16,7 +16,7 @@ Nm = 1;
 %% Dedicated Deployment Sim
 
 aF = AU;
-L = 5;
+L = 6;
 Npl = 5;
 frac = 1;
 [Sat_DVs, DPs_opt, pattern_opt, maxDV] = compute_SIdeployment_SatDVs_2DF(W,M,aF,eF,L,Npl,frac,resolution);
@@ -45,7 +45,7 @@ figure(1213)
 plot(dPs,DVs, LineWidth=2)
 hold on
 plot(dPs,DVs_seq, LineWidth=2)
-plot(DPs_for_pattern_curve,DVs_of_pattern_curve, LineWidth=2)r
+plot(DPs_for_pattern_curve,DVs_of_pattern_curve, LineWidth=2)
 scatter(DPs_opt, Sat_DVs, Marker="+", SizeData=100, MarkerEdgeColor="black", LineWidth=2)
 hold off
 xlabel("Flower Constellation Phase Change (rad)")

@@ -148,4 +148,4 @@ for t = 1:length(etR)
     filename = sprintf('temp_frames/frame_%04d.png', t);
     exportgraphics(fig, filename, Resolution=300, BackgroundColor='white');
     m = "Frames exported: " + num2str(t) + "/" + num2str(length(etR)) % Progress tracking
-    ends
+end

@@ -1,8 +1,12 @@
 function K2 = shiftK_inMOG(K1, dPhase, mu)
     K2 = K1;
-    [a,e,i,Om,w,f0i] = unpackKeplerian(K2);
-    if e > 1e-4 % Orbit non-circular, change argument of periapsis w
-        K2(5) = w + dPhase;
+    [a,e,i,Om,w,f0i] = unpackKeplerian(K1);
+    if abs(i) > 1e-8
+            K2(4) = Om + dPhase;
+        else
+        if e > 1e-8 % Orbit non-circular, change argument of periapsis w
+            K2(5) = w + dPhase;
+        end
     end
     % Regardless, stagger mean anomaly linearly out in time using
     % updateTrueAnomaly

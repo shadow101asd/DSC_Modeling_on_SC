@@ -5,14 +5,14 @@ function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDV_2DF_extende
 
     % Meta-parameters
     day = 86400; % 1 day in seconds
-    max_periods = 2.0; % in R+ | ORIGINAL DATA WAS FOUND WITH 2.0, ANIMATIONS MADE WITH 1.5
+    max_periods = 3.0; % in R+ | TODO: adapt to represent full range of possible starting positions
     T = 2*pi*sqrt(aF^3/mu); % satellites' orbital period
     min_tf_considered = 0.2*T/day; % in days
     max_tf_considered = 2.0*T/day; % in days
     m = 0;
     
     N = 150; % desired # of sample points
-    dt = day*ceil(T*2/day/N); % s THIS CAN BE LARGER NOW WITH THE EXTENSION
+    dt = day*ceil(T*max_periods/day/N); % s THIS CAN BE LARGER NOW WITH THE EXTENSION
 
     % Setup
     et0 = 0; % Arbitrary sim. start time
@@ -30,6 +30,7 @@ function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDV_2DF_extende
     details = struct;
     details.t1 = -1;
     details.t2 = -1;
+
     for i = 1:nT
         for j = i:nT
             tf = (j-i)*dt/day; % tof in days

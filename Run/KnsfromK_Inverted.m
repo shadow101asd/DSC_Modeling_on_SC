@@ -7,10 +7,10 @@ function Kns = KnsfromK_Inverted(Ki,numsats,mu)
         Kn = Ki;
         spacing = 2*pi/numsats;
 
-        if abs(i) > 1e-4
+        if abs(i) > 1e-8
             Kn(4) = Om + spacing*(n-1);
         else
-            if e > 1e-4 % Orbit non-circular, change argument of periapsis w
+            if e > 1e-8 % Orbit non-circular, change argument of periapsis w
                 Kn(5) = w + spacing*(n-1);
             end
         end
