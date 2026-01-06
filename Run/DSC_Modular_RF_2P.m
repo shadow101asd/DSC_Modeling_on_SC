@@ -191,6 +191,7 @@ function [] = DSC_Modular_RF_2P(Nl, Nf, run_idx, gaoptions, sat_config_name, shu
     else
         save(filename, "B", "X_opt", "NSats", "XSats_i", "output", "lb", "ub", "bandwidths");
     end
+    % save(filename, "B", "X_opt", "NSats", "XSats_i", "output", "lb", "ub", "bandwidths");
     
     % Final message.
     disp("Final solution: " + num2str(X_opt))

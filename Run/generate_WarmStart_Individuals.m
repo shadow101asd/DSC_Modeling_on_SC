@@ -55,4 +55,16 @@ function Initial_Pop = generate_WarmStart_Individuals(Nmax, run_idx, Nf_max, Nl_
         Initial_Pop(i, 1:length(X_opt)) = X_opt;
     end
 
+    % Backpropagate from one Nf above if relevant
+    Nf_above = Nf_max + 1;
+    Nl_above = Nl_max;
+    filename_above = "../Data/run"+run_idx+"/Nf"+int2str(Nf_above)+"Nl"+int2str(Nl_above)+".mat";
+    if isfile(filename_above)
+        % Extract and save data of interest
+        X_opt_above = load(filename_above).X_opt;
+
+        % Replace the worst B warm starter in this case
+        Initial_Pop(N_sel, :)  = X_opt_above(1:(size(Initial_Pop, 2))); % Make sure we trim to fit width-wise
+    end
+
 end

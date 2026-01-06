@@ -1,11 +1,10 @@
 function [] = DSC_Modular_run(Nl, Nf, run_idx, Planet_string)
     gaoptions = optimoptions("ga", Display="iter", FunctionTolerance=1e-5, ...
-        MaxStallGenerations=1, PopulationSize=250, UseParallel=true);
-    
+        MaxStallGenerations=3, PopulationSize=80, UseParallel=true);
 
     sat_config_name = "RF_all8m";
     shuttle_config_name = "SS_BIII";
-    plotting_bool = false;
+    plotting_bool = true;
     warm_start_bool = true;
     fmincon_bool = true;
 

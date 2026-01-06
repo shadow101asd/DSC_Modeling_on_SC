@@ -1,6 +1,6 @@
 %% Collect Data from DSC_Modular_RF_2P Runs
 
-run_idx = '017';
+run_idx = '018';
 Nf_range = 1:3;
 Nl_range = 1:125;
 
@@ -82,15 +82,15 @@ Nl_R2 = 41:max(Nl_range);
 B2 = Bs(Nl_R2,1);
 
 % Arch III
-Nl_R3 = 12:52;
+Nl_R3 = 12:58;
 B3 = Bs(Nl_R3,2);
 
 % Arch IV
-Nl_R4 = 53:max(Nl_range);
+Nl_R4 = 59:max(Nl_range);
 B4 = Bs(Nl_R4,2);
 
 % Arch V
-Nl_R5 = 46:max(Nl_range);
+Nl_R5 = 43:max(Nl_range);
 B5 = Bs(Nl_R5,3);
 
 
