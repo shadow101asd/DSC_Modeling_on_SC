@@ -1,4 +1,4 @@
-function [Sat_DVs, DPs_opt, pattern_opt, maxDV] = compute_SIdeployment_SatDVs_2DF(W,M,aF,eF,L,Npl,frac,resolution,mu)
+function [Sat_DVs, DPs_opt, pattern_opt, maxDV] = compute_SIdeployment_SatDVs_2DF(Nw,NM,aF,eF,NL,Npl,frac,resolution,mu)
     
     muSu = 1.327124400419393e+11;
     AU = 149600000; % 1 AU in km
@@ -15,9 +15,9 @@ function [Sat_DVs, DPs_opt, pattern_opt, maxDV] = compute_SIdeployment_SatDVs_2D
 
     % grid_resolution = 10;
     
-    patterns = slots_1D_tile_nonperiodic_recursive(L,Npl); % Possible DP patterns from combinatorics problem
+    patterns = slots_1D_tile_nonperiodic_recursive(NL,Npl); % Possible DP patterns from combinatorics problem
 
-    DV_func = @(DP) computeOptimalPhasingDV_2DF_extended(W,M,eF,DP)*sqrt(mu/aF * AU/muSu); % scale correctly according to aF
+    DV_func = @(DP) computeOptimalPhasingDV_2DF_extended(Nw,-NM,eF,DP)*sqrt(mu/aF * AU/muSu); % scale correctly according to aF
     
     % P = size(patterns, 1);
     % best_DVs = NaN([1, P]);
@@ -42,7 +42,7 @@ function [Sat_DVs, DPs_opt, pattern_opt, maxDV] = compute_SIdeployment_SatDVs_2D
     %     P0_opts(p) = P0_opt;
     % end
 
-    DVs = computePhasingDVs_2DF_sequentialM(W, M, eF, resolution, 1)*sqrt(mu/aF * AU/muSu); % scale correctly according to aF
+    DVs = computePhasingDVs_2DF_sequentialM(Nw, NM, eF, resolution, 1)*sqrt(mu/aF * AU/muSu); % scale correctly according to aF
     [DVs_pats, DPs_pats] = get_DVs_for_pattern(DVs, patterns, frac);
 
     [~, idx] = min(DVs_pats(:));

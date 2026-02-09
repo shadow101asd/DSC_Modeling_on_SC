@@ -3,9 +3,14 @@ function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDV_2DF_extende
     AU = 149600000; % 1 AU in km
     aF = AU;
 
+    % Reduce W,M to fundamental pair
+    G = gcd(W,M);
+    W = W/G;
+    M = M/G;
+
     % Meta-parameters
     day = 86400; % 1 day in seconds
-    max_periods = 3.0; % in R+ | TODO: adapt to represent full range of possible starting positions
+    max_periods = 2.0; % in R+ | TODO: adapt to represent full range of possible starting positions
     T = 2*pi*sqrt(aF^3/mu); % satellites' orbital period
     min_tf_considered = 0.2*T/day; % in days
     max_tf_considered = 2.0*T/day; % in days
@@ -90,7 +95,7 @@ function [best_DV, ToP, DV1, DV2, details] = computeOptimalPhasingDV_2DF_extende
     b = [0; 0];
     lb = [0; 0];
     ub = [et1-min_tf_considered*day ; et1]/factor;
-    options = optimoptions("fmincon", "Display", "none", OptimalityTolerance=1e-3);
+    options = optimoptions("fmincon", "Display", "none", OptimalityTolerance=1e-4);
 
     [x_opt,fval] = fmincon(@(X) lambertWrapper(X, K1, K2, mu, factor), x0, A, b, [], [], lb, ub, [], options);
 

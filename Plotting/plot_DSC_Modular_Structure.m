@@ -1,7 +1,11 @@
-function fig = plot_DSC_Modular_Structure(XSats_i, run_idx, figure_num, P2_name)
+function [fig, p2] = plot_DSC_Modular_Structure(XSats_i, run_idx, figure_num, P2_name, SatSize)
 
     if nargin <= 3
         P2_name = 'Mars'; % Default behavior
+    end
+
+    if nargin <= 4
+        SatSize = 200;
     end
 
     % Load Planetary Ephemerides from Inputs
@@ -32,9 +36,9 @@ function fig = plot_DSC_Modular_Structure(XSats_i, run_idx, figure_num, P2_name)
     
     scatter(0,0, 450, 'pentagram', 'yellow', 'filled', 'MarkerEdgeColor', 'black', 'LineWidth', 1);
     hold on
-    scatter(XSats(1,:)/AU,XSats(2,:)/AU,MarkerEdgeColor="black", MarkerFaceColor=[0.7,0.7,0.7], Marker="square", SizeData=200);
     scatter(XEa(1)/AU,XEa(2)/AU,MarkerEdgeColor="black", MarkerFaceColor="blue", Marker="o", SizeData=350);
-    scatter(XP2(1)/AU,XP2(2)/AU,MarkerEdgeColor="black", MarkerFaceColor=P2_color, Marker="o", SizeData=350);
+    p2 = scatter(XP2(1)/AU,XP2(2)/AU,MarkerEdgeColor="black", MarkerFaceColor=P2_color, Marker="o", SizeData=350);
+    sats = scatter(XSats(1,:)/AU,XSats(2,:)/AU,MarkerEdgeColor="black", MarkerFaceColor=[0.7,0.7,0.7], Marker="square", SizeData=SatSize);
     hold off
     xlabel("x [AU]", FontWeight="bold")
     ylabel("y [AU]", FontWeight="bold")

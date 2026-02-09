@@ -36,23 +36,31 @@ f1 = figure(str2double(run_idx));
 set(f1, 'Position', [f1.Position(1) f1.Position(2) w h])
 clf(str2double(run_idx))
 
-plot(plot_range, Bs(plot_range,:), LineWidth=2)
+h1 = plot(plot_range, Bs(plot_range,1), LineWidth=2);
+hold on
+h2 = plot(plot_range, Bs(plot_range,2), LineWidth=2);
+h3 = plot(plot_range, Bs(plot_range,3), LineWidth=2);
+hold off
 
 lgd = [];
 for Nf = Nf_range
     lgd = [lgd, "Nf = " + int2str(Nf)];
 end
-legend(lgd, Location='northwest')
+legend(lgd, Location='northwest', AutoUpdate='off')
+
+uistack(h2,'top')
+uistack(h1,'top')
+
 xlim([min(Nl_range), max(Nl_range)])
 ylim([0 ceil(max(max(Bs))/100)*100])
 xlabel("Number of Starship Launches N_l", FontWeight="bold")
-ylabel("Average Network Datarate [Mbps]", FontWeight="bold")
+ylabel("Average Mars-Earth Data Rate [Mbps]", FontWeight="bold")
 % title("Run " + run_idx + ": Ongoing")
 set(gca, FontName = "Times New Roman", FontSize=14)
 set(gca, 'Box','off');
 
 f2 = figure(100+str2double(run_idx));
-set(f2, 'Position', [f2.Position(1) f2.Position(2) w h/2])
+set(f2, 'Position', [f2.Position(1) f2.Position(2) w (h/2+30)])
 clf(100+str2double(run_idx))
 
 plot(plot_range, minBs(plot_range,:), LineWidth=2)
@@ -65,7 +73,7 @@ legend(lgd, Location='northwest')
 xlim([min(Nl_range), max(Nl_range)])
 ylim([0 ceil(max(max(minBs))/100)*100])
 xlabel("Number of Starship Launches N_l", FontWeight="bold")
-ylabel("Min. Datarate [Mbps]", FontWeight="bold")
+ylabel("Min. Data Rate [Mbps]", FontWeight="bold")
 % title("Run " + run_idx + ": Ongoing")
 set(gca, FontName = "Times New Roman", FontSize=14)
 set(gca, 'Box','off');
@@ -100,7 +108,7 @@ clf(200+str2double(run_idx))
 
 
 xlabel("Number of Starship Launches N_l", FontWeight="bold")
-ylabel("Average Network Datarate [Mbps]", FontWeight="bold")
+ylabel("Average Mars-Earth Data Rate [Mbps]", FontWeight="bold")
 set(gca, FontName = "Times New Roman", FontSize=14)
 
 hold on
